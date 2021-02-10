@@ -2,7 +2,7 @@ const testJson = {
   swagger: "2.0",
   info: { version: "project.info.version", title: "Process mining REST API" },
   host: "localhost:8080",
-  basePath: "/",
+  neutralPath: "/",
   tags: [
     {
       name: "analysis-controller",

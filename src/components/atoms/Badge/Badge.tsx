@@ -20,7 +20,7 @@ const Badge: React.FC<IBadgeProps> = ({
   badgeContent,
   children,
   className = '',
-  variant = 'base',
+  variant = 'neutral',
   max = 99,
   position = 'topRight',
   display = true

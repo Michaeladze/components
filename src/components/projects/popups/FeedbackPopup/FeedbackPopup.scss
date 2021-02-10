@@ -11,7 +11,7 @@
 }
 
 .feedback-popup__subtitle {
-  @include p1;
+  @include Body1Long;
   margin-top: 8px;
 }
 
@@ -20,7 +20,7 @@
 }
 
 .feedback__group-title {
-  @include s1;
+  @include Subtitle2;
   margin-bottom: 8px;
 }
 
@@ -28,7 +28,7 @@
   margin: 16px -48px;
   width: calc(100% + 96px);
   height: 1px;
-  background-color: var(--base-200);
+  background-color: var(--neutral-20);
 }
 
 .feedback__rating {
@@ -45,9 +45,9 @@
   min-width: 56px;
   border-radius: 8px;
   margin-right: 12px;
-  background-color: var(--base-100);
-  border: 1px solid var(--base-300);
-  color: var(--base-500);
+  background-color: var(--neutral-10);
+  border: 1px solid var(--neutral-30);
+  color: var(--neutral-50);
   cursor: pointer;
 }
 
@@ -56,20 +56,20 @@
 }
 
 .feedback__star:not(.feedback__star--active):hover {
-  background-color: var(--accent-200);
-  border: 1px solid var(--accent-500);
+  background-color: var(--primary-20);
+  border: 1px solid var(--primary-50);
 }
 
 .feedback__star--active {
-  border: 1px solid var(--accent-500);
-  background-color: var(--accent-500);
-  color: var(--base-000);
+  border: 1px solid var(--primary-50);
+  background-color: var(--primary-50);
+  color: var(--neutral-white);
 }
 
 .feedback__group-error {
-  @include p2;
+  @include Body2Long;
   margin-top: 8px;
-  color: var(--danger-500)
+  color: var(--error-50)
 }
 
 .feedback__action {

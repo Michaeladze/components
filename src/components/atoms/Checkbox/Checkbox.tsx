@@ -19,7 +19,7 @@ export interface ICheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 const Checkbox: FC<ICheckboxProps> = ({
-  label, value, node, icon = true, variant = 'accent', ...props
+  label, value, node, icon = true, variant = 'primary', ...props
 }: ICheckboxProps) => {
   /** Отображение иконки */
   const withIcon = icon ? (

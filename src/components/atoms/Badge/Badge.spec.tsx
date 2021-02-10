@@ -24,10 +24,10 @@ describe('', () => {
     expect(wrapper.find('.rf-badge').text()).toBe('99+');
   });
 
-  it('Should have class "rf--info"', () => {
-    const badge = <Badge variant='info'>Badge</Badge>;
+  it('Should have class "rf--attention"', () => {
+    const badge = <Badge variant='attention'>Badge</Badge>;
     const wrapper = shallow(badge);
-    expect(wrapper.find('.rf--info')).toHaveLength(1);
+    expect(wrapper.find('.rf--attention')).toHaveLength(1);
   });
 
   it('Should be empty and have class "rf-badge--dot"', () => {

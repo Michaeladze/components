@@ -44,8 +44,8 @@ export interface IMenuContext {
 /** Результат обработки файла */
 export interface IFileData {
   file: File;
-  base64: string;
-  base64Compressed?: string;
+  neutral64: string;
+  neutral64Compressed?: string;
 }
 
 /** Чипсы */
@@ -77,4 +77,4 @@ export interface IBreadcrumb {
 }
 
 /** Тип цветового оформления */
-export type Variant = 'base' | 'accent' | 'info' | 'complement' | 'danger' | 'warning' | 'success';
+export type Variant = 'neutral' | 'primary' | 'attention' | 'extra-one' | 'error' | 'warning' | 'success';

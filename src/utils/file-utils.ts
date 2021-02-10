@@ -168,15 +168,15 @@ const executablesList: string[] = [
   'zl9'
 ];
 
-/** Конвертация файла в base64 */
-export const getBase64 = (file: File): Promise<IFileData> => {
+/** Конвертация файла в neutral64 */
+export const getneutral64 = (file: File): Promise<IFileData> => {
   return new Promise<IFileData>((resolve, reject) => {
     const reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onload = () =>
       resolve({
         file,
-        base64: reader.result as string
+        neutral64: reader.result as string
       });
     reader.onerror = (error) => reject(error);
   });

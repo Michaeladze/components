@@ -20,7 +20,7 @@
   border-radius: 10px;
   transform: translate(50%, -50%);
 
-  @include p2;
+  @include Body2Long;
   cursor: default;
 }
 
@@ -28,43 +28,43 @@
   transform: translate(100%, -50%);
 }
 
-.rf-badge.rf--base {
-  background-color: var(--base-200);
+.rf-badge.rf--neutral {
+  background-color: var(--neutral-20);
 }
 
-.rf-badge.rf--accent {
-  background-color: var(--accent-500);
-  color: var(--base-000);
+.rf-badge.rf--primary {
+  background-color: var(--primary-50);
+  color: var(--neutral-white);
 }
 
-.rf-badge.rf--complement {
-  background-color: var(--complement-500);
-  color: var(--base-000);
+.rf-badge.rf--extra-one {
+  background-color: var(--extra-one-50);
+  color: var(--neutral-white);
 }
 
-.rf-badge.rf--info {
-  background-color: var(--info-500);
-  color: var(--base-000);
+.rf-badge.rf--attention {
+  background-color: var(--attention-50);
+  color: var(--neutral-white);
 }
 
 .rf-badge.rf--success {
-  background-color: var(--success-500);
-  color: var(--base-000);
+  background-color: var(--success-50);
+  color: var(--neutral-white);
 }
 
 .rf-badge.rf--warning {
-  background-color: var(--warning-500);
-  color: var(--base-000);
+  background-color: var(--warning-50);
+  color: var(--neutral-white);
 }
 
-.rf-badge.rf--danger {
-  background-color: var(--danger-500);
-  color: var(--base-000);
+.rf-badge.rf--error {
+  background-color: var(--error-50);
+  color: var(--neutral-white);
 }
 
 .rf-badge--dot {
   @include round(8px);
   padding: 0;
-  border: 2px solid var(--base-000);
+  border: 2px solid var(--neutral-white);
   box-sizing: content-box;
 }

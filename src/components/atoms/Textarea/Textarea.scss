@@ -14,21 +14,21 @@
   line-height: 20px;
   transition: 0.3s ease-in all;
 
-  @include p1;
-  border: 1px solid var(--base-300);
+  @include Body1Long;
+  border: 1px solid var(--neutral-30);
 }
 
 .rf-textarea-field::placeholder {
-  @include p1;
-  color: var(--base-500);
+  @include Body1Long;
+  color: var(--neutral-50);
 }
 
 .rf-textarea-field:hover {
-  border-color: var(--accent-300);
+  border-color: var(--primary-30);
 }
 
 .rf-textarea-field:focus {
-  border-color: var(--accent-500);
+  border-color: var(--primary-50);
 }
 
 .rf-textarea-field.disabled,
@@ -37,11 +37,11 @@
 }
 
 .rf-textarea-field.invalid {
-  border-color: var(--danger-500);
+  border-color: var(--error-50);
 }
 
 .rf-textarea__max-length {
-  @include p2;
+  @include Body2Long;
   margin-top: 4px;
   text-align: right;
 }

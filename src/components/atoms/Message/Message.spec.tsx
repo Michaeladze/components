@@ -10,7 +10,7 @@ describe('Test <Message/> component', () => {
 
   it('should have "info" class', () => {
     const wrapper = shallow(<Message>Message</Message>);
-    expect(wrapper.find('.rf-message').hasClass('rf--info')).toBeTruthy();
+    expect(wrapper.find('.rf-message').hasClass('rf--attention')).toBeTruthy();
   });
 
   it('should have "success" class', () => {

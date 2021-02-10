@@ -67,7 +67,7 @@ const RetryCountDown: React.FC<IProps> = ({ time, action }: IProps) => {
       <span>Повторное подключение через {value} сек.</span>
       <Button
         buttonType='primary'
-        variant='info'
+        variant='attention'
         size='small'
         onClick={onRetry}
         className='retry-now__button'

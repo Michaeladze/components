@@ -1,5 +1,53 @@
 @import 'variables';
 
+@font-face {
+  font-weight: 300;
+  font-family: 'VTB Group UI';
+  font-style: normal;
+  src: url('../assets/fonts/VTB_Group_UI/VTBGroupUI-Light.ttf') format('truetype'),
+    url('../assets/fonts/VTB_Group_UI/VTBGroupUI-Light.eot');
+}
+
+@font-face {
+  font-weight: 400;
+  font-family: 'VTB Group UI';
+  font-style: normal;
+  src: url('../assets/fonts/VTB_Group_UI/VTBGroupUI-Regular.ttf') format('truetype'),
+    url('../assets/fonts/VTB_Group_UI/VTBGroupUI-Regular.eot');
+}
+
+@font-face {
+  font-weight: 500;
+  font-family: 'VTB Group UI';
+  font-style: normal;
+  src: url('../assets/fonts/VTB_Group_UI/VTBGroupUI-Medium.ttf') format('truetype'),
+    url('../assets/fonts/VTB_Group_UI/VTBGroupUI-Medium.eot');
+}
+
+@font-face {
+  font-weight: 600;
+  font-family: 'VTB Group UI';
+  font-style: normal;
+  src: url('../assets/fonts/VTB_Group_UI/VTBGroupUI-SemiBold.ttf') format('truetype'),
+    url('../assets/fonts/VTB_Group_UI/VTBGroupUI-SemiBold.eot');
+}
+
+@font-face {
+  font-weight: 700;
+  font-family: 'VTB Group UI';
+  font-style: normal;
+  src: url('../assets/fonts/VTB_Group_UI/VTBGroupUI-DemiBold.ttf') format('truetype'),
+    url('../assets/fonts/VTB_Group_UI/VTBGroupUI-DemiBold.eot');
+}
+
+@font-face {
+  font-weight: 800;
+  font-family: 'VTB Group UI';
+  font-style: normal;
+  src: url('../assets/fonts/VTB_Group_UI/VTBGroupUI-Bold.ttf') format('truetype'),
+    url('../assets/fonts/VTB_Group_UI/VTBGroupUI-Bold.eot');
+}
+
 body {
   font-family: $fontFamily;
   background-color: transparent;

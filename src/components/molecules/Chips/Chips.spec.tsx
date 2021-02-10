@@ -37,8 +37,8 @@ describe('Test <Chips/> component', () => {
   });
 
   it('should have primary class', () => {
-    const wrapper = shallow(<Chips items={items} variant='accent' />);
-    expect(wrapper.find('.rf--accent')).toHaveLength(3);
+    const wrapper = shallow(<Chips items={items} variant='primary' />);
+    expect(wrapper.find('.rf--primary')).toHaveLength(3);
   });
 
   it('should have "custom" class', () => {

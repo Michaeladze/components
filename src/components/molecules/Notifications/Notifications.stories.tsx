@@ -14,7 +14,7 @@ export const notificationsList = () => {
     setTimeout(() => {
       sendNotification({
         message: 'Произошла ошибка. Обратитесь к разработчикам.',
-        variant: 'danger'
+        variant: 'error'
       });
     }, 2000);
 

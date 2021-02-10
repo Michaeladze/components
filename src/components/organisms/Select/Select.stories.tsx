@@ -34,7 +34,7 @@ for (let i = 1; i < 15; i++) {
           <Tooltip>
             <Info style={{
               marginLeft: '8px',
-              color: 'var(--warning-500)'
+              color: 'var(--warning-50)'
             }} />
             <div style={{ width: '240px' }}>
               <div>Вам недоступна эта опция. Свяжитесь с администратором для получения доступа.</div>

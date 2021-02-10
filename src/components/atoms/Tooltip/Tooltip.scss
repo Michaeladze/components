@@ -25,11 +25,11 @@ $radius: 8px;
 .rf-tooltip__inner {
   position: relative;
   padding: 16px;
-  color: var(--base-700);
+  color: var(--neutral-70);
   font-weight: normal;
   font-size: 14px;
   line-height: 18px;
-  background: var(--base-000);
+  background: var(--neutral-white);
   border-radius: $radius;
 }
 

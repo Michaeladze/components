@@ -242,7 +242,7 @@ const Select: FC<ISelectProps> = ({
 
   const chipsJSX = multiSelect && (
     <div className='rf-select__chips'>
-      <Chips variant='accent' items={chips} onRemove={onChipsRemove} disabled={props.disabled} />
+      <Chips variant='primary' items={chips} onRemove={onChipsRemove} disabled={props.disabled} />
     </div>
   );
 

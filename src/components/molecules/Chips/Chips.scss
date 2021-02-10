@@ -12,112 +12,112 @@
   border-radius: 16px;
   margin-right: 8px;
   margin-bottom: 8px;
-  background-color: var(--base-200);
+  background-color: var(--neutral-20);
   cursor: default;
 }
 
 .rf-chips__name {
-  @include p1;
+  @include Body1Long;
 }
 
 .rf-chips__button {
   @include round(22px);
   margin-left: 8px;
-  background-color: var(--base-000);
-  color: var(--base-500);
+  background-color: var(--neutral-white);
+  color: var(--neutral-50);
 }
 
-.rf-chips__item.rf--base:hover .rf-chips__name {
-  color: var(--base-500);
+.rf-chips__item.rf--neutral:hover .rf-chips__name {
+  color: var(--neutral-50);
 }
 
-.rf-chips__item.rf--accent {
-  background-color: var(--accent-500);
+.rf-chips__item.rf--primary {
+  background-color: var(--primary-50);
 
   .rf-chips__name {
-    color: var(--base-000);
+    color: var(--neutral-white);
   }
 
   &:hover {
-    background-color: var(--accent-400);
+    background-color: var(--primary-40);
   }
 }
 
 .rf-chips__item.rf--success {
-  background-color: var(--success-500);
+  background-color: var(--success-50);
 
   .rf-chips__name {
-    color: var(--base-000);
+    color: var(--neutral-white);
   }
 
   &:hover {
-    background-color: var(--success-400);
+    background-color: var(--success-40);
   }
 }
 
 .rf-chips__item.rf--warning {
-  background-color: var(--warning-500);
+  background-color: var(--warning-50);
 
   .rf-chips__name {
-    color: var(--base-000);
+    color: var(--neutral-white);
   }
 
   &:hover {
-    background-color: var(--warning-400);
+    background-color: var(--warning-40);
   }
 }
 
-.rf-chips__item.rf--danger {
-  background-color: var(--danger-500);
+.rf-chips__item.rf--error {
+  background-color: var(--error-50);
 
   .rf-chips__name {
-    color: var(--base-000);
+    color: var(--neutral-white);
   }
 
   &:hover {
-    background-color: var(--danger-400);
+    background-color: var(--error-40);
   }
 }
 
-.rf-chips__item.rf--info {
-  background-color: var(--info-500);
+.rf-chips__item.rf--attention {
+  background-color: var(--attention-50);
 
   .rf-chips__name {
-    color: var(--base-000);
+    color: var(--neutral-white);
   }
 
   &:hover {
-    background-color: var(--info-400);
+    background-color: var(--attention-40);
   }
 }
 
-.rf-chips__item.rf--complement {
-  background-color: var(--complement-500);
+.rf-chips__item.rf--extra-one {
+  background-color: var(--extra-one-50);
 
   .rf-chips__name {
-    color: var(--base-000);
+    color: var(--neutral-white);
   }
 
   &:hover {
-    background-color: var(--complement-400);
+    background-color: var(--extra-one-40);
   }
 }
 
 .rf-chips__item.rf-chips__item--disabled {
-  background-color: var(--base-200);
+  background-color: var(--neutral-20);
 
   .rf-chips__name {
-    color: var(--base-400);
+    color: var(--neutral-40);
   }
 
   .rf-chips__button {
-    background-color: var(--base-100);
-    color: var(--base-400);
+    background-color: var(--neutral-10);
+    color: var(--neutral-40);
     cursor: default;
   }
 
   &:hover {
-    background-color: var(--base-200);
+    background-color: var(--neutral-20);
   }
 }
 

@@ -14,7 +14,7 @@ function login(runtask) {
     if (fs.existsSync(path.resolve(...p, `login.json`))) {
         //если пароль сохранем то читаем его
         const data = JSON.parse(fs.readFileSync(path.resolve(p[0], `login.json`), 'utf-8'));
-        const AUTH = Buffer.from(data.auth, 'base64').toString().split(':');
+        const AUTH = Buffer.from(data.auth, 'neutral64').toString().split(':');
         auth.USERNAME = AUTH[0];
         auth.PASSWORD = AUTH[1];
         runtask();
@@ -26,7 +26,7 @@ function login(runtask) {
             auth.PASSWORD = (qwestion.name === 'password') ? qwestion.answer : auth.PASSWORD;
             if (auth.USERNAME && auth.PASSWORD) {
                 fs.writeFileSync(path.resolve(...p, `login.json`),
-                    `{"auth": "${Buffer.from(auth.USERNAME + ':' + auth.PASSWORD).toString('base64')}"}
+                    `{"auth": "${Buffer.from(auth.USERNAME + ':' + auth.PASSWORD).toString('neutral64')}"}
             `);
                 runtask();
             }

@@ -12,16 +12,16 @@
 }
 
 .find-users__notice {
-  @include p2;
+  @include Body2Long;
   padding-top: 8px;
-  color: var(--base-500);
+  color: var(--neutral-50);
 }
 
 .find-users__subtitle {
   @include h6;
   margin: 0 -48px;
   padding: 0 0 8px 48px;
-  border-bottom: 1px solid var(--base-200);
+  border-bottom: 1px solid var(--neutral-20);
 }
 
 .find-users__input-wrapper {
@@ -38,7 +38,7 @@
   top: 50%;
   left: 16px;
   transform: translateY(-50%);
-  color: var(--accent-500);
+  color: var(--primary-50);
 }
 
 .find-users__input {
@@ -46,12 +46,12 @@
   border-radius: 24px;
   min-height: 40px;
 
-  border: 2px solid var(--base-200);
+  border: 2px solid var(--neutral-20);
   padding-left: 48px;
 }
 
 .find-users__input:active {
-  border: 2px solid var(--accent-400);
+  border: 2px solid var(--primary-40);
 }
 
 .find-users__list-wrapper {
@@ -81,27 +81,27 @@
 }
 
 .list-users__user-name {
-  @include s1;
+  @include Subtitle2;
 }
 
 .list-users__user-position {
-  @include p2;
+  @include Body2Long;
 }
 
 .list-users__button-add,
 .list-users__button-add:focus,
 .list-users__button-add:hover {
   margin-left: auto;
-  background-color: var(--accent-100);
-  color: var(--accent-500);
+  background-color: var(--primary-10);
+  color: var(--primary-50);
 }
 
 .list-users__button-check,
 .list-users__button-check:focus,
 .list-users__button-check:hover {
   margin-left: auto;
-  background-color: var(--accent-500);
-  color: var(--base-000);
+  background-color: var(--primary-50);
+  color: var(--neutral-white);
 }
 
 .selected__list-wrapper {
@@ -111,7 +111,7 @@
 }
 
 .selected__text {
-  @include c2;
+  @include Caption1;
 }
 
 .selected__button {
@@ -119,9 +119,9 @@
   @include round(22px);
   right: 10px;
   top: 0;
-  background-color: var(--base-300);
-  border: 2px solid var(--base-000);
-  color: var(--base-000);
+  background-color: var(--neutral-30);
+  border: 2px solid var(--neutral-white);
+  color: var(--neutral-white);
   box-shadow: none;
 }
 
@@ -132,7 +132,7 @@
 
 .selected__button:focus,
 .selected__button:hover {
-  background-color: var(--base-300);
+  background-color: var(--neutral-30);
 }
 
 .swiper-container {
@@ -165,8 +165,8 @@
   height: 32px;
   top: auto;
   bottom: 48px;
-  background-color: var(--base-400);
-  color: var(--base-000);
+  background-color: var(--neutral-40);
+  color: var(--neutral-white);
   transition: 0ms;
 }
 
@@ -190,5 +190,5 @@
 }
 
 .find-users__message {
-  @include p2;
+  @include Body2Long;
 }

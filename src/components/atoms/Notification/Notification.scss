@@ -8,7 +8,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--base-700);
+  background-color: var(--neutral-70);
   cursor: default;
   border-radius: 8px;
   overflow: hidden;
@@ -24,37 +24,37 @@
 }
 
 .rf-notification.rf--success::before {
-  background-color: var(--success-500);
+  background-color: var(--success-50);
 }
 
-.rf-notification.rf--danger::before {
-  background-color: var(--danger-500);
+.rf-notification.rf--error::before {
+  background-color: var(--error-50);
 }
 
-.rf-notification.rf--info::before {
-  background-color: var(--info-500);
+.rf-notification.rf--attention::before {
+  background-color: var(--attention-50);
 }
 
 .rf-notification.rf--warning::before {
-  background-color: var(--warning-500);
+  background-color: var(--warning-50);
 }
 
-.rf-notification.rf--accent::before {
-  background-color: var(--accent-500);
+.rf-notification.rf--primary::before {
+  background-color: var(--primary-50);
 }
 
-.rf-notification.rf--base::before {
-  background-color: var(--base-500);
+.rf-notification.rf--neutral::before {
+  background-color: var(--neutral-50);
 }
 
-.rf-notification.rf--complement::before {
-  background-color: var(--complement-500);
+.rf-notification.rf--extra-one::before {
+  background-color: var(--extra-one-50);
 }
 
 .rf-notification__message {
   width: 100%;
-  @include p1;
-  color: var(--base-000);
+  @include Body1Long;
+  color: var(--neutral-white);
   white-space: normal;
 }
 
@@ -67,5 +67,5 @@
   background-color: transparent;
   border: 0;
   outline: none;
-  color: var(--base-200);
+  color: var(--neutral-20);
 }

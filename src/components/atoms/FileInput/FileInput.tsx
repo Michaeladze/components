@@ -1,7 +1,7 @@
 import React, {
   useCallback, useRef, useState
 } from 'react';
-import { getBase64, validateFile } from '../../../utils/file-utils';
+import { getneutral64, validateFile } from '../../../utils/file-utils';
 import Chips from '../../molecules/Chips/Chips';
 import { IChips, IFileData } from '../../../types';
 import Button from '../Button';
@@ -9,8 +9,8 @@ import { IButtonProps } from '../Button/Button';
 import { sendNotification } from '../../../index';
 
 /**
- * Файловый инпут для небольших файлов, конвертирует файл в base64.
- * Передает в коллбек setFile объект c файлом и его base64 версией { file: File, base64: string }
+ * Файловый инпут для небольших файлов, конвертирует файл в neutral64.
+ * Передает в коллбек setFile объект c файлом и его neutral64 версией { file: File, neutral64: string }
  *
  */
 
@@ -63,11 +63,11 @@ const FileInput: React.FC<IFileInputProps> = ({
         });
 
         if (validationResult.valid) {
-          promises.push(getBase64(fl));
+          promises.push(getneutral64(fl));
         } else {
           sendNotification({
             message: validationResult.error,
-            variant: 'danger'
+            variant: 'error'
           });
           onError && onError(new Error(validationResult.error));
         }

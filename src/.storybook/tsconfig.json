@@ -10,7 +10,7 @@
     "jsx": "react",
     "moduleResolution": "node",
     "rootDirs": ["../../src"],
-    "baseUrl": "src",
+    "neutralUrl": "src",
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,

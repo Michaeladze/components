@@ -41,7 +41,7 @@ const FeedbackPopup: React.FC<IFeedbackPopupProps> = ({ user, sendFeedback, onCl
       text: message,
       userId: user.id,
       userName: user.fullName,
-      file64: attachment[0]?.base64 || '',
+      file64: attachment[0]?.neutral64 || '',
       screen: `${window.innerWidth}x${window.innerHeight}`,
       photo: user.photo,
       userPosition: user.position,

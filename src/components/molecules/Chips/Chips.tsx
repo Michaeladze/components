@@ -14,7 +14,7 @@ export interface IChipsProps {
 }
 
 const Chips: FC<IChipsProps> = ({
-  items, variant = 'base', onRemove, onClick, className, disabled
+  items, variant = 'neutral', onRemove, onClick, className, disabled
 }: IChipsProps) => {
   const handleRemove = (e: React.MouseEvent, id: string) => {
     e.stopPropagation();

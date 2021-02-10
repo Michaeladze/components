@@ -19,7 +19,7 @@ const Button: FC<IButtonProps> = ({
   type = 'button',
   size = 'medium',
   buttonType = 'primary',
-  variant = 'accent',
+  variant = 'primary',
   rounded = false,
   ...props
 }: IButtonProps) => {

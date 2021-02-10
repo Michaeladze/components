@@ -19,7 +19,7 @@ const Switch: FC<ISwitchProps> = ({
   state = false,
   disable = false,
   onChange,
-  variant = 'accent'
+  variant = 'primary'
 }: ISwitchProps) => {
   const [s, toggle] = useState<boolean>(state);
 

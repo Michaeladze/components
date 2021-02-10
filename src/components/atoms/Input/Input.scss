@@ -13,21 +13,21 @@
   padding: 8px 16px;
   line-height: 20px;
   transition: 0.3s ease-in all;
-  @include p1;
+  @include Body1Long;
   border: 0;
-  border-bottom: 1px solid var(--base-300);
-  background-color: var(--base-000);
-  color: var(--base-1000);
+  border-bottom: 1px solid var(--neutral-30);
+  background-color: var(--neutral-white);
+  color: var(--neutral-black);
 
   &.invalid {
-    border-color: var(--danger-500);
+    border-color: var(--error-50);
   }
 
   &.disabled {
     @include disabled();
 
     &::placeholder {
-      color: var(--base-300);
+      color: var(--neutral-30);
     }
   }
 
@@ -42,32 +42,32 @@
 }
 
 .rf-input__field--outline {
-  border: 1px solid var(--base-300);
+  border: 1px solid var(--neutral-30);
   border-radius: 4px;
 }
 
 .rf-input__field:hover {
-  border-color: var(--accent-300);
+  border-color: var(--primary-30);
 }
 
 .rf-input__field:focus {
-  border-color: var(--accent-500);
+  border-color: var(--primary-50);
 }
 
 .rf-input__field:disabled {
   @include disabled();
   background-color: transparent;
-  border-color: var(--base-300);
-  color: var(--base-300);
+  border-color: var(--neutral-30);
+  color: var(--neutral-30);
 }
 
 .rf-input__field::placeholder {
-  @include p1;
-  color: var(--base-500);
+  @include Body1Long;
+  color: var(--neutral-50);
 }
 
 .rf-input__field:disabled::placeholder {
-  color: var(--base-300);
+  color: var(--neutral-30);
 }
 
 .rf-input-action {
@@ -82,14 +82,14 @@
   transform: translateY(-50%);
   transition: 0.3s ease-in color;
   cursor: pointer;
-  color: var(--base-300);
+  color: var(--neutral-30);
 
   @media screen and (max-width: $mobileLarge) {
     right: 12px;
   }
 
   &:focus + .rf-input__field {
-    border-color: var(--accent-500);
+    border-color: var(--primary-50);
   }
 }
 
@@ -101,12 +101,12 @@
 
 .rf-input__file-placeholder {
   line-height: 20px;
-  @include p1;
-  color: var(--base-500);
+  @include Body1Long;
+  color: var(--neutral-50);
 }
 
 .rf-input__file-value {
-  @include p1;
+  @include Body1Long;
 }
 
 input[type='file']:disabled + .rf-input__field.rf-input__field--file {
@@ -124,8 +124,8 @@ input[type='file']:disabled + .rf-input__field.rf-input__field--file {
   cursor: text;
   transform-origin: left center;
   transform: translate(0, -50%) scale(1);
-  @include p1;
-  color: var(--base-500);
+  @include Body1Long;
+  color: var(--neutral-50);
 }
 
 // лейбл при фокусе или заполненном инпуте
@@ -142,7 +142,7 @@ input[type='file']:disabled + .rf-input__field.rf-input__field--file {
   top: 50%;
   right: 16px;
   transform: translateY(-50%);
-  color: var(--base-500);
+  color: var(--neutral-50);
 
   display: flex;
   align-items: center;
@@ -153,23 +153,23 @@ input[type='file']:disabled + .rf-input__field.rf-input__field--file {
   padding-left: 48px;
   padding-right: 40px;
   border-radius: 24px;
-  border: 1px solid var(--base-300);
+  border: 1px solid var(--neutral-30);
 }
 
 .rf-input__action-search {
   right: auto;
   left: 18px;
-  color: var(--accent-500);
+  color: var(--primary-50);
   background: transparent;
   pointer-events: none;
   cursor: default;
 }
 
 .rf-input__action-clear {
-  color: var(--base-300);
+  color: var(--neutral-30);
 }
 
 .rf-input__action-clear:hover,
 .rf-input__action-clear:focus {
-  color: var(--base-500);
+  color: var(--neutral-50);
 }

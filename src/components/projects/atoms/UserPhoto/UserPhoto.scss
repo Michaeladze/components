@@ -5,12 +5,12 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: var(--base-300);
+  background-color: var(--neutral-30);
 
   display: flex;
   align-items: center;
   justify-content: center;
 
   @include buttonGiant;
-  color: var(--base-000);
+  color: var(--neutral-white);
 }

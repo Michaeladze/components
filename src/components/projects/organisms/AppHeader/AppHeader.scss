@@ -5,7 +5,7 @@
   z-index: 2;
   width: 100%;
   box-shadow: none;
-  background-color: var(--base-000);
+  background-color: var(--neutral-white);
 }
 
 .app__header--shadow {
@@ -25,13 +25,13 @@
 }
 
 .app-header__logo-icon {
-  color: var(--info-500);
+  color: var(--attention-50);
 }
 
 .app-header__logo-name {
   margin-left: 8px;
   @include h5;
-  color: var(--accent-900);
+  color: var(--primary-90);
   white-space: nowrap;
 }
 

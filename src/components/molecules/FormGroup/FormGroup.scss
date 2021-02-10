@@ -6,16 +6,16 @@
 
 .rf-form-group__label {
   margin-bottom: 10px;
-  @include c1;
-  color: var(--base-1000);
+  @include Caption1;
+  color: var(--neutral-black);
 }
 
 .rf-form-group__message {
   margin-top: 4px;
-  @include c1;
-  color: var(--danger-500);
+  @include Caption1;
+  color: var(--error-50);
 }
 
 .rf-form-group__required {
-  color: var(--danger-500);
+  color: var(--error-50);
 }

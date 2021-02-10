@@ -31,7 +31,7 @@ export const badge = () => {
 
   const userPhotos = ['bottomLeft', 'topLeft', 'topRight', 'bottomRight'].map((position: any) => (
     <StoryCol key={position}>
-      <Badge variant='danger' position={position}>
+      <Badge variant='error' position={position}>
         <UserPhoto fullName='Bottle Neck' />
       </Badge>
     </StoryCol>

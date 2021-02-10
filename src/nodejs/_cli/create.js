@@ -1,10 +1,10 @@
 const path = require('path');
-const basePath = path.dirname(require.main.filename).split(path.sep).slice(0,-1).join(path.sep);
-require(`${basePath}/_helpers/stringExtensions`);
+const neutralPath = path.dirname(require.main.filename).split(path.sep).slice(0,-1).join(path.sep);
+require(`${neutralPath}/_helpers/stringExtensions`);
 
 // /** универсальное логирование */
- const log = require(`${basePath}/_helpers/log`);
- const generate = require(`${basePath}/_helpers/generate`);
+ const log = require(`${neutralPath}/_helpers/log`);
+ const generate = require(`${neutralPath}/_helpers/generate`);
 /** user IO */
 const readline = require('readline');
 /** парсинг аргументов RAW */
@@ -51,7 +51,7 @@ const getNameOfFile = () => {
         })
     })
 };
-  
+
 const getComponentsNames = () => {
     return new Promise((resolve) => {
         rl.question('Введите наименования cущностей (для actions, reducers, effects, services) через разделитель "," : ', (userInputComponents) => {

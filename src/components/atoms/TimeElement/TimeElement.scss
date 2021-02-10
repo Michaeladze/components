@@ -8,7 +8,7 @@
 
 .rf-time-element {
   box-sizing: border-box;
-  @include s1;
+  @include Subtitle2;
   margin-right: 16px;
   letter-spacing: normal;
 }
@@ -39,7 +39,7 @@
 }
 
 .rf-time-element__name {
-  @include s2;
+  @include Subtitle3;
 }
 
 .rf-time-element__icon {

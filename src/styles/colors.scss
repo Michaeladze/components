@@ -1,12 +1,11 @@
 /*
-	base - основной цвет фона или текста
+	neutral - основной цвет фона или текста
 	faint - второстепенный текст или фон
-	accent - корпоративный цвет
-	complement - дополнительный accent
-	danger - ошибки
+	primary - корпоративный цвет
+	extra-one - дополнительный primary
+	error - ошибки
 	warning - не критические ошибки
 	success - успех
-
 */
 
 :root {
@@ -15,47 +14,169 @@
   // Палитра
   // ---------------------------
 
-  --base-000: #FFFFFF;
-  --base-100: #F7F9FC;
-  --base-200: #E4E9F2;
-  --base-300: #C5CEE0;
-  --base-400: #8F9BB3;
-  --base-500: #5D6A87;
-  --base-600: #2E3A59;
-  --base-700: #222B45;
-  --base-800: #192038;
-  --base-900: #151A30;
-  --base-1000: #000000;
+  --grey-white: #FFFFFF;
+  --grey-5: #F3F4F6;
+  --grey-10: #E5E7EB;
+  --grey-20: #D6D8DE;
+  --grey-30: #B1B5BB;
+  --grey-40: #9A9EA5;
+  --grey-50: #7B7E86;
+  --grey-60: #696C73;
+  --grey-70: #505258;
+  --grey-80: #37383C;
+  --grey-90: #22242A;
+  --grey-black: #000000;
 
-  --accent-100: #F2F6FF;
-  --accent-200: #D9E4FF;
-  --accent-300: #A6C0FF;
-  --accent-400: #5987FF;
-  --accent-500: #3369FF;
-  --accent-600: #274FDB;
-  --accent-700: #1A3AB8;
-  --accent-800: #102894;
-  --accent-900: #091C7A;
+  --blue-10: #EDF5FF;
+  --blue-20: #D6E4FE;
+  --blue-30: #A7C7FF;
+  --blue-40: #6FA3FF;
+  --blue-50: #307FFF;
+  --blue-60: #0062FF;
+  --blue-70: #0142D3;
+  --blue-80: #022D9A;
+  --blue-90: #001D6D;
+  --blue-100: #001144;
 
-  --info-100: #F2F8FF;
-  --info-200: #C7E4FF;
-  --info-300: #94D0FF;
-  --info-400: #42B6FF;
-  --info-500: #00AAFF;
-  --info-600: #0081D6;
-  --info-700: #0069C2;
-  --info-800: #0050A8;
-  --info-900: #003785;
+  --green-10: #E5FFEF;
+  --green-20: #B6F1C9;
+  --green-30: #73E49A;
+  --green-40: #32C665;
+  --green-50: #1BA049;
+  --green-60: #128238;
+  --green-70: #096227;
+  --green-80: #04451A;
+  --green-90: #003111;
+  --green-100: #00230C;
 
-  --complement-100: #FFF2FA;
-  --complement-200: #FFD9EF;
-  --complement-300: #FFA6DA;
-  --complement-400: #FF59BA;
-  --complement-500: #E42896;
-  --complement-600: #CA0075;
-  --complement-700: #AF0467;
-  --complement-800: #95075A;
-  --complement-900: #7A094B;
+  --red-10: #FFEFEF;
+  --red-20: #FFD4D4;
+  --red-30: #FFA7A7;
+  --red-40: #FF7C7C;
+  --red-50: #F64E4E;
+  --red-60: #D92020;
+  --red-70: #A71212;
+  --red-80: #780A0A;
+  --red-90: #520606;
+  --red-100: #320000;
+
+  --orange-10: #FFF1E5;
+  --orange-20: #FFD7C3;
+  --orange-30: #FFB799;
+  --orange-40: #FF8D64;
+  --orange-50: #FF5C22;
+  --orange-60: #D63F09;
+  --orange-70: #A63208;
+  --orange-80: #7A2503;
+  --orange-90: #591C04;
+  --orange-100: #3D1100;
+
+  --yellow-10: #FEF5D7;
+  --yellow-20: #FEEEB8;
+  --yellow-30: #FEE189;
+  --yellow-40: #FDD14C;
+  --yellow-50: #FFC400;
+
+  --purple-10: #F6F2FF;
+  --purple-20: #E8DAFF;
+  --purple-30: #D4BBFF;
+  --purple-40: #BE95FF;
+  --purple-50: #A56EFF;
+  --purple-60: #8A3FFC;
+  --purple-70: #6929C4;
+  --purple-80: #491D8B;
+  --purple-90: #31135E;
+  --purple-100: #1C0F30;
+
+  // ---------------------------
+  // Семантические цвета
+  // ---------------------------
+
+  --neutral-white: var(--grey-white);
+  --neutral-5: var(--grey-5);
+  --neutral-10: var(--grey-10);
+  --neutral-20: var(--grey-20);
+  --neutral-30: var(--grey-30);
+  --neutral-40: var(--grey-40);
+  --neutral-50: var(--grey-50);
+  --neutral-60: var(--grey-60);
+  --neutral-70: var(--grey-70);
+  --neutral-80: var(--grey-80);
+  --neutral-90: var(--grey-90);
+  --neutral-black: var(--grey-black);
+
+  --primary-10: var(--blue-10);
+  --primary-20: var(--blue-20);
+  --primary-30: var(--blue-30);
+  --primary-40: var(--blue-40);
+  --primary-50: var(--blue-50);
+  --primary-60: var(--blue-60);
+  --primary-70: var(--blue-70);
+  --primary-80: var(--blue-80);
+  --primary-90: var(--blue-90);
+  --primary-100: var(--blue-100);
+
+  --success-10: var(--green-10);
+  --success-20: var(--green-20);
+  --success-30: var(--green-30);
+  --success-40: var(--green-40);
+  --success-50: var(--green-50);
+  --success-60: var(--green-60);
+  --success-70: var(--green-70);
+  --success-80: var(--green-80);
+  --success-90: var(--green-90);
+  --success-100: var(--green-100);
+
+  --attention-10: var(--yellow-10);
+  --attention-20: var(--yellow-20);
+  --attention-30: var(--yellow-30);
+  --attention-40: var(--yellow-40);
+  --attention-50: var(--yellow-50);
+
+  --warning-10: var(--orange-10);
+  --warning-20: var(--orange-20);
+  --warning-30: var(--orange-30);
+  --warning-40: var(--orange-40);
+  --warning-50: var(--orange-50);
+  --warning-60: var(--orange-60);
+  --warning-70: var(--orange-70);
+  --warning-80: var(--orange-80);
+  --warning-90: var(--orange-90);
+  --warning-100: var(--orange-100);
+
+  --error-10: var(--red-10);
+  --error-20: var(--red-20);
+  --error-30: var(--red-30);
+  --error-40: var(--red-40);
+  --error-50: var(--red-50);
+  --error-60: var(--red-60);
+  --error-70: var(--red-70);
+  --error-80: var(--red-80);
+  --error-90: var(--red-90);
+  --error-100: var(--red-100);
+
+  --extra-one-10: var(--purple-10);
+  --extra-one-20: var(--purple-20);
+  --extra-one-30: var(--purple-30);
+  --extra-one-40: var(--purple-40);
+  --extra-one-50: var(--purple-50);
+  --extra-one-60: var(--purple-60);
+  --extra-one-70: var(--purple-70);
+  --extra-one-80: var(--purple-80);
+  --extra-one-90: var(--purple-90);
+  --extra-one-100: var(--purple-100);
+
+  --opacity-white-hover: #00000008;
+  --opacity-white-focused: #00000014;
+  --opacity-white-pressed: #00000020;
+  --opacity-white-medium: #00000060;
+
+  --opacity-black-hover: #00000005;
+  --opacity-black-focused: #00000010;
+  --opacity-black-pressed: #00000016;
+  --opacity-black-medium: #00000040;
+
+  // В Адмирале нет этих цветов
 
   --faint-100: rgba(93, 106, 135, 0.08);
   --faint-200: rgba(93, 106, 135, 0.16);
@@ -64,36 +185,6 @@
   --faint-500: rgba(93, 106, 135, 0.4);
   --faint-600: rgba(93, 106, 135, 0.48);
   --faint-900: rgba(2, 2, 3, 0.8);
-
-  --success-100: #F0FFF5;
-  --success-200: #CCFCE3;
-  --success-300: #8CFAC7;
-  --success-400: #2CE59B;
-  --success-500: #00D68F;
-  --success-600: #00B887;
-  --success-700: #00997A;
-  --success-800: #007D6C;
-  --success-900: #004A45;
-
-  --warning-100: #FFFDF2;
-  --warning-200: #FFF1C2;
-  --warning-300: #FFE59E;
-  --warning-400: #FFC94D;
-  --warning-500: #FFAA00;
-  --warning-600: #DB8B00;
-  --warning-700: #B86E00;
-  --warning-800: #945400;
-  --warning-900: #703C00;
-
-  --danger-100: #FFF2F2;
-  --danger-200: #FFD6D9;
-  --danger-300: #FFA8B4;
-  --danger-400: #FF708D;
-  --danger-500: #FF3D71;
-  --danger-600: #DB2C66;
-  --danger-700: #B81D5B;
-  --danger-800: #94124E;
-  --danger-900: #700940;
 
   // ---------------------------
   // Тени

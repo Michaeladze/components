@@ -10,7 +10,7 @@
   width: 100%;
   max-height: 250px;
   z-index: 100;
-  background: var(--base-000);
+  background: var(--neutral-white);
   box-shadow: 0 2px 6px rgba(25, 59, 104, 0.15);
   border-radius: 4px;
   padding: 16px 0;
@@ -24,7 +24,7 @@
 }
 
 .rf-select__list-item:hover {
-  background-color: var(--base-200);
+  background-color: var(--neutral-20);
 }
 
 .rf-select__list-item > label {
@@ -32,19 +32,19 @@
 }
 
 .rf-select__list-item:hover .rf-radio__label {
-  color: var(--accent-500);
+  color: var(--primary-50);
 }
 
 .rf-select__list-item .rf-radio__input:checked + .rf-radio__label {
-  color: var(--accent-500);
+  color: var(--primary-50);
 }
 
 .rf-select__list-item .rf-radio__input:disabled ~ .rf-radio__label {
-  color: var(--base-500);
+  color: var(--neutral-50);
 }
 
 .rf-select__list-item .rf-checkbox__input:disabled ~ .rf-checkbox__label {
-  color: var(--base-500);
+  color: var(--neutral-50);
 }
 
 .rf-select__list-item--hidden {
@@ -72,7 +72,7 @@
   top: 50%;
   transform: translateY(-50%) rotate(0);
   transition: 0.35s;
-  color: var(--base-500);
+  color: var(--neutral-50);
 }
 
 .rf-select__input-angle {
@@ -85,7 +85,7 @@
   cursor: pointer;
   display: none;
   pointer-events: none;
-  color: var(--base-300);
+  color: var(--neutral-30);
 }
 
 .rf-select__input-clear--show {
@@ -94,7 +94,7 @@
 }
 
 .rf-select__input-clear:hover {
-  color: var(--base-500);
+  color: var(--neutral-50);
 }
 
 .rf-select__input-angle--rotate {

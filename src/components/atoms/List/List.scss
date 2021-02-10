@@ -15,13 +15,13 @@
   padding: 8px 24px;
   cursor: pointer;
   transition: 0.15s;
-  background-color: var(--base-000);
-  @include p1;
+  background-color: var(--neutral-white);
+  @include Body1Long;
   white-space: nowrap;
 }
 
 .rf-list__element--disabled {
-  color: var(--base-500);
+  color: var(--neutral-50);
   cursor: default;
   pointer-events: none;
 }
@@ -29,10 +29,10 @@
 .rf-list__separator {
   width: 100%;
   height: 1px;
-  background-color: var(--base-200);
+  background-color: var(--neutral-20);
   margin: 8px 0;
 }
 
 .rf-list__element:hover {
-  background-color: var(--base-200);
+  background-color: var(--neutral-20);
 }

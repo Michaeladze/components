@@ -19,7 +19,7 @@ export interface IRadioProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 const Radio: FC<IRadioProps> = ({
-  label, value, node, icon = true, variant = 'accent', ...props
+  label, value, node, icon = true, variant = 'primary', ...props
 }: IRadioProps) => {
   /** Отображение иконки */
   const withIcon = icon ? (

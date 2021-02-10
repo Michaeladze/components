@@ -7,7 +7,7 @@ export interface IPreloaderProps {
   variant?: Variant;
 }
 
-const Preloader: React.FC<IPreloaderProps> = ({ size = 'medium', variant = 'accent' }: IPreloaderProps) => {
+const Preloader: React.FC<IPreloaderProps> = ({ size = 'medium', variant = 'primary' }: IPreloaderProps) => {
   return (
     <div className={`preloader preloader--${size} ${variantClass[variant]}`}>
       <div className='preloader__circle' />

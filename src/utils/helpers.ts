@@ -116,21 +116,21 @@ export const getShortString = (text: string, n = 50, symbol = '...') => {
 
 /** Общий класс для цветового оформления */
 export const variantClass: Record<string, string> = {
-  base: 'rf--base',
-  accent: 'rf--accent',
-  complement: 'rf--complement',
-  info: 'rf--info',
-  success: 'rf--success',
-  danger: 'rf--danger',
-  warning: 'rf--warning'
+  'neutral': 'rf--neutral',
+  'primary': 'rf--primary',
+  'extra-one': 'rf--extra-one',
+  'attention': 'rf--attention',
+  'success': 'rf--success',
+  'error': 'rf--error',
+  'warning': 'rf--warning'
 };
 
 export const variants: Variant[] = [
-  'base',
-  'accent',
-  'info',
-  'complement',
-  'danger',
+  'neutral',
+  'primary',
+  'extra-one',
+  'success',
+  'attention',
   'warning',
-  'success'
+  'error'
 ];

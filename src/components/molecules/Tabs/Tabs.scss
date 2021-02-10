@@ -6,7 +6,7 @@ $lineWidth: 2px;
 .rf-tabs__navigation {
   position: relative;
   padding-bottom: $margin;
-  border-bottom: $lineWidth solid var(--base-300);
+  border-bottom: $lineWidth solid var(--neutral-30);
 }
 
 .rf-tabs__navigation-list {
@@ -19,7 +19,7 @@ $lineWidth: 2px;
   bottom: -$lineWidth;
   left: 0;
   height: $lineWidth;
-  background-color: var(--accent-500);
+  background-color: var(--primary-50);
 
   transition: 0.3s;
 }
@@ -35,11 +35,11 @@ $lineWidth: 2px;
 .rf-button.rf-tabs__button {
   font-size: 16px;
   line-height: 20px;
-  color: var(--base-400);
+  color: var(--neutral-40);
 }
 
 .rf-button.rf-tabs__button--active {
-  color: var(--base-1000);
+  color: var(--neutral-black);
 }
 
 .rf-tabs__content {
@@ -54,11 +54,11 @@ $lineWidth: 2px;
 
   .rf-tabs__button {
     @include h5;
-    color: var(--base-500);
+    color: var(--neutral-50);
   }
 
   .rf-tabs__button--active {
-    color: var(--base-1000);
+    color: var(--neutral-black);
   }
 
   .rf-tabs__navigation-line {

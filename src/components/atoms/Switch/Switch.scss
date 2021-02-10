@@ -14,44 +14,44 @@
   border: 1px solid transparent;
 }
 
-.rf-switch__toggle.rf--accent.on {
-  background-color: var(--accent-500);
-  border-color: var(--accent-500);
+.rf-switch__toggle.rf--primary.on {
+  background-color: var(--primary-50);
+  border-color: var(--primary-50);
 }
 
-.rf-switch__toggle.rf--base.on {
-  background-color: var(--base-500);
-  border-color: var(--base-500);
+.rf-switch__toggle.rf--neutral.on {
+  background-color: var(--neutral-50);
+  border-color: var(--neutral-50);
 }
 
-.rf-switch__toggle.rf--info.on {
-  background-color: var(--info-500);
-  border-color: var(--info-500);
+.rf-switch__toggle.rf--attention.on {
+  background-color: var(--attention-50);
+  border-color: var(--attention-50);
 }
 
-.rf-switch__toggle.rf--complement.on {
-  background-color: var(--complement-500);
-  border-color: var(--complement-500);
+.rf-switch__toggle.rf--extra-one.on {
+  background-color: var(--extra-one-50);
+  border-color: var(--extra-one-50);
 }
 
-.rf-switch__toggle.rf--danger.on {
-  background-color: var(--danger-500);
-  border-color: var(--danger-500);
+.rf-switch__toggle.rf--error.on {
+  background-color: var(--error-50);
+  border-color: var(--error-50);
 }
 
 .rf-switch__toggle.rf--warning.on {
-  background-color: var(--warning-500);
-  border-color: var(--warning-500);
+  background-color: var(--warning-50);
+  border-color: var(--warning-50);
 }
 
 .rf-switch__toggle.rf--success.on {
-  background-color: var(--success-500);
-  border-color: var(--success-500);
+  background-color: var(--success-50);
+  border-color: var(--success-50);
 }
 
 .rf-switch__toggle.off {
-  background-color: var(--base-200);
-  border-color: var(--base-300);
+  background-color: var(--neutral-20);
+  border-color: var(--neutral-30);
 }
 
 .rf-switch__circle {
@@ -59,7 +59,7 @@
   top: 1px;
   left: 2px;
   @include round(16px);
-  background-color: var(--base-000);
+  background-color: var(--neutral-white);
   transition: 0.15s ease-in-out;
 }
 
@@ -73,19 +73,19 @@
 
 .rf-switch__label {
   margin-left: 10px;
-  @include p1;
+  @include Body1Long;
   user-select: none;
 }
 
 //.rf-switch:hover {
 //  .rf-switch__toggle.on {
-//    background-color: var(--accent-400);
-//    border-color: var(--accent-400);
+//    background-color: var(--primary-40);
+//    border-color: var(--primary-40);
 //  }
 //
 //  .rf-switch__toggle.off {
-//    background-color: var(--accent-200);
-//    border-color: var(--accent-500);
+//    background-color: var(--primary-20);
+//    border-color: var(--primary-50);
 //  }
 //}
 
@@ -96,12 +96,12 @@
   }
 
   .rf-switch__toggle.on {
-    background-color: var(--base-300);
-    border-color: var(--base-300);
+    background-color: var(--neutral-30);
+    border-color: var(--neutral-30);
   }
 
   .rf-switch__toggle.off {
-    background-color: var(--base-100);
-    border-color: var(--base-200);
+    background-color: var(--neutral-10);
+    border-color: var(--neutral-20);
   }
 }

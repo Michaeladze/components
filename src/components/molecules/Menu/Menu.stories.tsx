@@ -77,7 +77,7 @@ export const menu = () => {
         <StoryRow>
           <StoryCol>
             <Menu list={list} position='right'>
-              <Button buttonType='secondary' variant='accent'>
+              <Button buttonType='secondary' variant='primary'>
                 Правое меню слева
               </Button>
             </Menu>
@@ -85,7 +85,7 @@ export const menu = () => {
 
           <StoryCol>
             <Menu list={list}>
-              <Button buttonType='secondary' variant='accent'>
+              <Button buttonType='secondary' variant='primary'>
                 Левое меню
               </Button>
             </Menu>
@@ -93,7 +93,7 @@ export const menu = () => {
 
           <StoryCol>
             <Menu position='right' list={list}>
-              <Button buttonType='secondary' variant='accent'>
+              <Button buttonType='secondary' variant='primary'>
                 Правое меню
               </Button>
             </Menu>
@@ -104,7 +104,7 @@ export const menu = () => {
         <StoryRow>
           <StoryCol>
             <Menu position='right' content={content}>
-              <Button buttonType='secondary' variant='accent'>
+              <Button buttonType='secondary' variant='primary'>
                 Тут контент 😏
               </Button>
             </Menu>
