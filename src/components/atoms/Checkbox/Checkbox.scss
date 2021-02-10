@@ -39,7 +39,7 @@
   @include round(36px);
   z-index: -1;
   opacity: 0;
-  transition: opacity 0.15s;
+  transition: 0.25s;
 }
 
 .rf-checkbox__mark {
