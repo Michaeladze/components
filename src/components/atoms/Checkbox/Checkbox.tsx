@@ -23,16 +23,19 @@ export interface ICheckboxProps extends Omit<InputHTMLAttributes<HTMLInputElemen
 const Checkbox: FC<ICheckboxProps> = ({
   label, value, node, icon = true, variant = 'primary', size = 'default', ...props
 }: ICheckboxProps) => {
+
+  // -------------------------------------------------------------------------------------------------------------------
+
   /** Отображение иконки */
-  const withIcon = icon ? (
+  const withIcon = icon && (
     <span className={ `rf-checkbox__check ${variantClass[variant]} ${node ? 'rf-checkbox__check--node' : ''}` }>
       <span className='rf-checkbox__mark'>
         <CheckIcon/>
       </span>
     </span>
-  ) : (
-    ''
   );
+
+  // -------------------------------------------------------------------------------------------------------------------
 
   const onMouseDown = (e: React.MouseEvent<HTMLLabelElement>) => {
     e.currentTarget.classList.add('rf-checkbox--pressed');
@@ -42,8 +45,12 @@ const Checkbox: FC<ICheckboxProps> = ({
     e.currentTarget.classList.remove('rf-checkbox--pressed');
   };
 
+  // -------------------------------------------------------------------------------------------------------------------
+
   const disabledClass = props.disabled ? 'disabled' : '';
   const sizeClass = size === 'small' ? 'rf-checkbox--small' : '';
+
+  // -------------------------------------------------------------------------------------------------------------------
 
   return (
     <label className={ `rf-checkbox ${disabledClass} ${sizeClass} ${props.className || ''} ` }
