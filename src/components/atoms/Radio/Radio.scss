@@ -12,13 +12,11 @@ $radius: 20px;
 }
 
 .rf-radio__input {
-  position: absolute;
-  top: -9999px;
-  opacity: 0;
-  display: none;
+  @include hidden;
 }
 
 .rf-radio__circle {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,49 +27,23 @@ $radius: 20px;
   margin-right: 10px;
   border-radius: 50%;
 
-  background-color: var(--faint-100);
-  border: 1px solid var(--neutral-30);
+  background-color: transparent;
+  border: 1px solid var(--neutral-60);
 
-  transition: background-color 0.15s ease-in;
+  transition: border 0.15s ease-in;
 }
 
-.rf-radio__circle:after {
+.rf-radio__circle::after {
   content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--neutral-5);
+  @include round(36px);
+  z-index: -1;
   opacity: 0;
-  display: block;
-  @include round(12px);
-  transition: 0.15s ease-in opacity;
-}
-
-.rf-radio__circle {
-
-  &.rf--neutral:after {
-    background-color: var(--neutral-50);
-  }
-
-  &.rf--primary:after {
-    background-color: var(--primary-50);
-  }
-
-  &.rf--attention:after {
-    background-color: var(--attention-50);
-  }
-
-  &.rf--extra-one:after {
-    background-color: var(--extra-one-50);
-  }
-
-  &.rf--error:after {
-    background-color: var(--error-50);
-  }
-
-  &.rf--warning:after {
-    background-color: var(--warning-50);
-  }
-
-  &.rf--success:after {
-    background-color: var(--success-50);
-  }
+  transition: 0.25s;
 }
 
 .rf-radio__mark {
@@ -89,66 +61,54 @@ $radius: 20px;
   transition: 0.15s ease-in color;
 }
 
-// Hover
-.rf-radio:hover .rf-radio__input:enabled + .rf-radio__circle {
-
-  &.rf--neutral {
-    background-color: var(--neutral-20);
-    border-color: var(--neutral-50);
+.rf-radio--small {
+  .rf-radio__circle {
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    min-height: 18px;
   }
 
-  &.rf--primary {
-    background-color: var(--primary-20);
-    border-color: var(--primary-50);
+  .rf-radio__circle::after {
+    @include round(32px);
   }
 
-  &.rf--attention {
-    background-color: var(--attention-20);
-    border-color: var(--attention-50);
+  .rf-radio__label {
+    @include Body2Short;
   }
 
-  &.rf--extra-one {
-    background-color: var(--extra-one-20);
-    border-color: var(--extra-one-50);
-  }
-
-  &.rf--error {
-    background-color: var(--error-20);
-    border-color: var(--error-50);
-  }
-
-  &.rf--warning {
-    background-color: var(--warning-20);
-    border-color: var(--warning-50);
-  }
-
-  &.rf--success {
-    background-color: var(--success-20);
-    border-color: var(--success-50);
+  .rf-radio__mark svg {
+    width: 20px;
+    height: 20px;
   }
 }
 
-.rf-radio:hover .rf-radio__input:checked + .rf-radio__circle {
-  background-color: var(--faint-100);
+// Hover
+.rf-radio:hover .rf-radio__input:enabled + .rf-radio__circle::after {
+  opacity: 1;
 }
 
 // Focus
-.rf-radio__input:focus ~ .rf-radio__label {
-  color: var(--neutral-black);
+.rf-radio__input:focus + .rf-radio__circle::after {
+  opacity: 1;
+  background-color: var(--opacity-black-focus);
 }
 
-.rf-radio__input:checked:focus ~ .rf-radio__circle {
-  outline: none;
+// Pressed
+
+.rf-radio--pressed .rf-radio__input:not(:disabled) + .rf-radio__circle::after {
+  opacity: 1;
+  background-color: var(--opacity-black-pressed);
 }
 
 // Checked
-.rf-radio__input:checked + .rf-radio__circle {
+.rf-radio__input:checked:not(:disabled) + .rf-radio__circle {
   &.rf--neutral {
-    border-color: var(--neutral-50);
+    border-color: var(--neutral-60);
   }
 
   &.rf--primary {
-    border-color: var(--primary-50);
+    border-color: var(--primary-60);
   }
 
   &.rf--attention {
@@ -156,24 +116,24 @@ $radius: 20px;
   }
 
   &.rf--extra-one {
-    border-color: var(--extra-one-50);
+    border-color: var(--extra-one-60);
   }
 
   &.rf--error {
-    border-color: var(--error-50);
+    border-color: var(--error-60);
   }
 
   &.rf--warning {
-    border-color: var(--warning-50);
+    border-color: var(--warning-60);
   }
 
   &.rf--success {
-    border-color: var(--success-50);
+    border-color: var(--success-60);
   }
 }
 
-.rf-radio__input:checked + .rf-radio__circle:after {
-  opacity: 1;
+.rf-radio__input:checked + .rf-radio__circle {
+  border-width: 4px;
 }
 
 //.rf-radio__input:checked + .rf-radio__circle .rf-radio__mark {
@@ -181,7 +141,7 @@ $radius: 20px;
 //}
 
 .rf-radio__input:checked ~ .rf-radio__label {
-  color: var(--neutral-black);
+  color: var(--neutral-90);
 }
 
 // Disabled
@@ -192,16 +152,17 @@ $radius: 20px;
 .rf-radio.disabled + .rf-radio__circle,
 .rf-radio__input:disabled + .rf-radio__circle {
   @include disabled();
-  color: var(--neutral-black);
+  color: var(--neutral-30);
+  border-color: var(--neutral-30);
 }
 
 .rf-radio.disabled ~ .rf-radio__label:not(.rf-radio__label--node),
 .rf-radio__input:disabled ~ .rf-radio__label:not(.rf-radio__label--node) {
   @include disabled();
-  color: var(--neutral-black);
+  color: var(--neutral-30);
 }
 
 .rf-radio.disabled:hover ~ .rf-radio__label:not(.rf-radio__label--node),
 .rf-radio__input:disabled:hover ~ .rf-radio__label:not(.rf-radio__label--node) {
-  color: var(--neutral-black);
+  color: var(--neutral-30);
 }

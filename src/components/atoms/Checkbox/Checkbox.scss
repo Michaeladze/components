@@ -23,6 +23,7 @@
   min-height: 20px;
   margin-right: 10px;
   border-radius: 4px;
+
   background-color: transparent;
   border: 1px solid var(--neutral-60);
 
@@ -144,7 +145,7 @@
 }
 
 .rf-checkbox__input:checked ~ .rf-checkbox__label {
-  color: var(--neutral-black);
+  color: var(--neutral-90);
 }
 
 .rf-checkbox__input:disabled ~ .rf-checkbox__label:not(.rf-checkbox__label--node) {
