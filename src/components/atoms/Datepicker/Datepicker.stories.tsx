@@ -16,14 +16,9 @@ export const datepicker = () => {
 
   return (
     <Story name='Datepicker (Выбор даты))' width={500}>
-      <StoryItem description='Тип inline'>
-        <FormGroup label='Inline'>
-          <Datepicker name='dateTo' value={new Date()} onChange={onChange} disabled />
-        </FormGroup>
-      </StoryItem>
-      <StoryItem description='Тип outline'>
+      <StoryItem>
         <FormGroup label='Outline'>
-          <Datepicker name='dateFrom' value={new Date()} onChange={onChange} inputType='outline' />
+          <Datepicker name='dateFrom' value={new Date()} onChange={onChange} />
         </FormGroup>
       </StoryItem>
     </Story>

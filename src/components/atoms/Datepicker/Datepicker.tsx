@@ -7,8 +7,6 @@ import Close from '../../_icons/close';
 export interface IDatepickerProps extends Omit<DatePickerProps, 'onChange'> {
   onChange?: (date: Date | null, name?: string) => void;
   clear?: boolean;
-  /** Тип */
-  inputType?: 'inline' | 'outline';
 }
 
 const Datepicker: FC<IDatepickerProps> = (props: IDatepickerProps) => {
@@ -21,10 +19,8 @@ const Datepicker: FC<IDatepickerProps> = (props: IDatepickerProps) => {
     props.onChange && props.onChange(d, props.name || '');
   };
 
-  const typeClass = props.inputType === 'outline' ? 'rf-datepicker__wrapper--outline' : '';
-
   return (
-    <div className={`rf-datepicker__wrapper ${typeClass}`}>
+    <div className={'rf-datepicker__wrapper'}>
       <DatePicker
         {...props}
         value={value}

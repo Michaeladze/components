@@ -17,8 +17,8 @@ $margin: 2px;
   .react-date-picker__wrapper {
     overflow: hidden;
     position: relative;
-    border: 0;
-    border-bottom: 1px solid var(--neutral-30);
+    border: 1px solid var(--neutral-30);
+    border-radius: 4px;
   }
 
   .react-date-picker__inputGroup {
@@ -46,9 +46,7 @@ $margin: 2px;
     border: 0;
     outline: 0;
     cursor: pointer;
-    line-height: inherit;
     @include Body1Long;
-    letter-spacing: normal;
   }
 
   .react-date-picker__inputGroup__day {
@@ -64,7 +62,7 @@ $margin: 2px;
   }
 
   .react-date-picker__inputGroup__leadingZero {
-    //@include text;
+    @include text;
   }
 
   // цвет выделения
@@ -307,14 +305,6 @@ $margin: 2px;
   .react-calendar__tile.react-calendar__century-view__decades__decade,
   .react-calendar__tile.react-calendar__decade-view__years__year {
     padding: 4px 8px;
-  }
-}
-
-.rf-datepicker__wrapper--outline {
-
-  .react-date-picker__wrapper {
-    border: 1px solid var(--neutral-30);
-    border-radius: 4px;
   }
 }
 
