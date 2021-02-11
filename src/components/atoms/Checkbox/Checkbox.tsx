@@ -5,7 +5,7 @@ import CheckIcon from '../../_icons/check-icon';
 import { Variant } from '../../../types';
 import { variantClass } from '../../../utils/helpers';
 
-export interface ICheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
+export interface ICheckboxProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> {
   /** Лейбл */
   label?: React.ReactNode;
   /** Значение */
@@ -16,31 +16,52 @@ export interface ICheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
   icon?: boolean;
   /** Вариант */
   variant?: Variant;
+  /** Размер */
+  size?: 'default' | 'small';
 }
 
 const Checkbox: FC<ICheckboxProps> = ({
-  label, value, node, icon = true, variant = 'primary', ...props
+  label, value, node, icon = true, variant = 'primary', size = 'default', ...props
 }: ICheckboxProps) => {
+
+  // -------------------------------------------------------------------------------------------------------------------
+
   /** Отображение иконки */
-  const withIcon = icon ? (
-    <span className={`rf-checkbox__check ${variantClass[variant]} ${node ? 'rf-checkbox__check--node' : ''}`}>
+  const withIcon = icon && (
+    <span className={ `rf-checkbox__check ${variantClass[variant]} ${node ? 'rf-checkbox__check--node' : ''}` }>
       <span className='rf-checkbox__mark'>
-        <CheckIcon />
+        <CheckIcon/>
       </span>
     </span>
-  ) : (
-    ''
   );
 
+  // -------------------------------------------------------------------------------------------------------------------
+
+  const onMouseDown = (e: React.MouseEvent<HTMLLabelElement>) => {
+    e.currentTarget.classList.add('rf-checkbox--pressed');
+  };
+
+  const onMouseUp = (e: React.MouseEvent<HTMLLabelElement>) => {
+    e.currentTarget.classList.remove('rf-checkbox--pressed');
+  };
+
+  // -------------------------------------------------------------------------------------------------------------------
+
   const disabledClass = props.disabled ? 'disabled' : '';
+  const sizeClass = size === 'small' ? 'rf-checkbox--small' : '';
+
+  // -------------------------------------------------------------------------------------------------------------------
 
   return (
-    <label className={`rf-checkbox ${props.className || ''} ${disabledClass} `}>
-      <input {...props} type='checkbox' className='rf-checkbox__input' value={value} />
+    <label className={ `rf-checkbox ${disabledClass} ${sizeClass} ${props.className || ''} ` }
+      onMouseDown={ onMouseDown }
+      onMouseUp={ onMouseUp }>
+      <input { ...props } type='checkbox' className='rf-checkbox__input' value={ value }/>
 
-      {withIcon}
+      { withIcon }
 
-      {label && <div className={`rf-checkbox__label ${node ? 'rf-checkbox__label--node' : ''}`}>{node || label}</div>}
+      { label &&
+      <div className={ `rf-checkbox__label ${node ? 'rf-checkbox__label--node' : ''}` }>{ node || label }</div> }
     </label>
   );
 };
