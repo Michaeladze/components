@@ -51,6 +51,27 @@ import PopupFooter from './components/projects/molecules/PopupFooter';
 
 // ---------------------------------------------------------------------------------------------------------------------
 
+import Copy from './components/_icons/copy';
+import Envelope from './components/_icons/envelope';
+import Headset from './components/_icons/headset';
+import MenuOutline from './components/_icons/menu-outline';
+import Bell from './components/_icons/bell';
+import People from './components/_icons/people';
+import QuestionCircle from './components/_icons/question-circle';
+import Settings from './components/_icons/settings';
+
+export {
+  Copy,
+  Envelope,
+  Headset,
+  MenuOutline,
+  Bell,
+  People,
+  QuestionCircle,
+  Settings
+};
+
+
 export { useClickOutside, useLocation };
 export {
   Switch,
