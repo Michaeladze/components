@@ -17,7 +17,7 @@ export interface ISwitchProps extends Omit<HTMLProps<HTMLDivElement>, 'label'| '
   disable?: boolean;
   /** Цвета */
   variant?: Variant;
-  /** Размер*/
+  /** Размер */
   size?: 'default'|'small';
   /** Включить/выключить анимацию */
   animation?: boolean;
