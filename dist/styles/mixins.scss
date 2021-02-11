@@ -1,0 +1,210 @@
+// Неактивное состояние элемента
+@mixin disabled() {
+  cursor: default;
+  pointer-events: none;
+}
+
+// Визуально скрыть
+@mixin hidden {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+// ------------------
+
+// Заголовки
+
+@mixin h {
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: normal;
+  color: var(--neutral-90);
+}
+
+@mixin hl1 {
+  @include h;
+  font-size: 56px;
+  line-height: 60px;
+}
+
+@mixin hl2 {
+  @include h;
+  font-size: 48px;
+  line-height: 52px;
+}
+
+@mixin h1 {
+  @include h;
+  font-size: 40px;
+  line-height: 44px;
+}
+
+@mixin h2 {
+  @include h;
+  font-size: 34px;
+  line-height: 36px;
+}
+
+@mixin h3 {
+  @include h;
+  font-size: 28px;
+  line-height: 32px;
+}
+
+@mixin h4 {
+  @include h;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+@mixin h5 {
+  @include h;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+@mixin h6 {
+  @include h;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+// Подзаголовки
+
+@mixin S {
+  font-style: normal;
+  letter-spacing: normal;
+  font-weight: 400;
+  color: var(--neutral-90);
+}
+
+@mixin Subtitle1 {
+  @include S;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+@mixin Subtitle2 {
+  @include S;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 500;
+}
+
+@mixin Subtitle3 {
+  @include S;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+}
+
+// Тексты
+
+@mixin t {
+  font-style: normal;
+  letter-spacing: normal;
+  font-weight: 400;
+  color: var(--neutral-90);
+}
+
+@mixin Body1Long {
+  @include t;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+@mixin Body1Short {
+  @include t;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+@mixin Body2Long {
+  @include t;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+@mixin Body2Short {
+  @include t;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+@mixin Caption1 {
+  @include t;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+// Кнопки
+
+@mixin button {
+  font-style: normal;
+  letter-spacing: normal;
+  font-weight: 500;
+}
+
+@mixin Button1 {
+  font-style: normal;
+  letter-spacing: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+@mixin Button2 {
+  font-style: normal;
+  letter-spacing: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+// -------------------------------------
+
+@mixin buttonGiant {
+  @include button;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@mixin buttonLarge {
+  @include button;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+@mixin buttonMedium {
+  @include button;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+@mixin buttonSmall {
+  @include button;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+@mixin buttonTiny {
+  @include button;
+  font-size: 10px;
+  line-height: 12px;
+  letter-spacing: 1px;
+}
+
+// Прочее
+
+@mixin round($r) {
+  width: $r;
+  height: $r;
+  min-width: $r;
+  min-height: $r;
+  border-radius: 50%;
+}
