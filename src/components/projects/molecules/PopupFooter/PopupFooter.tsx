@@ -26,7 +26,7 @@ const PopupFooter: FC<IProps> = ({ onClose, onSubmit, textAccept = 'Выбрат
         {textAccept}
       </Button>
       {onClose && (
-        <Button className='popup-footer__button' type='button' buttonType='link' onClick={onClose}>
+        <Button className='popup-footer__button' type='button' buttonType='ghost' onClick={onClose}>
           Отмена
         </Button>
       )}

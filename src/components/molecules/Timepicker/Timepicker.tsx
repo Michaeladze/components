@@ -9,7 +9,7 @@ import Button from '../../atoms/Button';
 import TimeElement from '../../atoms/TimeElement';
 import Menu from '../Menu';
 
-export interface ITimepickerProps extends HTMLProps<HTMLInputElement> {
+export interface ITimepickerProps extends Omit<HTMLProps<HTMLInputElement>, 'size'> {
   /** Css класс */
   className?: string;
   /** Заблокирован выбор или нет */

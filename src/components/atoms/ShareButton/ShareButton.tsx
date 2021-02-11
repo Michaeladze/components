@@ -17,7 +17,7 @@ const ShareButton: React.FC<IShareButtonProps> = ({ ...props }: IShareButtonProp
     document.body.removeChild(tmp);
     sendNotification({
       message: 'Ссылка скопирована в буфер обмена',
-      variant: 'info'
+      variant: 'primary'
     });
   };
 

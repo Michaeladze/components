@@ -8,7 +8,7 @@ export interface IProps {
   children: React.ReactNode | React.ReactNode[];
 }
 
-const Message: FC<IProps> = ({ children, variant = 'info', className = '' }: IProps) => {
+const Message: FC<IProps> = ({ children, variant = 'neutral', className = '' }: IProps) => {
   return (
     <div className={`rf-message ${variantClass[variant]} ${className}`}>
       <div className='rf-message__message'>{children}</div>

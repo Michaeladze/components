@@ -28,19 +28,19 @@ const Fonts = () => {
       <div className='rf-fonts__col'>
         <h3 className='rf-fonts__col-title'>Кнопки</h3>
 
-        <Button buttonType='link' className='rf-fonts__item rf-button-giant'>
+        <Button buttonType='ghost' className='rf-fonts__item rf-button-giant'>
           Гигантский
         </Button>
-        <Button buttonType='link' className='rf-fonts__item rf-button-large'>
+        <Button buttonType='ghost' className='rf-fonts__item rf-button-large'>
           Большой
         </Button>
-        <Button buttonType='link' className='rf-fonts__item rf-button-medium'>
+        <Button buttonType='ghost' className='rf-fonts__item rf-button-medium'>
           Средний
         </Button>
-        <Button buttonType='link' className='rf-fonts__item rf-button-small'>
+        <Button buttonType='ghost' className='rf-fonts__item rf-button-small'>
           Маленький
         </Button>
-        <Button buttonType='link' className='rf-fonts__item rf-button-tiny'>
+        <Button buttonType='ghost' className='rf-fonts__item rf-button-tiny'>
           Крошечный
         </Button>
       </div>

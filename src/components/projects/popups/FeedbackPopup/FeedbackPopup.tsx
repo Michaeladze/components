@@ -85,7 +85,7 @@ const FeedbackPopup: React.FC<IFeedbackPopupProps> = ({ user, sendFeedback, onCl
       <div className='feedback__group'>
         <FileInput
           name='file'
-          buttonType='outlinePrimary'
+          buttonType='secondary'
           placeholder='Прикрепить изображение'
           setFile={setFile}
           accept='image/*'
@@ -96,7 +96,7 @@ const FeedbackPopup: React.FC<IFeedbackPopupProps> = ({ user, sendFeedback, onCl
         <Button className='feedback__action' type='submit'>
           Отправить
         </Button>
-        <Button className='feedback__action' buttonType='link' onClick={onClose}>
+        <Button className='feedback__action' buttonType='ghost' onClick={onClose}>
           Отменить
         </Button>
       </div>

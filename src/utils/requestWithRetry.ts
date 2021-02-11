@@ -39,7 +39,7 @@ export function requestWithRetry<T = any>(
                     id: RETRY_ID,
                     message: '',
                     countdown: retries,
-                    variant: 'info',
+                    variant: 'neutral',
                     retryAction() {
                       stop$.next(true);
                       retry();
