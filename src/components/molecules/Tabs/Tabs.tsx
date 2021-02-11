@@ -59,7 +59,7 @@ const Tabs: FC<ITabsProps> = ({ list, type = 'underline', children }: ITabsProps
   }, [list, pathname]);
 
   /** Устанавливаем активную вкладку */
-  const onClick = (e: MouseEvent, i: number, element: HTMLDivElement | null) => {
+  const onClick = (_: MouseEvent, i: number, element: HTMLDivElement | null) => {
     element && setLinePosition(element);
 
     if (isRouting && list[i].url) {
