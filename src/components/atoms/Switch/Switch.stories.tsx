@@ -7,7 +7,7 @@ import StoryItem from '../../storybook/StoryItem';
 import StoryRow from '../../storybook/StoryRow';
 
 export default {
-  title: 'Switch',
+  title: 'Form Controls/Switch',
   component: Switch
 };
 
