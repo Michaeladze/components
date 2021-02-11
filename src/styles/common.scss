@@ -157,3 +157,7 @@ pre {
   width: 1px !important;
   overflow: hidden;
 }
+
+*:focus {
+  outline: none;
+}

@@ -15,6 +15,7 @@
     "strict": true,
     "module": "commonjs",
     "moduleResolution": "node",
+    "noUnusedParameters": true,
     "jsx": "react"
   },
   "files": ["./src/.storybook/custom.d.ts", "./src/index.ts"],

@@ -1,45 +1,65 @@
 import React, {
-  FC, ReactNode, useState, useEffect
+  FC, ReactNode, useState, useEffect, HTMLProps
 } from 'react';
 import { Variant } from '../../../types';
 import { variantClass } from '../../../utils/helpers';
 
-export interface ISwitchProps {
-  onChange?: (f: boolean) => void;
+export interface ISwitchProps extends Omit<HTMLProps<HTMLDivElement>, 'label'> {
+  /** Функция срабатывает при переключении*/
+  onSwitch?: (f: boolean) => void;
+  /** Метка*/
   label?: ReactNode;
-  className?: string;
+  /** Позиция метки*/
+  labelPosition?:'right'|'left';
+  /** Текущее состояние*/
   state?: boolean;
+  /** Блокировка от нажатий*/
   disable?: boolean;
+  /** цвета*/
   variant?: Variant;
+  /** размер*/
+  sizeElement?:'default'|'small';
+  /** включить/выключить анимацию*/
+  animation?:boolean;
 }
 
 const Switch: FC<ISwitchProps> = ({
   label,
-  className = '',
   state = false,
   disable = false,
-  onChange,
-  variant = 'primary'
+  animation = false,
+  onSwitch,
+  labelPosition = 'right',
+  variant = 'primary',
+  sizeElement = 'default',
+  ...props
 }: ISwitchProps) => {
   const [s, toggle] = useState<boolean>(state);
 
   useEffect(() => {
+    // в случае программного изменения тоже выдаем событие
+    onSwitch && s !== state && onSwitch(state);
     toggle(state);
   }, [state]);
 
   const changeState = () => {
-    if (!disable) {
-      onChange && onChange(!s);
-      toggle(!s);
-    }
+    onSwitch && onSwitch(!s);
+    toggle(!s);
   };
 
+  const classDisable = disable ? 'rf-switch--disable' : '';
+  const classAnim = animation ? 'rf-switch--anim' : '';
+  const classOther = props.className ?? '';
+
   return (
-    <div className={`rf-switch ${disable ? 'rf-switch--disable' : ''} ${className}`} onClick={changeState}>
-      <div className={`rf-switch__toggle ${s ? 'on' : 'off'} ${variantClass[variant]}`}>
+    <div tabIndex={0}
+      className={`rf-switch rf-switch__toggle-${sizeElement} ${classDisable} ${classAnim} ${classOther}`}
+      onClick={changeState} {...props} >
+      {label && labelPosition === 'left' && <p className='rf-switch__label rf-switch__label--left'>{label}</p>}
+      <div className={`rf-switch__toggle  ${s ? 'rf-switch__toggle--on' : 'rf-switch__toggle--off'} ${variantClass[variant]}`}>
         <div className='rf-switch__circle' />
       </div>
-      {label && <p className='rf-switch__label'>{label}</p>}
+      {label && labelPosition === 'right' && <p className='rf-switch__label rf-switch__label--right'>{label}</p>}
     </div>
   );
 };

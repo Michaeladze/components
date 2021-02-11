@@ -6,102 +6,170 @@
   cursor: pointer;
 }
 
-.rf-switch__toggle {
-  width: 40px;
-  height: 20px;
-  border-radius: 12px;
-  position: relative;
-  border: 1px solid transparent;
+.rf-switch--anim:focus .rf-switch__circle:before,
+.rf-switch--anim:hover .rf-switch__circle:before {
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 50%;
+  animation: pulse 1s ease-out;
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  transform: translate(-50%,-50%) scale(0);
+  top: 50%;
+  left: 50%;
+  content: "";
+  z-index: -1;
 }
 
-.rf-switch__toggle.rf--primary.on {
+@keyframes pulse {
+  to {
+    transform: translate(-50%,-50%) scale(50);
+    background-color: rgba(0, 0, 0, 0);
+    opacity: 0;
+  }
+}
+
+.rf-switch__toggle.rf-switch__toggle--off .rf-switch__circle {
+  left: 2px;
+}
+
+.rf-switch__label--left {
+  margin-right: 8px;
+}
+
+.rf-switch__label--right {
+  margin-left: 8px;
+}
+
+//=====================default===========================
+
+.rf-switch__toggle-default {
+  .rf-switch__toggle {
+    position: relative;
+    border-radius: 10px;
+    width: 36px;
+    height: 20px;
+    transition: background-color 0.6s ease-in-out;
+  }
+
+  .rf-switch__circle {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    @include round(16px);
+    background-color: var(--neutral-white);
+    transition: 0.15s ease-in-out;
+
+  }
+
+  .rf-switch__toggle.rf-switch__toggle--on .rf-switch__circle {
+    left: 18px;
+  }
+
+  .rf-switch__label {
+    @include Body1Short;
+    user-select: none;
+  }
+}
+
+//=====================SMALL===========================
+.rf-switch__toggle-small {
+
+  .rf-switch__toggle {
+    position: relative;
+    border-radius: 12px;
+    width: 28px;
+    height: 16px;
+    transition: background-color 0.6s ease-in-out;
+  }
+
+  .rf-switch__circle {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    @include round(12px);
+    background-color: var(--neutral-white);
+    transition: 0.15s ease-in-out;
+
+  }
+
+  .rf-switch__toggle.rf-switch__toggle--on .rf-switch__circle {
+    left: 14px
+  }
+
+  .rf-switch__label {
+    @include Body2Short;
+    user-select: none;
+  }
+}
+
+//====================COLORS===========================
+.rf-switch__toggle.rf--primary.rf-switch__toggle--on {
   background-color: var(--primary-50);
   border-color: var(--primary-50);
 }
 
-.rf-switch__toggle.rf--neutral.on {
+.rf-switch__toggle.rf--neutral.rf-switch__toggle--on {
   background-color: var(--neutral-50);
   border-color: var(--neutral-50);
 }
 
-.rf-switch__toggle.rf--attention.on {
+.rf-switch__toggle.rf--attention.rf-switch__toggle--on {
   background-color: var(--attention-50);
   border-color: var(--attention-50);
 }
 
-.rf-switch__toggle.rf--extra-one.on {
+.rf-switch__toggle.rf--extra-one.rf-switch__toggle--on {
   background-color: var(--extra-one-50);
   border-color: var(--extra-one-50);
 }
 
-.rf-switch__toggle.rf--error.on {
+.rf-switch__toggle.rf--error.rf-switch__toggle--on {
   background-color: var(--error-50);
   border-color: var(--error-50);
 }
 
-.rf-switch__toggle.rf--warning.on {
+.rf-switch__toggle.rf--warning.rf-switch__toggle--on {
   background-color: var(--warning-50);
   border-color: var(--warning-50);
 }
 
-.rf-switch__toggle.rf--success.on {
+.rf-switch__toggle.rf--success.rf-switch__toggle--on {
   background-color: var(--success-50);
   border-color: var(--success-50);
 }
 
-.rf-switch__toggle.off {
-  background-color: var(--neutral-20);
-  border-color: var(--neutral-30);
+.rf-switch__toggle.rf-switch__toggle--off {
+  background-color: var(--neutral-50);
+  border-color: var(--neutral-50);
 }
 
-.rf-switch__circle {
-  position: absolute;
-  top: 1px;
-  left: 2px;
-  @include round(16px);
-  background-color: var(--neutral-white);
-  transition: 0.15s ease-in-out;
+@keyframes animShade {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
 }
-
-.rf-switch__toggle.off .rf-switch__circle {
-  transform: translateX(0);
-}
-
-.rf-switch__toggle.on .rf-switch__circle {
-  transform: translateX(18px);
-}
-
-.rf-switch__label {
-  margin-left: 10px;
-  @include Body1Long;
-  user-select: none;
-}
-
-//.rf-switch:hover {
-//  .rf-switch__toggle.on {
-//    background-color: var(--primary-40);
-//    border-color: var(--primary-40);
-//  }
-//
-//  .rf-switch__toggle.off {
-//    background-color: var(--primary-20);
-//    border-color: var(--primary-50);
-//  }
-//}
-
+//====================DISABLE===========================
 .rf-switch--disable {
+  pointer-events: none;
 
   .rf-switch__toggle {
     cursor: default;
   }
 
-  .rf-switch__toggle.on {
-    background-color: var(--neutral-30);
-    border-color: var(--neutral-30);
+  .rf-switch__toggle.rf-switch__toggle--on {
+    background-color: var(--primary-30);
+    border-color: var(--primary-30);
   }
 
-  .rf-switch__toggle.off {
-    background-color: var(--neutral-10);
-    border-color: var(--neutral-20);
+  .rf-switch__toggle.rf-switch__toggle--off {
+    background-color: var(--neutral-30);
+    border-color: var(--neutral-30);
   }
 }
