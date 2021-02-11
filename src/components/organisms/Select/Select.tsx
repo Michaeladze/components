@@ -21,8 +21,6 @@ export interface ISelectProps extends InputHTMLAttributes<HTMLInputElement> {
   onChange?: (e: React.ChangeEvent<HTMLInputElement>, option?: IOption) => void;
   /** Вернуть IOption */
   getValue?: (option: IOption) => void;
-  /** Тип */
-  inputType?: 'inline' | 'outline';
 }
 
 const Select: FC<ISelectProps> = ({
@@ -31,7 +29,6 @@ const Select: FC<ISelectProps> = ({
   value,
   onChange,
   getValue,
-  inputType = 'inline',
   ...props
 }: ISelectProps) => {
   /** Ссылка на текущий компонент */
@@ -287,7 +284,6 @@ const Select: FC<ISelectProps> = ({
           readOnly={props.readOnly}
           onChange={onInputChange}
           onKeyUp={onSearch}
-          inputType={inputType}
           onClick={onInputClick}
           disabled={props.disabled}
         />
