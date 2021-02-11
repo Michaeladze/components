@@ -35,7 +35,7 @@ export const switcher = () => {
       <StoryItem description='Состояния переключателя'>
         <StoryRow>
           <Switch animation={true} label='Default c анимацией ' onChange={onChange} />
-          <Switch label='Default без анимацией ' style={{ paddingLeft: '60px' }} onChange={onChange} labelPosition='left'/>
+          <Switch label='Default без анимации ' style={{ paddingLeft: '60px' }} onChange={onChange} labelPosition='left'/>
         </StoryRow>
         <StoryRow>
           <Switch label='Small' onChange={onChange} size='small' />
