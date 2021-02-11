@@ -5,7 +5,7 @@ $lineWidth: 2px;
 
 .rf-tabs__navigation {
   position: relative;
-  padding-bottom: $margin;
+  //padding-bottom: $margin;
   border-bottom: $lineWidth solid var(--neutral-20);
 }
 
@@ -24,10 +24,6 @@ $lineWidth: 2px;
   transition: 0.3s;
 }
 
-.rf-tabs__link {
-  margin-right: 32px;
-}
-
 .rf-tabs__link:last-of-type {
   margin-right: 0;
 }
@@ -35,6 +31,12 @@ $lineWidth: 2px;
 .rf-button.rf-tabs__button {
   color: var(--neutral-50);
   font-weight: 400;
+  border-radius: 0;
+  padding: 0 16px;
+}
+
+.rf-button.rf-tabs__button:hover {
+  background-color: var(--opacity-black-hover);
 }
 
 .rf-button.rf-tabs__button--active {
