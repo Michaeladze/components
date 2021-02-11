@@ -4,8 +4,8 @@
   width: 100%;
   display: flex;
   align-items: center;
-  @include Subtitle2;
-  color: var(--primary-50);
+  @include Subtitle3;
+  color: var(--primary-60);
   cursor: pointer;
 }
 

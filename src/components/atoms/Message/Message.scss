@@ -28,7 +28,7 @@
 }
 
 .rf-message.rf--primary::before {
-  background-color: var(--primary-50);
+  background-color: var(--primary-60);
 }
 
 .rf-message.rf--attention::before {
@@ -40,7 +40,7 @@
 }
 
 .rf-message.rf--error::before {
-  background-color: var(--error-50);
+  background-color: var(--error-60);
 }
 
 .rf-message.rf--success::before {

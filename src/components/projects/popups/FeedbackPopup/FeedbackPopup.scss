@@ -57,19 +57,19 @@
 
 .feedback__star:not(.feedback__star--active):hover {
   background-color: var(--primary-20);
-  border: 1px solid var(--primary-50);
+  border: 1px solid var(--primary-60);
 }
 
 .feedback__star--active {
-  border: 1px solid var(--primary-50);
-  background-color: var(--primary-50);
+  border: 1px solid var(--primary-60);
+  background-color: var(--primary-60);
   color: var(--neutral-white);
 }
 
 .feedback__group-error {
   @include Body2Long;
   margin-top: 8px;
-  color: var(--error-50)
+  color: var(--error-60)
 }
 
 .feedback__action {

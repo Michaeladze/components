@@ -70,7 +70,7 @@
   }
 
   &.rf--primary {
-    background-color: var(--primary-50);
+    background-color: var(--primary-60);
     color: var(--neutral-white);
 
     &:hover {
@@ -79,7 +79,7 @@
 
     &:active,
     &:focus {
-      background-color: var(--primary-50);
+      background-color: var(--primary-60);
     }
 
     &:disabled {
@@ -208,7 +208,7 @@
   }
 
   &.rf--primary {
-    color: var(--primary-50);
+    color: var(--primary-60);
 
     &:hover {
       background-color: var(--opacity-black-hover);
@@ -259,7 +259,7 @@
   }
 
   &.rf--error {
-    color: var(--error-50);
+    color: var(--error-60);
 
     &:hover {
       background-color: var(--opacity-black-hover);
@@ -267,7 +267,7 @@
 
     &:active,
     &:focus {
-      border-color: var(--error-50);
+      border-color: var(--error-60);
     }
 
     &:disabled {
@@ -335,8 +335,8 @@
   }
 
   &.rf--primary {
-    color: var(--primary-50);
-    border-color: var(--primary-50);
+    color: var(--primary-60);
+    border-color: var(--primary-60);
 
     &:hover {
       background-color: var(--opacity-black-hover);
@@ -395,8 +395,8 @@
   }
 
   &.rf--error {
-    color: var(--error-50);
-    border-color: var(--error-50);
+    color: var(--error-60);
+    border-color: var(--error-60);
 
     &:hover {
       background-color: var(--opacity-black-hover);
@@ -489,7 +489,7 @@
 
   &.rf--primary {
     color: var(--neutral-white);
-    background-color: var(--primary-50);
+    background-color: var(--primary-60);
   }
 
   &.rf--attention {
@@ -504,7 +504,7 @@
 
   &.rf--error {
     color: var(--neutral-white);
-    background-color: var(--error-50);
+    background-color: var(--error-60);
   }
 
   &.rf--warning {

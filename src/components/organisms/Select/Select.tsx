@@ -6,7 +6,7 @@ import useClickOutside from '../../../hooks/useClickOutside';
 import {
   Button, Checkbox, Input, Radio
 } from '../../../index';
-import Angle from '../../_icons/caret-down';
+import Angle from '../../_icons/angle-down';
 import Close from '../../_icons/close';
 import Chips from '../../molecules/Chips/Chips';
 

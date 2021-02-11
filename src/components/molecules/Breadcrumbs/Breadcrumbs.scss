@@ -11,12 +11,13 @@
 }
 
 .breadcrumb__link {
-  @include Subtitle2;
-  color: var(--primary-50);
+  @include Body1Short;
+  color: var(--neutral-50);
+  transition: 0.15s ease-in-out;
 }
 
 .breadcrumb__angle {
-  margin: 0 4px;
+  margin: 0 8px;
   transform: rotate(-90deg);
   color: var(--neutral-50);
 }
@@ -27,4 +28,8 @@
 
 .breadcrumb__link--disabled {
   pointer-events: none;
+}
+
+.breadcrumb__link:not(.breadcrumb__link--disabled):hover {
+  color: var(--primary-60);
 }
