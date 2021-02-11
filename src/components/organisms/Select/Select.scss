@@ -20,23 +20,30 @@
 
 .rf-select__list-item {
   list-style: none;
+  height: 48px;
+  display: flex;
+  align-items: center;
   transition: background-color 0.15s;
 }
 
 .rf-select__list-item:hover {
-  background-color: var(--neutral-20);
+  background-color: var(--neutral-5);
 }
 
 .rf-select__list-item > label {
-  padding: 6px 32px;
+  padding: 12px 16px;
 }
 
 .rf-select__list-item:hover .rf-radio__label {
-  color: var(--primary-50);
+  color: var(--primary-60);
+}
+
+.rf-select__list-item:hover .rf-checkbox__label {
+  color: var(--primary-60);
 }
 
 .rf-select__list-item .rf-radio__input:checked + .rf-radio__label {
-  color: var(--primary-50);
+  color: var(--primary-60);
 }
 
 .rf-select__list-item .rf-radio__input:disabled ~ .rf-radio__label {
@@ -81,7 +88,7 @@
 }
 
 .rf-select__input-clear {
-  right: 48px;
+  right: 40px;
   cursor: pointer;
   display: none;
   pointer-events: none;

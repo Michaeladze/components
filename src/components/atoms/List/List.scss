@@ -12,7 +12,7 @@
 
 .rf-list__element {
   text-align: left;
-  padding: 8px 24px;
+  padding: 8px 16px;
   cursor: pointer;
   transition: 0.15s;
   background-color: var(--neutral-white);
@@ -21,7 +21,7 @@
 }
 
 .rf-list__element--disabled {
-  color: var(--neutral-50);
+  color: var(--neutral-30);
   cursor: default;
   pointer-events: none;
 }
@@ -34,5 +34,6 @@
 }
 
 .rf-list__element:hover {
-  background-color: var(--neutral-20);
+  background-color: var(--neutral-5);
+  color: var(--primary-60);
 }
