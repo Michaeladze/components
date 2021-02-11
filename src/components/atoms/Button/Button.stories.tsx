@@ -12,9 +12,9 @@ export default {
   component: Button
 };
 
-const scales: string[] = ['giant', 'large', 'medium', 'small', 'tiny'];
+const scales: string[] = ['big', 'medium', 'small', 'micro'];
 
-const buttonTypes: any = ['primary', 'secondary', 'link', 'outlinePrimary'];
+const buttonTypes: any = ['primary', 'secondary', 'ghost'];
 
 export const buttons = () => {
   const buttonsJSX = buttonTypes.map((bt: any) => (
@@ -33,14 +33,6 @@ export const buttons = () => {
     </StoryItem>
   ));
 
-  const outlineSecondaryList = scales.map((s: any, j: number) => (
-    <StoryCol key={s}>
-      <Button key={s} buttonType='outlineSecondary' disabled={j === 2} size={s}>
-        Outline S
-      </Button>
-    </StoryCol>
-  ));
-
   const roundList = variants.map((variant: Variant) => (
     <div key={variant} style={{ padding: '10px' }}>
       <Button buttonType='round' variant={variant}>
@@ -52,9 +44,6 @@ export const buttons = () => {
   return (
     <Story name='Button (Кнопка)'>
       {buttonsJSX}
-      <StoryItem description='Кнопки с типом outlineSecondary'>
-        <StoryRow>{outlineSecondaryList}</StoryRow>
-      </StoryItem>
 
       <StoryItem description='Круглые кнопки'>
         <StoryRow>{roundList}</StoryRow>

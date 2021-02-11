@@ -4,50 +4,41 @@ import { variantClass } from '../../../utils/helpers';
 
 export interface IButtonProps extends Omit<HTMLProps<HTMLButtonElement>, 'size'> {
   /** Внешний вид */
-  buttonType?: 'primary' | 'secondary' | 'link' | 'outlinePrimary' | 'outlineSecondary' | 'round' | 'text';
+  buttonType?: 'primary' | 'secondary' | 'ghost' | 'round' | 'text';
   /** Размер */
-  size?: 'giant' | 'large' | 'medium' | 'small' | 'tiny';
+  size?: 'big' | 'medium' | 'small' | 'micro';
   /** Тип */
   type?: 'button' | 'submit' | 'reset';
-  /** Скругленная */
-  rounded?: boolean;
   /** Варианты */
   variant?: Variant;
 }
 
 const Button: FC<IButtonProps> = ({
   type = 'button',
-  size = 'medium',
+  size = 'small',
   buttonType = 'primary',
   variant = 'primary',
-  rounded = false,
   ...props
 }: IButtonProps) => {
   const classesMap: { [key: string]: string } = {
     primary: 'rf-button--primary',
     secondary: 'rf-button--secondary',
-    link: 'rf-button--link',
-    outlinePrimary: 'rf-button--outline-primary',
-    outlineSecondary: 'rf-button--outline-secondary',
+    ghost: 'rf-button--ghost',
     text: 'rf-button--text',
     round: 'rf-button--round',
 
-    giant: 'rf-button__giant',
-    large: 'rf-button__large',
+    big: 'rf-button__big',
     medium: 'rf-button__medium',
     small: 'rf-button__small',
-    tiny: 'rf-button__tiny'
+    micro: 'rf-button__micro'
   };
-
-  const roundedClass = rounded ? 'rf-button__rounded' : '';
 
   return (
     <button
       {...props}
       type={type}
-      className={`rf-button ${classesMap[buttonType]} ${classesMap[size]} ${variantClass[variant]} ${roundedClass} ${
-        props.className || ''
-      }`}>
+      className={`rf-button ${classesMap[buttonType]} ${classesMap[size]} ${variantClass[variant]}
+      ${props.className || ''}`}>
       {props.children}
     </button>
   );
