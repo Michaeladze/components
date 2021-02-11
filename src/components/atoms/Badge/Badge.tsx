@@ -12,6 +12,7 @@ export interface IBadgeProps {
   max?: number;
   position?: 'topRight' | 'topLeft' | 'bottomLeft' | 'bottomRight' | 'text';
   display?: boolean;
+  size?: 'default' | 'small';
 }
 
 type Coordinates = { top: number; right: number };
@@ -23,7 +24,8 @@ const Badge: React.FC<IBadgeProps> = ({
   variant = 'neutral',
   max = 99,
   position = 'topRight',
-  display = true
+  display = true,
+  size = 'default'
 }: IBadgeProps) => {
   const wrapper = useRef<HTMLDivElement>(null);
 
@@ -72,12 +74,13 @@ const Badge: React.FC<IBadgeProps> = ({
   // -------------------------------------------------------------------------------------------------------------------
 
   const textClass = typeof children === 'string' || position === 'text' ? 'rf-badge--text' : '';
+  const sizeClass = size === 'small' ? 'rf-badge--small' : '';
 
   return (
     <div className={`rf-badge__wrapper ${className}`} ref={wrapper}>
       {children}
       {display &&
-        <div className={`rf-badge ${variantClass[variant]} ${isDot} ${textClass}`} style={coordinates}>
+        <div className={`rf-badge ${variantClass[variant]} ${sizeClass} ${isDot} ${textClass}`} style={coordinates}>
           {badgeContent ? !isNaN(+badgeContent) && +badgeContent > max ? `${max}+` : badgeContent : null}
         </div>
       }

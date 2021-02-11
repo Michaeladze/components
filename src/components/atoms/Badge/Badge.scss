@@ -24,16 +24,22 @@
   cursor: default;
 }
 
+.rf-badge--small {
+  min-width: 16px;
+  height: 16px;
+  @include Caption1;
+}
+
 .rf-badge--text {
   transform: translate(100%, -50%);
 }
 
 .rf-badge.rf--neutral {
-  background-color: var(--neutral-20);
+  background-color: var(--neutral-10);
 }
 
 .rf-badge.rf--primary {
-  background-color: var(--primary-50);
+  background-color: var(--primary-60);
   color: var(--neutral-white);
 }
 
@@ -58,7 +64,7 @@
 }
 
 .rf-badge.rf--error {
-  background-color: var(--error-50);
+  background-color: var(--error-60);
   color: var(--neutral-white);
 }
 

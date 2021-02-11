@@ -8,27 +8,50 @@
 .rf-chips__item {
   display: flex;
   align-items: center;
-  padding: 6px 12px;
-  border-radius: 16px;
-  margin-right: 8px;
-  margin-bottom: 8px;
-  background-color: var(--neutral-20);
+  height: 28px;
+  padding: 4px 10px;
+  border-radius: 14px;
+  margin-right: 12px;
+  margin-bottom: 12px;
+  background-color: var(--neutral-10);
   cursor: default;
+  transition: 0.15s ease-in-out;
 }
 
 .rf-chips__name {
-  @include Body1Long;
+  @include Body2Long;
+}
+
+.rf-chips__item--small {
+  height: 24px;
+  padding: 4px 8px;
+
+  .rf-chips__name {
+    @include Caption1;
+  }
 }
 
 .rf-chips__button {
-  @include round(22px);
+  width: auto;
+  height: auto;
+  min-width: unset;
+  min-height: unset;
+  box-shadow: unset;
   margin-left: 8px;
-  background-color: var(--neutral-white);
+  background-color: transparent;
   color: var(--neutral-50);
 }
 
-.rf-chips__item.rf--neutral:hover .rf-chips__name {
-  color: var(--neutral-50);
+.rf-chips__item {
+  .rf-chips__button:focus,
+  .rf-chips__button:hover {
+    background-color: transparent;
+    color: var(--neutral-50);
+  }
+}
+
+.rf-chips__item:hover {
+  background-color: var(--neutral-20);
 }
 
 .rf-chips__item.rf--primary {

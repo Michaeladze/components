@@ -40,11 +40,11 @@ export const chips = () => {
       description='Теги нужны для перечисление свойств или атрибутов какой-либо сущности'>
       <StoryItem description='Состояния тегов'>
         <StoryRow>
-          <Chips items={items} />
+          <Chips items={items} onRemove={() => {}} />
         </StoryRow>
       </StoryItem>
 
-      <StoryItem description='Цветовое оформление тегов'>{chips}</StoryItem>
+      {/* <StoryItem description='Цветовое оформление тегов'>{chips}</StoryItem>*/}
     </Story>
   );
 };
