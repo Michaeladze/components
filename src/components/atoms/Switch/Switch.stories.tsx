@@ -34,21 +34,21 @@ export const switcher = () => {
     <Story name='Switch (Переключатель)' description='Переключает состояние какой-нибудь сущности'>
       <StoryItem description='Состояния переключателя'>
         <StoryRow>
-          <Switch animation={true} label='Default c анимацией ' onSwitch={onChange} />
-          <Switch label='Default без анимацией ' style={{ paddingLeft: '60px' }} onSwitch={onChange} labelPosition='left'/>
+          <Switch animation={true} label='Default c анимацией ' onChange={onChange} />
+          <Switch label='Default без анимацией ' style={{ paddingLeft: '60px' }} onChange={onChange} labelPosition='left'/>
         </StoryRow>
         <StoryRow>
-          <Switch label='Small' onSwitch={onChange} sizeElement='small' />
-          <Switch label='Small' style={{ paddingLeft: '60px' }} onSwitch={onChange} sizeElement='small' labelPosition='left'/>
+          <Switch label='Small' onChange={onChange} size='small' />
+          <Switch label='Small' style={{ paddingLeft: '60px' }} onChange={onChange} size='small' labelPosition='left'/>
         </StoryRow>
         <StoryRow>
-          <Switch animation={true} label='Default' onSwitch={onChange} state={active}/>
+          <Switch animation={true} label='Default' onChange={onChange} state={active}/>
         </StoryRow>
         <StoryRow>
-          <Switch label='Неактивен и включен' state={true} disable={true} onSwitch={onChange} />
+          <Switch label='Неактивен и включен' state={true} disable={true} onChange={onChange} />
         </StoryRow>
         <StoryRow>
-          <Switch sizeElement='small' label='Неактивен и выключен и еще и мелкий)' disable={true} onSwitch={onChange} />
+          <Switch size='small' label='Неактивен и выключен и еще и мелкий)' disable={true} onChange={onChange} />
         </StoryRow>
       </StoryItem>
       <StoryItem description='Варианты цветового оформления'>{switchVariantsJSX}</StoryItem>
