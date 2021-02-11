@@ -15,10 +15,10 @@ export const datepicker = () => {
   };
 
   return (
-    <Story name='Datepicker (Выбор даты))' width={500}>
+    <Story name='Datepicker (Выбор даты))' width={ 500 }>
       <StoryItem>
-        <FormGroup label='Outline'>
-          <Datepicker name='dateFrom' value={new Date()} onChange={onChange} />
+        <FormGroup label='Выберите дату'>
+          <Datepicker name='dateFrom' value={ new Date() } onChange={ onChange } />
         </FormGroup>
       </StoryItem>
     </Story>

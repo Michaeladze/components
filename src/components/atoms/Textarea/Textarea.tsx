@@ -77,19 +77,17 @@ const Textarea: FC<ITextareaProps> = ({
   }, []);
 
   return (
-    <div className={`rf-textarea__wrapper ${props.className}`}>
+    <div className={ `rf-textarea__wrapper ${props.className}` }>
       <textarea
-        {...props}
-        ref={textarea}
-        rows={rows}
-        className={'rf-textarea-field'}
+        { ...props }
+        ref={ textarea }
+        rows={ rows }
+        className={ 'rf-textarea-field' }
         autoComplete='off'
       />
-      {props.maxLength && props.maxLength > 0 && (
-        <p className='rf-textarea__max-length'>
-          {value.length} / {props.maxLength}
-        </p>
-      )}
+      { props.maxLength && props.maxLength > 0 && !props.disabled && (<p className='rf-textarea__max-length'>
+        { value.length } / { props.maxLength }
+      </p>) }
     </div>
   );
 };

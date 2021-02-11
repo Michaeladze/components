@@ -5,6 +5,7 @@ $size: 32px;
 $margin: 2px;
 
 .react-date-picker__calendar {
+  top: calc(100% + 8px) !important; // omg
   z-index: 100;
   background-color: white;
 }
@@ -17,28 +18,58 @@ $margin: 2px;
   .react-date-picker__wrapper {
     overflow: hidden;
     position: relative;
-    border: 1px solid var(--neutral-30);
-    border-radius: 4px;
+    transition: 0.15s ease-in all;
   }
 
   .react-date-picker__inputGroup {
     min-width: 190px;
-    @include Subtitle2;
+    @include Body1Long;
     flex-grow: 1;
     line-height: 20px;
     padding: 8px 16px;
     background-color: var(--neutral-white);
+    border: 1px solid var(--neutral-30);
+    border-radius: 4px;
+    display: flex;
+    align-items: baseline;
   }
 
-  .react-date-picker__wrapper:hover {
-    border-color: var(--primary-30);
+  .rf-datepicker__wrapper--big {
+    height: 56px;
+
+    .react-date-picker__inputGroup {
+      padding: 16px;
+    }
   }
 
-  .react-date-picker__wrapper:focus {
-    border-color: var(--primary-50);
+  .rf-datepicker__wrapper--small {
+    height: 40px;
+
+    .react-date-picker__inputGroup {
+      padding: 8px 16px;
+    }
   }
 
-  .react-date-picker__wrapper.invalid {
+  .rf-datepicker__wrapper--micro {
+    height: 32px;
+
+    .react-date-picker__inputGroup {
+      padding: 6px 12px;
+      @include Body2Long;
+    }
+  }
+
+  .react-date-picker:not(.react-date-picker--disabled):not(.react-date-picker--open) {
+    .react-date-picker__wrapper:hover .react-date-picker__inputGroup {
+      border-color: var(--neutral-50);
+    }
+  }
+
+  .react-date-picker--open:not(.react-date-picker--disabled) .react-date-picker__inputGroup {
+    border-color: var(--primary-60);
+  }
+
+  .react-date-picker__inputGroup.invalid {
     border-color: var(--error-50);
   }
 
@@ -59,6 +90,8 @@ $margin: 2px;
 
   .react-date-picker__inputGroup__year {
     @include text;
+    width: 100% !important;
+    flex-shrink: 1;
   }
 
   .react-date-picker__inputGroup__leadingZero {
@@ -92,6 +125,7 @@ $margin: 2px;
     z-index: 50;
     @include Subtitle2;
     color: var(--neutral-50);
+    transition: 0.15s ease-in color;
   }
 
   .react-date-picker__clear-button {
@@ -112,6 +146,7 @@ $margin: 2px;
   .react-date-picker__button:hover,
   .react-date-picker__button:focus {
     background-color: transparent;
+    color: var(--primary-60);
   }
 
   // Calendar
@@ -119,9 +154,9 @@ $margin: 2px;
   .react-calendar {
     box-sizing: content-box;
     width: ($size + $margin * 2)  * 7;
-    padding: 25px;
+    padding: 30px 20px;
     border-radius: 4px;
-    color: var(--neutral-black);
+    color: var(--neutral-90);
     box-shadow: 0 2px 6px rgba(25, 59, 104, 0.15);
   }
 
@@ -135,16 +170,17 @@ $margin: 2px;
     outline: 0;
     box-sizing: border-box;
     border-radius: 2px;
-    @include Subtitle2;
+    @include Body2Short;
   }
 
   .react-calendar__tile--active {
-    background-color: var(--primary-20);
-    border-color: var(--primary-50);
+    background-color: var(--primary-60);
+    border-color: var(--primary-60);
+    color: var(--neutral-white);
   }
 
   .react-calendar__tile:disabled {
-    color: var(--neutral-40);
+    color: var(--neutral-30);
   }
 
   .react-calendar__tile[disabled] {
@@ -154,32 +190,26 @@ $margin: 2px;
   .react-calendar__tile:enabled:hover,
   .react-calendar__tile:enabled:focus {
     cursor: pointer;
-    background-color: var(--primary-20);
-    border-color: var(--primary-50);
+    border-color: var(--primary-60);
   }
 
   .react-calendar__tile--active:enabled:hover,
   .react-calendar__tile--active:enabled:focus {
-    background-color: var(--primary-20);
-    border-color: var(--primary-50);
+    border-color: var(--primary-60);
   }
 
   .react-calendar__month-view__days__day--neighboringMonth {
     @include Body2Long;
-    color: var(--neutral-50);
+    color: var(--neutral-30);
   }
 
   .react-calendar__tile.react-calendar__month-view__days__day--neighboringMonth:hover {
-    background-color: var(--primary-10);
-    border-color: var(--primary-10);
+    border-color: var(--primary-60);
   }
 
   .react-calendar__month-view__weekdays {
-    @include Caption1;
-    color: var(--neutral-50);
+    @include Body2Short;
     padding: 4px 0;
-    border-top: 1px solid var(--neutral-20);
-    border-bottom: 1px solid var(--neutral-20);
   }
 
   .react-calendar__month-view__weekdays__weekday {
@@ -194,7 +224,7 @@ $margin: 2px;
 
     abbr {
       text-decoration: none;
-      text-transform: uppercase;
+      text-transform: capitalize;
     }
   }
 
@@ -211,8 +241,7 @@ $margin: 2px;
 
   .react-calendar__year-view__months__month:enabled:hover,
   .react-calendar__year-view__months__month:enabled:focus {
-    background-color: var(--primary-20);
-    border-color: var(--primary-50);
+    border-color: var(--primary-60);
   }
 
   .react-calendar__decade-view__years__year {
@@ -222,8 +251,7 @@ $margin: 2px;
 
   .react-calendar__decade-view__years__year:enabled:hover,
   .react-calendar__decade-view__years__year:enabled:focus {
-    background-color: var(--primary-20);
-    border-color: var(--primary-50);
+    border-color: var(--primary-60);
   }
 
   // Navigation
@@ -246,7 +274,7 @@ $margin: 2px;
     text-align: center;
     text-transform: capitalize;
     cursor: pointer;
-    @include Subtitle3;
+    @include Subtitle2;
   }
 
   .react-calendar__navigation__prev-button {
@@ -320,17 +348,18 @@ input[type=number]::-webkit-outer-spin-button {
   cursor: default;
 
   .rf-datepicker__wrapper .react-date-picker__wrapper {
-    border-bottom-color: var(--neutral-30);
-  }
-
-  .react-date-picker__wrapper:hover {
-    border-bottom-color: var(--neutral-30);
+    border-color: var(--neutral-10);
   }
 
   .react-date-picker__inputGroup__input {
     color: var(--neutral-30);
     background-color: transparent;
     cursor: default
+  }
+
+  .react-date-picker__inputGroup {
+    background-color: var(--neutral-10);
+    border-color: var(--neutral-10);
   }
 
   .react-date-picker__inputGroup__leadingZero {
@@ -347,6 +376,7 @@ input[type=number]::-webkit-outer-spin-button {
     color: var(--neutral-30);
   }
 
+  .react-date-picker__button:hover,
   .react-date-picker__button {
     color: var(--neutral-30);
     cursor: default
