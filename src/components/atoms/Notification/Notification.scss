@@ -6,9 +6,8 @@
   width: 640px;
   padding: 16px 24px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  background-color: var(--neutral-70);
   cursor: default;
   border-radius: 8px;
   overflow: hidden;
@@ -23,39 +22,66 @@
   width: 8px;
 }
 
-.rf-notification.rf--success::before {
-  background-color: var(--success-50);
+.rf-notification.rf--success {
+  background-color: var(--success-10);
+
+  &::before {
+    background-color: var(--success-50);
+  }
 }
 
-.rf-notification.rf--error::before {
-  background-color: var(--error-50);
+.rf-notification.rf--error {
+  background-color: var(--error-10);
+
+  &::before {
+    background-color: var(--error-50);
+  }
 }
 
-.rf-notification.rf--attention::before {
-  background-color: var(--attention-50);
+.rf-notification.rf--attention {
+  background-color: var(--attention-10);
+
+  &::before {
+    background-color: var(--attention-50);
+  }
 }
 
-.rf-notification.rf--warning::before {
-  background-color: var(--warning-50);
+.rf-notification.rf--warning {
+  background-color: var(--warning-10);
+
+  &::before {
+    background-color: var(--warning-50);
+  }
 }
 
-.rf-notification.rf--primary::before {
-  background-color: var(--primary-50);
+.rf-notification.rf--primary {
+  background-color: var(--primary-10);
+
+  &::before {
+    background-color: var(--primary-50);
+  }
 }
 
-.rf-notification.rf--neutral::before {
-  background-color: var(--neutral-50);
+.rf-notification.rf--neutral {
+  background-color: var(--neutral-10);
+
+  &::before {
+    background-color: var(--neutral-50);
+  }
 }
 
-.rf-notification.rf--extra-one::before {
-  background-color: var(--extra-one-50);
+.rf-notification.rf--extra-one {
+  background-color: var(--extra-one-10);
+
+  &::before {
+    background-color: var(--extra-one-50);
+  }
 }
 
 .rf-notification__message {
   width: 100%;
   @include Body1Long;
-  color: var(--neutral-white);
-  white-space: normal;
+  padding-right: 16px;
 }
 
 .rf-notification__close {
@@ -67,5 +93,5 @@
   background-color: transparent;
   border: 0;
   outline: none;
-  color: var(--neutral-20);
+  color: var(--neutral-50);
 }

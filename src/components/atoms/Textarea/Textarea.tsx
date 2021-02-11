@@ -82,7 +82,7 @@ const Textarea: FC<ITextareaProps> = ({
         { ...props }
         ref={ textarea }
         rows={ rows }
-        className={ 'rf-textarea-field' }
+        className={`rf-textarea-field ${props.className}`}
         autoComplete='off'
       />
       { props.maxLength && props.maxLength > 0 && !props.disabled && (<p className='rf-textarea__max-length'>
