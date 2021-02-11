@@ -4,6 +4,7 @@
   display: inline-flex;
   align-items: center;
   cursor: pointer;
+  outline: none;
 }
 
 .rf-switch--anim:focus .rf-switch__circle:before,
@@ -40,26 +41,35 @@
 .rf-switch__label--right {
   margin-left: 8px;
 }
+//=====================IN COMMON=========================
+.rf-switch__toggle {
+  position: relative;
+  transition: background-color 0.6s ease-in-out;
+}
 
-//=====================default===========================
+.rf-switch__circle {
+  position: absolute;
+  background-color: var(--neutral-white);
+  transition: 0.15s ease-in-out;
+  top: 2px;
+  left: 2px;
+}
+
+.rf-switch__label {
+  user-select: none;
+}
+//=====================DEFAULT===========================
 
 .rf-switch__toggle-default {
   .rf-switch__toggle {
-    position: relative;
     border-radius: 10px;
     width: 36px;
+    min-width: 36px;
     height: 20px;
-    transition: background-color 0.6s ease-in-out;
   }
 
   .rf-switch__circle {
-    position: absolute;
-    top: 2px;
-    left: 2px;
     @include round(16px);
-    background-color: var(--neutral-white);
-    transition: 0.15s ease-in-out;
-
   }
 
   .rf-switch__toggle.rf-switch__toggle--on .rf-switch__circle {
@@ -68,29 +78,20 @@
 
   .rf-switch__label {
     @include Body1Short;
-    user-select: none;
   }
 }
 
 //=====================SMALL===========================
 .rf-switch__toggle-small {
-
   .rf-switch__toggle {
-    position: relative;
     border-radius: 12px;
     width: 28px;
+    min-width: 28px;
     height: 16px;
-    transition: background-color 0.6s ease-in-out;
   }
 
   .rf-switch__circle {
-    position: absolute;
-    top: 2px;
-    left: 2px;
     @include round(12px);
-    background-color: var(--neutral-white);
-    transition: 0.15s ease-in-out;
-
   }
 
   .rf-switch__toggle.rf-switch__toggle--on .rf-switch__circle {
@@ -99,7 +100,6 @@
 
   .rf-switch__label {
     @include Body2Short;
-    user-select: none;
   }
 }
 
@@ -144,17 +144,6 @@
   border-color: var(--neutral-50);
 }
 
-@keyframes animShade {
-  from {
-    margin-left: 100%;
-    width: 300%;
-  }
-
-  to {
-    margin-left: 0%;
-    width: 100%;
-  }
-}
 //====================DISABLE===========================
 .rf-switch--disable {
   pointer-events: none;

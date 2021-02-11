@@ -4,23 +4,23 @@ import React, {
 import { Variant } from '../../../types';
 import { variantClass } from '../../../utils/helpers';
 
-export interface ISwitchProps extends Omit<HTMLProps<HTMLDivElement>, 'label'> {
-  /** Функция срабатывает при переключении*/
-  onSwitch?: (f: boolean) => void;
-  /** Метка*/
+export interface ISwitchProps extends Omit<HTMLProps<HTMLDivElement>, 'label'| 'size' |'onChange'> {
+  /** Функция срабатывает при переключении */
+  onChange?: (f: boolean) => void;
+  /** Метка */
   label?: ReactNode;
-  /** Позиция метки*/
-  labelPosition?:'right'|'left';
-  /** Текущее состояние*/
+  /** Позиция метки */
+  labelPosition?: 'right'|'left';
+  /** Текущее состояние */
   state?: boolean;
-  /** Блокировка от нажатий*/
+  /** Блокировка от нажатий */
   disable?: boolean;
-  /** цвета*/
+  /** Цвета */
   variant?: Variant;
-  /** размер*/
-  sizeElement?:'default'|'small';
-  /** включить/выключить анимацию*/
-  animation?:boolean;
+  /** Размер */
+  size?: 'default'|'small';
+  /** Включить/выключить анимацию */
+  animation?: boolean;
 }
 
 const Switch: FC<ISwitchProps> = ({
@@ -28,22 +28,22 @@ const Switch: FC<ISwitchProps> = ({
   state = false,
   disable = false,
   animation = false,
-  onSwitch,
+  onChange,
   labelPosition = 'right',
   variant = 'primary',
-  sizeElement = 'default',
+  size = 'default',
   ...props
 }: ISwitchProps) => {
   const [s, toggle] = useState<boolean>(state);
 
   useEffect(() => {
     // в случае программного изменения тоже выдаем событие
-    onSwitch && s !== state && onSwitch(state);
+    onChange && s !== state && onChange(state);
     toggle(state);
   }, [state]);
 
   const changeState = () => {
-    onSwitch && onSwitch(!s);
+    onChange && onChange(!s);
     toggle(!s);
   };
 
@@ -53,7 +53,7 @@ const Switch: FC<ISwitchProps> = ({
 
   return (
     <div tabIndex={0}
-      className={`rf-switch rf-switch__toggle-${sizeElement} ${classDisable} ${classAnim} ${classOther}`}
+      className={`rf-switch rf-switch__toggle-${size} ${classDisable} ${classAnim} ${classOther}`}
       onClick={changeState} {...props} >
       {label && labelPosition === 'left' && <p className='rf-switch__label rf-switch__label--left'>{label}</p>}
       <div className={`rf-switch__toggle  ${s ? 'rf-switch__toggle--on' : 'rf-switch__toggle--off'} ${variantClass[variant]}`}>
