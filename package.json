@@ -5,7 +5,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "jest",
-    "build": "rimraf dist && tsc && yarn build_css && yarn copy-scss && yarn copy-assets",
+    "build": "rimraf dist && tsc && yarn build_css && yarn copy-scss && yarn copy-fonts",
     "build_css": "node-sass src/styles/index.scss -o dist/ ",
     "start": "npm run build -- -w",
     "commit": "git add . && npx git-cz",
@@ -18,7 +18,7 @@
     "semantic-release": "semantic-release",
 
     "copy-scss": "mkdir dist/styles/ && cp src/styles/mixins.scss dist/styles/",
-    "copy-assets": "mkdir dist/assets/ && cp -R src/assets dist/assets/"
+    "copy-fonts": "cp -R src/styles/fonts dist/fonts/"
   },
   "license": "MIT",
   "author": {
