@@ -49,7 +49,8 @@ import UserItem from './components/projects/molecules/User';
 import UsersStack from './components/projects/molecules/UsersStack';
 import PopupFooter from './components/projects/molecules/PopupFooter';
 
-// ---------------------------------------------------------------------------------------------------------------------
+// -------------------------Icons---------------------------------------------------------------------------------------
+
 
 import Copy from './components/_icons/copy';
 import Envelope from './components/_icons/envelope';
@@ -60,16 +61,7 @@ import People from './components/_icons/people';
 import QuestionCircle from './components/_icons/question-circle';
 import Settings from './components/_icons/settings';
 
-export {
-  Copy,
-  Envelope,
-  Headset,
-  MenuOutline,
-  Bell,
-  People,
-  QuestionCircle,
-  Settings
-};
+// ---------------------------------------------------------------------------------------------------------------------
 
 
 export { useClickOutside, useLocation };
@@ -117,4 +109,15 @@ export {
 
 export {
   formatDate, getShortString, getMonthName
+};
+
+export {
+  Copy,
+  Envelope,
+  Headset,
+  MenuOutline,
+  Bell,
+  People,
+  QuestionCircle,
+  Settings
 };
