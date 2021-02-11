@@ -3,6 +3,7 @@ import Input from './Input';
 import Story from '../../storybook/Story';
 import StoryItem from '../../storybook/StoryItem';
 import StoryRow from '../../storybook/StoryRow';
+import { FormGroup } from '../../../index';
 
 export default {
   title: 'Form Controls/Input',
@@ -60,7 +61,7 @@ export const input = () => {
           <Input
             name={searchInputData.name}
             placeholder={searchInputData.placeholder}
-            search={true}
+            search
             onClear={() => console.log('clear')}
           />
         </StoryRow>
@@ -74,11 +75,12 @@ export const input = () => {
             onClear={() => console.log('clear')}
           />
         </StoryRow>
+      </StoryItem>
+      <StoryItem description='Чтобы добавить подписи, нужно обернуть Input в FromGroup или FormGroupInline'>
         <StoryRow>
-          <Input name='border' placeholder='С контуром' inputType='outline' />
-        </StoryRow>
-        <StoryRow>
-          <Input name='floatLabel' floatLabel='Введите текст' />
+          <FormGroup label='Label' required message='Это сообщение может быть любого цвета' variant='neutral'>
+            <Input placeholder='Placeholder'/>
+          </FormGroup>
         </StoryRow>
       </StoryItem>
     </Story>

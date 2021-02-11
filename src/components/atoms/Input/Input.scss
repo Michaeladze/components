@@ -10,17 +10,15 @@
 
 .rf-input__field {
   width: 100%;
-  padding: 8px 16px;
-  line-height: 20px;
-  transition: 0.3s ease-in all;
+  transition: 0.15s ease-in all;
   @include Body1Long;
-  border: 0;
-  border-bottom: 1px solid var(--neutral-30);
+  border: 1px solid var(--neutral-30);
+  border-radius: 4px;
   background-color: var(--neutral-white);
   color: var(--neutral-black);
 
   &.invalid {
-    border-color: var(--error-50);
+    border-color: var(--error-60);
   }
 
   &.disabled {
@@ -41,23 +39,34 @@
   }
 }
 
-.rf-input__field--outline {
-  border: 1px solid var(--neutral-30);
-  border-radius: 4px;
+.rf-input--big {
+  height: 56px;
+  padding: 16px;
+}
+
+.rf-input--small {
+  height: 40px;
+  padding: 8px 16px;
+}
+
+.rf-input--micro {
+  height: 32px;
+  padding: 6px 12px;
+  @include Body2Long;
 }
 
 .rf-input__field:hover {
-  border-color: var(--primary-30);
+  border-color: var(--neutral-50);
 }
 
 .rf-input__field:focus {
-  border-color: var(--primary-50);
+  border-color: var(--primary-60);
 }
 
 .rf-input__field:disabled {
   @include disabled();
-  background-color: transparent;
-  border-color: var(--neutral-30);
+  background-color: var(--neutral-10);
+  border-color: var(--neutral-10);
   color: var(--neutral-30);
 }
 
@@ -149,27 +158,22 @@ input[type='file']:disabled + .rf-input__field.rf-input__field--file {
   justify-content: center;
 }
 
-.rf-input--search {
-  padding-left: 48px;
-  padding-right: 40px;
-  border-radius: 24px;
-  border: 1px solid var(--neutral-30);
-}
-
 .rf-input__action-search {
-  right: auto;
-  left: 18px;
-  color: var(--primary-50);
+  color: var(--neutral-50);
   background: transparent;
   pointer-events: none;
   cursor: default;
 }
 
 .rf-input__action-clear {
-  color: var(--neutral-30);
+  color: var(--neutral-50);
 }
 
 .rf-input__action-clear:hover,
 .rf-input__action-clear:focus {
   color: var(--neutral-50);
+}
+
+.rf-password-action:hover {
+  color: var(--primary-60);
 }

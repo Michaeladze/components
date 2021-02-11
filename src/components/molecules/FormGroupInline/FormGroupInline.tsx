@@ -1,4 +1,6 @@
 import React, { FC } from 'react';
+import { Variant } from '../../../types';
+import { variantClass } from '../../../utils/helpers';
 
 export interface IFormGroupInlineProps {
   /** Дочерние элементы */
@@ -11,6 +13,8 @@ export interface IFormGroupInlineProps {
   className?: string;
   /** Обязательность */
   required?: boolean;
+  /** Вариант */
+  variant?: Variant;
 }
 
 const FormGroupInline: FC<IFormGroupInlineProps> = ({
@@ -18,6 +22,7 @@ const FormGroupInline: FC<IFormGroupInlineProps> = ({
   className,
   errorMessage,
   label,
+  variant = 'error',
   required
 }: IFormGroupInlineProps) => {
   return (
@@ -30,7 +35,7 @@ const FormGroupInline: FC<IFormGroupInlineProps> = ({
         )}
         {children}
       </div>
-      {errorMessage && <p className='rf-inline-group__message'>{errorMessage}</p>}
+      {errorMessage && <p className={`rf-inline-group__message ${variantClass[variant]}`}>{errorMessage}</p>}
     </div>
   );
 };

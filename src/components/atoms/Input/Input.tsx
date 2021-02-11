@@ -10,7 +10,7 @@ import CloseIcon from '../../_icons/close';
 import HideIcon from '../../_icons/hide';
 import ShowIcon from '../../_icons/show';
 
-export interface IInputProps extends HTMLProps<HTMLInputElement> {
+export interface IInputProps extends Omit<HTMLProps<HTMLInputElement>, 'size'> {
   /** Возможность очистки поля по клику */
   onClear?: () => void;
   /** Возможность поиска */
@@ -21,8 +21,8 @@ export interface IInputProps extends HTMLProps<HTMLInputElement> {
   debounce?: number;
   /** Вернуть value */
   getValue?: (value: string) => void;
-  /** Тип */
-  inputType?: 'inline' | 'outline';
+  /** Размер */
+  size?: 'big' | 'small' | 'micro';
 }
 
 const Input: FC<IInputProps> = ({
@@ -31,9 +31,12 @@ const Input: FC<IInputProps> = ({
   search = false,
   floatLabel,
   getValue,
-  inputType = 'inline',
+  size = 'small',
   ...props
 }: IInputProps) => {
+
+  // -------------------------------------------------------------------------------------------------------------------
+
   /** Ref */
   const ref = useRef<HTMLInputElement>(null);
 
@@ -43,10 +46,13 @@ const Input: FC<IInputProps> = ({
   /** Иконка показать/скрыть пароль */
   const [showPassword, setShowPassword] = useState(false);
 
+  /** Иконка показать/скрыть лупу */
+  const [showSearch, setShowSearch] = useState(search);
+
   /** Значение поля */
   const [value, setValue] = useState<string>(props.defaultValue?.toString() || props.value?.toString() || '');
 
-  // ------------------------------------------------------------------------------------------------------------------
+  // -------------------------------------------------------------------------------------------------------------------
 
   useEffect(() => {
     /** Подписываемся на ввод текста */
@@ -63,6 +69,10 @@ const Input: FC<IInputProps> = ({
           setValue(e.target.value);
           props.onKeyUp && props.onKeyUp(e);
           getValue && getValue(e.target.value);
+
+          if (search) {
+            setShowSearch(!e.target.value);
+          }
         });
     }
 
@@ -75,7 +85,8 @@ const Input: FC<IInputProps> = ({
     };
   }, [onClear, debounce, props.onKeyUp, search]);
 
-  // ------------------------------------------------------------------------------------------------------------------
+  // -------------------------------------------------------------------------------------------------------------------
+
   /** Очистка поля ввода и сброс результатов поиска */
   const clearInput = () => {
     if (ref.current) {
@@ -83,6 +94,10 @@ const Input: FC<IInputProps> = ({
       setValue('');
       onClear && onClear();
       floatLabel && setFloatClass('');
+
+      if (search) {
+        setShowSearch(true);
+      }
     }
   };
 
@@ -94,13 +109,14 @@ const Input: FC<IInputProps> = ({
   );
 
   /** Кнопка поиска и сброса */
-  const searchButton = search && (
+  const searchButton = search && showSearch && (
     <button className='rf-input__action rf-input__action-search'>
       <SearchIcon />
     </button>
   );
 
-  // ------------------------------------------------------------------------------------------------------------------
+  // -------------------------------------------------------------------------------------------------------------------
+
   /** Показать пароль, если type="password" */
   const togglePassword = () => {
     if (ref.current) {
@@ -116,7 +132,8 @@ const Input: FC<IInputProps> = ({
     </button>
   );
 
-  // ------------------------------------------------------------------------------------------------------------------
+  // -------------------------------------------------------------------------------------------------------------------
+
   /** Плавающий лейбл */
   const labelText = floatLabel && <label className='rf-input__label'>{floatLabel}</label>;
 
@@ -127,11 +144,19 @@ const Input: FC<IInputProps> = ({
     }
   };
 
-  // ------------------------------------------------------------------------------------------------------------------
+  // -------------------------------------------------------------------------------------------------------------------
 
+  /** Классы */
   const searchClass = search ? 'rf-input--search' : '';
   const floatLabelClass = floatLabel ? 'rf-input__field--with-label' : '';
-  const typeClass = inputType === 'outline' ? 'rf-input__field--outline' : '';
+
+  const sizeClass: Record<'big' | 'small' | 'micro', string> = {
+    big: 'rf-input--big',
+    small: 'rf-input--small',
+    micro: 'rf-input--micro'
+  };
+
+  // -------------------------------------------------------------------------------------------------------------------
 
   return (
     <div className='rf-input'>
@@ -140,7 +165,7 @@ const Input: FC<IInputProps> = ({
         ref={ref}
         className={`rf-input__field ${
           props.className || ''
-        } ${floatLabelClass} ${floatClass} ${searchClass} ${typeClass}`}
+        } ${floatLabelClass} ${floatClass} ${searchClass} ${sizeClass[size]}`}
         autoComplete='off'
         type={props.type || 'text'}
         onKeyUp={handleFloatLabel}

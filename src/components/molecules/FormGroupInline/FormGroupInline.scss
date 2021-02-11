@@ -6,8 +6,8 @@
 }
 
 .rf-inline-group__label {
-  @include Subtitle3;
-  margin-right: 8px;
+  @include Body1Short;
+  margin-right: 40px;
   white-space: nowrap;
   min-width: 60px;
 }
@@ -17,9 +17,36 @@
 }
 
 .rf-inline-group__message {
-  margin-top: 4px;
-  @include Caption1;
-  color: var(--error-50);
+  margin-top: 8px;
+  @include Body2Long;
+
+  &.rf--neutral {
+    color: var(--neutral-60);
+  }
+
+  &.rf--primary {
+    color: var(--primary-60);
+  }
+
+  &.rf--attention {
+    color: var(--attention-50);
+  }
+
+  &.rf--extra-one {
+    color: var(--extra-one-60);
+  }
+
+  &.rf--error {
+    color: var(--error-60);
+  }
+
+  &.rf--warning {
+    color: var(--warning-60);
+  }
+
+  &.rf--success {
+    color: var(--success-50);
+  }
 }
 
 .rf-inline-group__inner .rf-input__field {

@@ -1,23 +1,27 @@
 import React, { FC } from 'react';
+import { Variant } from '../../../types';
+import { variantClass } from '../../../utils/helpers';
 
 export interface IFormGroup {
   /** Дочерние элементы */
   children: React.ReactNode | React.ReactNode[];
   /** Имя */
   label?: React.ReactNode;
-  /** Сообщение об ошибке */
-  errorMessage?: string;
+  /** Сообщение */
+  message?: string;
   /** Дополнительный класс */
   className?: string;
   /** Обязательность */
   required?: boolean;
+  /** Вариант */
+  variant?: Variant;
 }
 
 const FormGroup: FC<IFormGroup> = ({
-  label, children, errorMessage, className = '', required = false
+  label, children, message, className = '', variant = 'error', required = false
 }: IFormGroup) => {
   return (
-    <div className={`rf-form-group ${className} `}>
+    <div className={`rf-form-group ${className}`}>
       <div className='rf-form-group__inner'>
         {label && (
           <p className='rf-form-group__label'>
@@ -27,7 +31,7 @@ const FormGroup: FC<IFormGroup> = ({
         )}
         {children}
       </div>
-      {errorMessage && <p className='rf-form-group__message'>{errorMessage}</p>}
+      {message && <p className={`rf-form-group__message ${variantClass[variant]}`}>{message}</p>}
     </div>
   );
 };

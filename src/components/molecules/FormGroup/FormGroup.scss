@@ -5,17 +5,44 @@
 }
 
 .rf-form-group__label {
-  margin-bottom: 10px;
-  @include Caption1;
-  color: var(--neutral-black);
+  margin-bottom: 8px;
+  @include Body2Short;
+  color: var(--neutral-90);
 }
 
 .rf-form-group__message {
-  margin-top: 4px;
-  @include Caption1;
-  color: var(--error-50);
+  margin-top: 8px;
+  @include Body2Short;
+
+  &.rf--neutral {
+    color: var(--neutral-60);
+  }
+
+  &.rf--primary {
+    color: var(--primary-60);
+  }
+
+  &.rf--attention {
+    color: var(--attention-50);
+  }
+
+  &.rf--extra-one {
+    color: var(--extra-one-60);
+  }
+
+  &.rf--error {
+    color: var(--error-60);
+  }
+
+  &.rf--warning {
+    color: var(--warning-60);
+  }
+
+  &.rf--success {
+    color: var(--success-50);
+  }
 }
 
 .rf-form-group__required {
-  color: var(--error-50);
+  color: var(--error-60);
 }

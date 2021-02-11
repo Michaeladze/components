@@ -23,7 +23,7 @@ describe('Test <FormGroup/> component', () => {
   });
 
   it('should have error message "Error"', () => {
-    const wrapper = shallow(<FormGroup label='Label' errorMessage='Error'>
+    const wrapper = shallow(<FormGroup label='Label' message='Error'>
         Content
     </FormGroup>);
     expect(wrapper.find('.rf-form-group__message')).toHaveLength(1);

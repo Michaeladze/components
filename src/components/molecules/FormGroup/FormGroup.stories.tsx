@@ -20,7 +20,7 @@ export const formGroup = () => (
       </StoryRow>
 
       <StoryRow>
-        <FormGroup label='Ошибка в поле ввода' errorMessage='Обязательное поле' required={true}>
+        <FormGroup label='Ошибка в поле ввода' message='Обязательное поле' required={true}>
           <Input name='text' placeholder='Введите текст' className='invalid' />
         </FormGroup>
       </StoryRow>
