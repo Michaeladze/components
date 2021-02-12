@@ -26,7 +26,7 @@ var react_1 = __importStar(require("react"));
 var Button_1 = __importDefault(require("../../atoms/Button"));
 var react_router_dom_1 = require("react-router-dom");
 var Tabs = function (_a) {
-    var list = _a.list, _b = _a.type, type = _b === void 0 ? 'underline' : _b, children = _a.children;
+    var list = _a.list, _b = _a.type, type = _b === void 0 ? 'underline' : _b, _c = _a.size, size = _c === void 0 ? 'default' : _c, children = _a.children;
     var history = react_router_dom_1.useHistory();
     var pathname = react_router_dom_1.useLocation().pathname;
     /** Ссылки на вкладки */
@@ -47,7 +47,7 @@ var Tabs = function (_a) {
     };
     // -------------------------------------------------------------------------------------------------------------------
     /** Определяем активную вкладку */
-    var _c = react_1.useState(0), active = _c[0], setActive = _c[1];
+    var _d = react_1.useState(0), active = _d[0], setActive = _d[1];
     react_1.useEffect(function () {
         var index = list.findIndex(function (t) { return (isRouting ? t.url === pathname : t.active); });
         setActive(index >= 0 && !list[index].disabled ? index : 0);
@@ -61,6 +61,7 @@ var Tabs = function (_a) {
         setActive(i);
     };
     // -------------------------------------------------------------------------------------------------------------------
+    var buttonSize = size === 'small' ? 'small' : 'medium';
     /** Список вкладок */
     var nav = list.map(function (t, i) {
         if (!refs.current[i]) {
@@ -69,7 +70,7 @@ var Tabs = function (_a) {
         var className = "" + (i === active ? 'rf-tabs__button--active' : '');
         var handler = function (e) { return onClick(e, i, refs.current[i].current); };
         return (react_1.default.createElement("div", { key: i, className: 'rf-tabs__link', ref: refs.current[i] },
-            react_1.default.createElement(Button_1.default, { className: "rf-tabs__button " + className, buttonType: 'text', disabled: t.disabled, onClick: handler }, t.label)));
+            react_1.default.createElement(Button_1.default, { className: "rf-tabs__button " + className, size: buttonSize, buttonType: 'text', disabled: t.disabled, onClick: handler }, t.label)));
     });
     /** Устанавливаем линию на активную вкладку при инициализации */
     react_1.useLayoutEffect(function () {
