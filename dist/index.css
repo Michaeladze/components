@@ -3133,7 +3133,7 @@ input[type='file']:disabled + .rf-input__field.rf-input__field--file {
   color: var(--neutral-90);
   font-size: 14px;
   line-height: 16px;
-  color: var(--neutral-90); }
+  color: var(--neutral-50); }
 
 .rf-form-group__message {
   margin-top: 8px;
