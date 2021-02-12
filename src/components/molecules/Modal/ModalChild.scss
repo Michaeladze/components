@@ -1,9 +1,5 @@
 @import "../../../styles/mixins";
 
-.rf-modal-child {
-  padding: 20px;
-}
-
 .rf-modal-child__title {
   margin-bottom: 20px;
   @include h3();

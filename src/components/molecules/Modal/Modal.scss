@@ -26,16 +26,15 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  border-radius: 25px;
+  border-radius: 8px;
   min-width: 464px;
   max-width: 90vw;
   max-height: 95vh;
   background: var(--neutral-white);
-
 }
 
 .rf-modal__content {
-  padding: 40px 48px 32px 48px;
+  padding: 20px 24px;
   flex-grow: 1;
   overflow-y: auto;
 }
@@ -56,6 +55,7 @@
   border: 0;
   cursor: pointer;
   z-index: 2;
+  color: var(--neutral-50);
 }
 
 .rf-modal__footer {
