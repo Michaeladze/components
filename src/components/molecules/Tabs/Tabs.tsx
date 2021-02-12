@@ -21,9 +21,11 @@ export interface ITabsProps {
   type?: 'underline' | 'buttons';
   /** Если во вкладках есть url, то через children пробрасывается <Router/> */
   children?: ReactNode | ReactNode[];
+  /** Размер */
+  size?: 'default' | 'small';
 }
 
-const Tabs: FC<ITabsProps> = ({ list, type = 'underline', children }: ITabsProps) => {
+const Tabs: FC<ITabsProps> = ({ list, type = 'underline', size = 'default', children }: ITabsProps) => {
   const history = useHistory();
   const { pathname } = useLocation();
 
@@ -71,6 +73,8 @@ const Tabs: FC<ITabsProps> = ({ list, type = 'underline', children }: ITabsProps
 
   // -------------------------------------------------------------------------------------------------------------------
 
+  const buttonSize = size === 'small' ? 'small' : 'medium';
+
   /** Список вкладок */
   const nav = list.map((t: ITab, i: number) => {
     if (!refs.current[i]) {
@@ -81,9 +85,10 @@ const Tabs: FC<ITabsProps> = ({ list, type = 'underline', children }: ITabsProps
     const handler = (e: MouseEvent) => onClick(e, i, refs.current[i].current);
 
     return (
-      <div key={i} className='rf-tabs__link' ref={refs.current[i]}>
-        <Button className={`rf-tabs__button ${className}`} buttonType='text' disabled={t.disabled} onClick={handler}>
-          {t.label}
+      <div key={ i } className='rf-tabs__link' ref={ refs.current[i] }>
+        <Button className={ `rf-tabs__button ${className}` } size={ buttonSize } buttonType='text'
+          disabled={ t.disabled } onClick={ handler }>
+          { t.label }
         </Button>
       </div>
     );
@@ -102,12 +107,12 @@ const Tabs: FC<ITabsProps> = ({ list, type = 'underline', children }: ITabsProps
   const typeClass = type === 'buttons' ? 'rf-tabs--buttons' : '';
 
   return (
-    <div className={`rf-tabs ${typeClass}`}>
-      <nav className={'rf-tabs__navigation '}>
-        <div className='rf-tabs__navigation-list'>{nav}</div>
-        <div className='rf-tabs__navigation-line' ref={lineRef} />
+    <div className={ `rf-tabs ${typeClass}` }>
+      <nav className={ 'rf-tabs__navigation ' }>
+        <div className='rf-tabs__navigation-list'>{ nav }</div>
+        <div className='rf-tabs__navigation-line' ref={ lineRef }/>
       </nav>
-      <div className='rf-tabs__content'>{isRouting && children ? children : list[active].tab}</div>
+      <div className='rf-tabs__content'>{ isRouting && children ? children : list[active].tab }</div>
     </div>
   );
 };
