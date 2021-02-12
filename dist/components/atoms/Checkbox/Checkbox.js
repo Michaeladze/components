@@ -30,7 +30,7 @@ var check_icon_1 = __importDefault(require("../../_icons/check-icon"));
 var helpers_1 = require("../../../utils/helpers");
 var Checkbox = function (_a) {
     // -------------------------------------------------------------------------------------------------------------------
-    var label = _a.label, value = _a.value, node = _a.node, _b = _a.icon, icon = _b === void 0 ? true : _b, _c = _a.variant, variant = _c === void 0 ? 'primary' : _c, _d = _a.size, size = _d === void 0 ? 'default' : _d, props = __rest(_a, ["label", "value", "node", "icon", "variant", "size"]);
+    var label = _a.label, value = _a.value, node = _a.node, _b = _a.icon, icon = _b === void 0 ? true : _b, _c = _a.variant, variant = _c === void 0 ? 'primary' : _c, _d = _a.size, size = _d === void 0 ? 'medium' : _d, props = __rest(_a, ["label", "value", "node", "icon", "variant", "size"]);
     /** Отображение иконки */
     var withIcon = icon && (react_1.default.createElement("span", { className: "rf-checkbox__check " + helpers_1.variantClass[variant] + " " + (node ? 'rf-checkbox__check--node' : '') },
         react_1.default.createElement("span", { className: 'rf-checkbox__mark' },
@@ -44,9 +44,8 @@ var Checkbox = function (_a) {
     };
     // -------------------------------------------------------------------------------------------------------------------
     var disabledClass = props.disabled ? 'disabled' : '';
-    var sizeClass = size === 'small' ? 'rf-checkbox--small' : '';
     // -------------------------------------------------------------------------------------------------------------------
-    return (react_1.default.createElement("label", { className: "rf-checkbox " + disabledClass + " " + sizeClass + " " + (props.className || '') + " ", onMouseDown: onMouseDown, onMouseUp: onMouseUp },
+    return (react_1.default.createElement("label", { className: "rf-checkbox " + disabledClass + " " + helpers_1.sizeClass[size] + " " + (props.className || '') + " ", onMouseDown: onMouseDown, onMouseUp: onMouseUp },
         react_1.default.createElement("input", __assign({}, props, { type: 'checkbox', className: 'rf-checkbox__input', value: value })),
         withIcon,
         label &&

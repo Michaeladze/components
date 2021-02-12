@@ -1,8 +1,8 @@
 import React, {
   FC, ReactNode, useState, useEffect, HTMLProps
 } from 'react';
-import { Variant } from '../../../types';
-import { variantClass } from '../../../utils/helpers';
+import { Size, Variant } from '../../../types';
+import { sizeClass, variantClass } from '../../../utils/helpers';
 
 export interface ISwitchProps extends Omit<HTMLProps<HTMLDivElement>, 'label' | 'size' | 'onChange'> {
   /** Функция срабатывает при переключении */
@@ -18,7 +18,7 @@ export interface ISwitchProps extends Omit<HTMLProps<HTMLDivElement>, 'label' | 
   /** Цвета */
   variant?: Variant;
   /** Размер */
-  size?: 'default' | 'small';
+  size?: Size;
   /** Включить/выключить анимацию */
   animation?: boolean;
 }
@@ -31,7 +31,7 @@ const Switch: FC<ISwitchProps> = ({
   onChange,
   labelPosition = 'right',
   variant = 'primary',
-  size = 'default',
+  size = 'medium',
   ...props
 }: ISwitchProps) => {
   const [s, toggle] = useState<boolean>(state);
@@ -53,7 +53,7 @@ const Switch: FC<ISwitchProps> = ({
 
   return (
     <div { ...props } tabIndex={ 0 }
-      className={ `rf-switch rf-switch__toggle-${size} ${classDisable} ${classAnim} ${classOther}` }
+      className={ `rf-switch ${sizeClass[size]} ${classDisable} ${classAnim} ${classOther}` }
       onClick={ changeState } >
       { label && labelPosition === 'left' && <p className='rf-switch__label rf-switch__label--left'>{ label }</p> }
       <div

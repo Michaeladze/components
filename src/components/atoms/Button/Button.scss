@@ -16,25 +16,25 @@
   white-space: nowrap;
 }
 
-.rf-button__big {
+.rf-button.rf--big {
   @include Button1;
   padding: 16px 32px;
   height: 56px;
 }
 
-.rf-button__medium {
+.rf-button.rf--medium {
   @include Button1;
   padding: 12px 28px;
   height: 48px;
 }
 
-.rf-button__small {
+.rf-button.rf--small {
   @include Button2;
   padding: 10px 24px;
   height: 40px;
 }
 
-.rf-button__micro {
+.rf-button.rf--micro {
   @include Button2;
   padding: 6px 20px;
   height: 32px;

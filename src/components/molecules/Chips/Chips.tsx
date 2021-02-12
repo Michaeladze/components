@@ -1,8 +1,9 @@
 import React, { FC } from 'react';
-import Button from '../../atoms/Button';
 import Close from '../../_icons/close-circle';
-import { IChips, Variant } from '../../../types';
-import { variantClass } from '../../../utils/helpers';
+import {
+  IChips, Size, Variant
+} from '../../../types';
+import { sizeClass, variantClass } from '../../../utils/helpers';
 
 export interface IChipsProps {
   items: IChips[];
@@ -11,11 +12,11 @@ export interface IChipsProps {
   onClick?: (c: IChips) => void;
   onRemove?: (id: string) => void;
   disabled?: boolean;
-  size?: 'default' | 'small';
+  size?: Size;
 }
 
 const Chips: FC<IChipsProps> = ({
-  items, variant = 'neutral', size = 'default', onRemove, onClick, className, disabled
+  items, variant = 'neutral', size = 'medium', onRemove, onClick, className, disabled
 }: IChipsProps) => {
   const handleRemove = (e: React.MouseEvent, id: string) => {
     e.stopPropagation();
@@ -28,11 +29,9 @@ const Chips: FC<IChipsProps> = ({
     onClick && onClick(c);
   };
 
-  const sizeClass = size === 'small' ? 'rf-chips__item--small' : '';
-
   const chips = items.map((e: IChips) => (
     <div
-      className={`rf-chips__item ${variantClass[variant]} ${sizeClass} ${
+      className={`rf-chips__item ${variantClass[variant]} ${sizeClass[size]} ${
         disabled || e.disabled ? 'rf-chips__item--disabled' : ''
       } ${className} ${onClick ? 'rf-chips__item--pointer' : ''}`}
       key={e.id}
@@ -41,14 +40,12 @@ const Chips: FC<IChipsProps> = ({
         {e.name.length > 20 ? `${e.name.substr(0, 20)}...` : e.name}
       </span>
       {onRemove && !disabled && !e.disabled && (
-        <Button
+        <button
           className='rf-chips__button'
-          buttonType='round'
           disabled={disabled}
-          variant={variant}
           onClick={(ev: React.MouseEvent) => handleRemove(ev, e.id)}>
           <Close />
-        </Button>
+        </button>
       )}
     </div>
   ));

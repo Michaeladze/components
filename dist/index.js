@@ -22,8 +22,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.People = exports.Bell = exports.MenuOutline = exports.Headset = exports.Envelope = exports.Copy = exports.getMonthName = exports.getShortString = exports.formatDate = exports.BackdropLoader = exports.Menu = exports.FeedbackPopup = exports.UsersStack = exports.AppHeader = exports.FindUsers = exports.openPopup = exports.PopupMaker = exports.Select = exports.Tabs = exports.Modal = exports.FormGroup = exports.sendNotification = exports.Notifications = exports.Chips = exports.ContentExpander = exports.Container = exports.UserPhoto = exports.PopupFooter = exports.Tooltip = exports.Textarea = exports.Row = exports.Radio = exports.Input = exports.Message = exports.FileInput = exports.Datepicker = exports.Notification = exports.Column = exports.Checkbox = exports.Preloader = exports.Button = exports.Breadcrumbs = exports.PageTemplate = exports.Timepicker = exports.UserItem = exports.ShareButton = exports.Tile = exports.Switch = exports.useLocation = exports.useClickOutside = void 0;
-exports.Settings = exports.QuestionCircle = void 0;
+exports.Bell = exports.MenuOutline = exports.Headset = exports.Envelope = exports.Copy = exports.getMonthName = exports.getShortString = exports.formatDate = exports.Tag = exports.BackdropLoader = exports.Menu = exports.FeedbackPopup = exports.UsersStack = exports.AppHeader = exports.FindUsers = exports.openPopup = exports.PopupMaker = exports.Select = exports.Tabs = exports.Modal = exports.FormGroup = exports.sendNotification = exports.Notifications = exports.Chips = exports.ContentExpander = exports.Container = exports.UserPhoto = exports.PopupFooter = exports.Tooltip = exports.Textarea = exports.Row = exports.Radio = exports.Input = exports.Message = exports.FileInput = exports.Datepicker = exports.Notification = exports.Column = exports.Checkbox = exports.Preloader = exports.Button = exports.Breadcrumbs = exports.PageTemplate = exports.Timepicker = exports.UserItem = exports.ShareButton = exports.Tile = exports.Switch = exports.useLocation = exports.useClickOutside = void 0;
+exports.Settings = exports.QuestionCircle = exports.People = void 0;
 var useClickOutside_1 = __importDefault(require("./hooks/useClickOutside"));
 exports.useClickOutside = useClickOutside_1.default;
 var useLocation_1 = require("./hooks/useLocation");
@@ -69,6 +69,8 @@ var ShareButton_1 = __importDefault(require("./components/atoms/ShareButton"));
 exports.ShareButton = ShareButton_1.default;
 var BackdropLoader_1 = __importDefault(require("./components/atoms/BackdropLoader"));
 exports.BackdropLoader = BackdropLoader_1.default;
+var Tag_1 = __importDefault(require("./components/atoms/Tag"));
+exports.Tag = Tag_1.default;
 // ------------------------ Компоненты Molecules -----------------------------------------------------------------------
 var Notifications_1 = __importStar(require("./components/molecules/Notifications"));
 exports.Notifications = Notifications_1.default;

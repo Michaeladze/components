@@ -34,7 +34,7 @@ $margin: 2px;
     align-items: baseline;
   }
 
-  .rf-datepicker__wrapper--big {
+  .rf-datepicker__wrapper.rf--big {
     height: 56px;
 
     .react-date-picker__inputGroup {
@@ -42,7 +42,7 @@ $margin: 2px;
     }
   }
 
-  .rf-datepicker__wrapper--small {
+  .rf-datepicker__wrapper.rf--small {
     height: 40px;
 
     .react-date-picker__inputGroup {
@@ -50,7 +50,7 @@ $margin: 2px;
     }
   }
 
-  .rf-datepicker__wrapper--micro {
+  .rf-datepicker__wrapper.rf--micro {
     height: 32px;
 
     .react-date-picker__inputGroup {

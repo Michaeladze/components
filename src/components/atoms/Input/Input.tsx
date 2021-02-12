@@ -9,6 +9,8 @@ import SearchIcon from '../../_icons/search';
 import CloseIcon from '../../_icons/close';
 import HideIcon from '../../_icons/hide';
 import ShowIcon from '../../_icons/show';
+import { Size } from '../../../types';
+import { sizeClass } from '../../../utils/helpers';
 
 export interface IInputProps extends Omit<HTMLProps<HTMLInputElement>, 'size'> {
   /** Возможность очистки поля по клику */
@@ -22,7 +24,7 @@ export interface IInputProps extends Omit<HTMLProps<HTMLInputElement>, 'size'> {
   /** Вернуть value */
   getValue?: (value: string) => void;
   /** Размер */
-  size?: 'big' | 'small' | 'micro';
+  size?: Size;
 }
 
 const Input: FC<IInputProps> = ({
@@ -103,15 +105,15 @@ const Input: FC<IInputProps> = ({
 
   /** Кнопка поиска и сброса */
   const closeButton = onClear && value.length > 0 && (
-    <button className='rf-input__action rf-input__action-clear' onClick={clearInput}>
-      <CloseIcon />
+    <button className='rf-input__action rf-input__action-clear' onClick={ clearInput }>
+      <CloseIcon/>
     </button>
   );
 
   /** Кнопка поиска и сброса */
   const searchButton = search && showSearch && (
     <button className='rf-input__action rf-input__action-search'>
-      <SearchIcon />
+      <SearchIcon/>
     </button>
   );
 
@@ -127,15 +129,15 @@ const Input: FC<IInputProps> = ({
 
   /** Кнопка отображения пароля */
   const showButton = props.type === 'password' && (
-    <button className='rf-input-action rf-password-action' type='button' onClick={togglePassword}>
-      {showPassword ? <ShowIcon /> : <HideIcon />}
+    <button className='rf-input-action rf-password-action' type='button' onClick={ togglePassword }>
+      { showPassword ? <ShowIcon/> : <HideIcon/> }
     </button>
   );
 
   // -------------------------------------------------------------------------------------------------------------------
 
   /** Плавающий лейбл */
-  const labelText = floatLabel && <label className='rf-input__label'>{floatLabel}</label>;
+  const labelText = floatLabel && <label className='rf-input__label'>{ floatLabel }</label>;
 
   /** Добавляем активный класс, если инпут заполнен */
   const handleFloatLabel = () => {
@@ -150,28 +152,22 @@ const Input: FC<IInputProps> = ({
   const searchClass = search ? 'rf-input--search' : '';
   const floatLabelClass = floatLabel ? 'rf-input__field--with-label' : '';
 
-  const sizeClass: Record<'big' | 'small' | 'micro', string> = {
-    big: 'rf-input--big',
-    small: 'rf-input--small',
-    micro: 'rf-input--micro'
-  };
-
   // -------------------------------------------------------------------------------------------------------------------
 
   return (
-    <div className={`rf-input ${props.className || ''}`}>
+    <div className={ `rf-input ${props.className || ''}` }>
       <input
-        {...props}
-        ref={ref}
-        className={`rf-input__field ${floatLabelClass} ${floatClass} ${searchClass} ${sizeClass[size]}`}
+        { ...props }
+        ref={ ref }
+        className={ `rf-input__field ${floatLabelClass} ${floatClass} ${searchClass} ${sizeClass[size]}` }
         autoComplete='off'
-        type={props.type || 'text'}
-        onKeyUp={handleFloatLabel}
+        type={ props.type || 'text' }
+        onKeyUp={ handleFloatLabel }
       />
-      {labelText}
-      {showButton}
-      {closeButton}
-      {searchButton}
+      { labelText }
+      { showButton }
+      { closeButton }
+      { searchButton }
     </div>
   );
 };

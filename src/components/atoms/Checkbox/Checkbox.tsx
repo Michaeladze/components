@@ -2,8 +2,8 @@ import React, {
   FC, InputHTMLAttributes, ReactNode
 } from 'react';
 import CheckIcon from '../../_icons/check-icon';
-import { Variant } from '../../../types';
-import { variantClass } from '../../../utils/helpers';
+import { Size, Variant } from '../../../types';
+import { sizeClass, variantClass } from '../../../utils/helpers';
 
 export interface ICheckboxProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> {
   /** Лейбл */
@@ -17,11 +17,11 @@ export interface ICheckboxProps extends Omit<InputHTMLAttributes<HTMLInputElemen
   /** Вариант */
   variant?: Variant;
   /** Размер */
-  size?: 'default' | 'small';
+  size?: Size;
 }
 
 const Checkbox: FC<ICheckboxProps> = ({
-  label, value, node, icon = true, variant = 'primary', size = 'default', ...props
+  label, value, node, icon = true, variant = 'primary', size = 'medium', ...props
 }: ICheckboxProps) => {
 
   // -------------------------------------------------------------------------------------------------------------------
@@ -48,12 +48,11 @@ const Checkbox: FC<ICheckboxProps> = ({
   // -------------------------------------------------------------------------------------------------------------------
 
   const disabledClass = props.disabled ? 'disabled' : '';
-  const sizeClass = size === 'small' ? 'rf-checkbox--small' : '';
 
   // -------------------------------------------------------------------------------------------------------------------
 
   return (
-    <label className={ `rf-checkbox ${disabledClass} ${sizeClass} ${props.className || ''} ` }
+    <label className={ `rf-checkbox ${disabledClass} ${sizeClass[size]} ${props.className || ''} ` }
       onMouseDown={ onMouseDown }
       onMouseUp={ onMouseUp }>
       <input { ...props } type='checkbox' className='rf-checkbox__input' value={ value }/>

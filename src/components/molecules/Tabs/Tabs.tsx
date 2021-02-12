@@ -12,7 +12,7 @@ import React, {
 } from 'react';
 import Button from '../../atoms/Button';
 import { useHistory, useLocation } from 'react-router-dom';
-import { ITab } from '../../../types';
+import { ITab, Size } from '../../../types';
 
 export interface ITabsProps {
   /** Список вкладок */
@@ -22,10 +22,10 @@ export interface ITabsProps {
   /** Если во вкладках есть url, то через children пробрасывается <Router/> */
   children?: ReactNode | ReactNode[];
   /** Размер */
-  size?: 'default' | 'small';
+  size?: Size;
 }
 
-const Tabs: FC<ITabsProps> = ({ list, type = 'underline', size = 'default', children }: ITabsProps) => {
+const Tabs: FC<ITabsProps> = ({ list, type = 'underline', size = 'medium', children }: ITabsProps) => {
   const history = useHistory();
   const { pathname } = useLocation();
 
@@ -73,8 +73,6 @@ const Tabs: FC<ITabsProps> = ({ list, type = 'underline', size = 'default', chil
 
   // -------------------------------------------------------------------------------------------------------------------
 
-  const buttonSize = size === 'small' ? 'small' : 'medium';
-
   /** Список вкладок */
   const nav = list.map((t: ITab, i: number) => {
     if (!refs.current[i]) {
@@ -86,7 +84,7 @@ const Tabs: FC<ITabsProps> = ({ list, type = 'underline', size = 'default', chil
 
     return (
       <div key={ i } className='rf-tabs__link' ref={ refs.current[i] }>
-        <Button className={ `rf-tabs__button ${className}` } size={ buttonSize } buttonType='text'
+        <Button className={ `rf-tabs__button ${className}` } size={ size } buttonType='text'
           disabled={ t.disabled } onClick={ handler }>
           { t.label }
         </Button>

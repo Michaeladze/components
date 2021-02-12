@@ -49,6 +49,7 @@ var react_1 = __importStar(require("react"));
 var entry_nostyle_1 = __importDefault(require("react-date-picker/dist/entry.nostyle"));
 var calendar_1 = __importDefault(require("../../_icons/calendar"));
 var close_1 = __importDefault(require("../../_icons/close"));
+var helpers_1 = require("../../../utils/helpers");
 var Datepicker = function (_a) {
     var _b = _a.size, size = _b === void 0 ? 'small' : _b, props = __rest(_a, ["size"]);
     var _c = react_1.useState(props.value || null), value = _c[0], setValue = _c[1];
@@ -58,12 +59,7 @@ var Datepicker = function (_a) {
         setValue(d);
         props.onChange && props.onChange(d, props.name || '');
     };
-    var sizeClass = {
-        big: 'rf-datepicker__wrapper--big',
-        small: 'rf-datepicker__wrapper--small',
-        micro: 'rf-datepicker__wrapper--micro'
-    };
-    return (react_1.default.createElement("div", { className: "rf-datepicker__wrapper " + sizeClass[size] },
+    return (react_1.default.createElement("div", { className: "rf-datepicker__wrapper " + helpers_1.sizeClass[size] },
         react_1.default.createElement(entry_nostyle_1.default, __assign({}, props, { value: value, format: 'dd.MM.y', calendarIcon: react_1.default.createElement(calendar_1.default, null), clearIcon: props.clear && !props.disabled && value ? react_1.default.createElement(close_1.default, null) : null, onChange: handleChange, dayPlaceholder: '__', monthPlaceholder: '__', yearPlaceholder: '____' }))));
 };
 exports.default = Datepicker;

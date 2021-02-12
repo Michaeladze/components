@@ -1,7 +1,7 @@
 import React from 'react';
-import { Variant } from '../../../types';
+import { Size, Variant } from '../../../types';
 export interface IPreloaderProps {
-    size?: 'small' | 'medium' | 'large';
+    size?: Size;
     variant?: Variant;
 }
 declare const Preloader: React.FC<IPreloaderProps>;

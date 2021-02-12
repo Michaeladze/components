@@ -1,5 +1,5 @@
 import { FC, InputHTMLAttributes, ReactNode } from 'react';
-import { Variant } from '../../../types';
+import { Size, Variant } from '../../../types';
 export interface IRadioProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> {
     /** Лейбл */
     label: ReactNode;
@@ -12,7 +12,7 @@ export interface IRadioProps extends Omit<InputHTMLAttributes<HTMLInputElement>,
     /** Вариант */
     variant?: Variant;
     /** Размер */
-    size?: 'default' | 'small';
+    size?: Size;
 }
 declare const Radio: FC<IRadioProps>;
 export default Radio;

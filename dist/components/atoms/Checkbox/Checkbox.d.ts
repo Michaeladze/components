@@ -1,5 +1,5 @@
 import React, { FC, InputHTMLAttributes, ReactNode } from 'react';
-import { Variant } from '../../../types';
+import { Size, Variant } from '../../../types';
 export interface ICheckboxProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> {
     /** Лейбл */
     label?: React.ReactNode;
@@ -12,7 +12,7 @@ export interface ICheckboxProps extends Omit<InputHTMLAttributes<HTMLInputElemen
     /** Вариант */
     variant?: Variant;
     /** Размер */
-    size?: 'default' | 'small';
+    size?: Size;
 }
 declare const Checkbox: FC<ICheckboxProps>;
 export default Checkbox;

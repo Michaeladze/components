@@ -1,0 +1,43 @@
+@import "src/styles/mixins";
+
+.rf-tag {
+  padding: 4px 8px;
+  height: 24px;
+  @include Caption1;
+  max-width: 400px;
+  border-radius: 4px;
+  text-transform: capitalize;
+  cursor: default;
+}
+
+.rf-tag--clickable {
+  cursor: pointer;
+}
+
+.rf-tag.rf--neutral {
+  background-color: var(--neutral-10);
+}
+
+.rf-tag.rf--primary {
+  background-color: var(--primary-20);
+}
+
+.rf-tag.rf--extra-one {
+  background-color: var(--extra-one-20);
+}
+
+.rf-tag.rf--attention {
+  background-color: var(--attention-20);
+}
+
+.rf-tag.rf--success {
+  background-color: var(--success-20);
+}
+
+.rf-tag.rf--warning {
+  background-color: var(--warning-20);
+}
+
+.rf-tag.rf--error {
+  background-color: var(--error-20);
+}

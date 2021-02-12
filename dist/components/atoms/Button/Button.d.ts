@@ -1,10 +1,10 @@
 import { FC, HTMLProps } from 'react';
-import { Variant } from '../../../types';
+import { Size, Variant } from '../../../types';
 export interface IButtonProps extends Omit<HTMLProps<HTMLButtonElement>, 'size'> {
     /** Внешний вид */
     buttonType?: 'primary' | 'secondary' | 'ghost' | 'round' | 'text';
     /** Размер */
-    size?: 'big' | 'medium' | 'small' | 'micro';
+    size?: Size;
     /** Тип */
     type?: 'button' | 'submit' | 'reset';
     /** Варианты */

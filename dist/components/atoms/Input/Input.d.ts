@@ -1,4 +1,5 @@
 import { FC, HTMLProps } from 'react';
+import { Size } from '../../../types';
 export interface IInputProps extends Omit<HTMLProps<HTMLInputElement>, 'size'> {
     /** Возможность очистки поля по клику */
     onClear?: () => void;
@@ -11,7 +12,7 @@ export interface IInputProps extends Omit<HTMLProps<HTMLInputElement>, 'size'> {
     /** Вернуть value */
     getValue?: (value: string) => void;
     /** Размер */
-    size?: 'big' | 'small' | 'micro';
+    size?: Size;
 }
 declare const Input: FC<IInputProps>;
 export default Input;

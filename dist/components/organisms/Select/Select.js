@@ -57,6 +57,7 @@ var index_1 = require("../../../index");
 var angle_down_1 = __importDefault(require("../../_icons/angle-down"));
 var close_1 = __importDefault(require("../../_icons/close"));
 var Chips_1 = __importDefault(require("../../molecules/Chips/Chips"));
+var helpers_1 = require("../../../utils/helpers");
 var Select = function (_a) {
     var options = _a.options, _b = _a.multiSelect, multiSelect = _b === void 0 ? false : _b, value = _a.value, onChange = _a.onChange, getValue = _a.getValue, _c = _a.size, size = _c === void 0 ? 'small' : _c, props = __rest(_a, ["options", "multiSelect", "value", "onChange", "getValue", "size"]);
     /** Ссылка на текущий компонент */
@@ -206,7 +207,7 @@ var Select = function (_a) {
         setCurrentValue(onOptionRemove(id));
     };
     var chipsJSX = multiSelect && (react_1.default.createElement("div", { className: 'rf-select__chips' },
-        react_1.default.createElement(Chips_1.default, { variant: 'neutral', items: chips, onRemove: onChipsRemove, disabled: props.disabled })));
+        react_1.default.createElement(Chips_1.default, { variant: 'neutral', items: chips, onRemove: onChipsRemove, disabled: props.disabled, size: size })));
     // -------------------------------------------------------------------------------------------------------------------
     /** Очистка оля ввода */
     var clearInput = function () {
@@ -231,17 +232,12 @@ var Select = function (_a) {
     useClickOutside_1.default(componentNode, handleClickOutside);
     // -------------------------------------------------------------------------------------------------------------------
     var clearIconClass = !props.readOnly && inputValue.length > 0 ? 'rf-select__input-clear--show' : '';
-    var sizeClass = {
-        big: 'rf-select--big',
-        small: 'rf-select--small',
-        micro: 'rf-select--micro'
-    };
-    return (react_1.default.createElement("div", { className: "rf-select " + (props.className || '') + " " + sizeClass[size], ref: componentNode },
+    return (react_1.default.createElement("div", { className: "rf-select " + (props.className || '') + " " + helpers_1.sizeClass[size], ref: componentNode },
         react_1.default.createElement("div", { className: 'rf-select__input-wrapper' },
             react_1.default.createElement(index_1.Input, { placeholder: props.placeholder, value: inputValue, readOnly: props.readOnly, onChange: onInputChange, onKeyUp: onSearch, onClick: onInputClick, disabled: props.disabled, size: size }),
-            react_1.default.createElement(index_1.Button, { buttonType: 'text', disabled: props.disabled, className: "rf-select__input-icon rf-select__input-clear " + clearIconClass },
+            react_1.default.createElement("button", { disabled: props.disabled, className: "rf-select__input-icon rf-select__input-clear " + clearIconClass },
                 react_1.default.createElement(close_1.default, { onClick: clearInput })),
-            react_1.default.createElement(index_1.Button, { buttonType: 'text', disabled: props.disabled, className: "rf-select__input-icon rf-select__input-angle\n                " + (showDropdown ? 'rf-select__input-angle--rotate' : ''), onClick: openSelectDropdown },
+            react_1.default.createElement("button", { disabled: props.disabled, className: "rf-select__input-icon rf-select__input-angle\n                " + (showDropdown ? 'rf-select__input-angle--rotate' : ''), onClick: openSelectDropdown },
                 react_1.default.createElement(angle_down_1.default, null))),
         react_1.default.createElement("ul", { className: "rf-select__list " + (showDropdown ? 'rf-select__list--show' : ''), ref: dropdownRef, onScroll: function (e) { return e.stopPropagation(); } }, optionsList),
         chipsJSX));

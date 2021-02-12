@@ -2,8 +2,8 @@ import React, {
   FC, InputHTMLAttributes, ReactNode
 } from 'react';
 import CheckIcon from '../../_icons/check-icon';
-import { Variant } from '../../../types';
-import { variantClass } from '../../../utils/helpers';
+import { Size, Variant } from '../../../types';
+import { sizeClass, variantClass } from '../../../utils/helpers';
 
 export interface IRadioProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> {
   /** Лейбл */
@@ -17,11 +17,11 @@ export interface IRadioProps extends Omit<InputHTMLAttributes<HTMLInputElement>,
   /** Вариант */
   variant?: Variant;
   /** Размер */
-  size?: 'default' | 'small';
+  size?: Size;
 }
 
 const Radio: FC<IRadioProps> = ({
-  label, value, node, icon = true, variant = 'primary', size = 'default', ...props
+  label, value, node, icon = true, variant = 'primary', size = 'medium', ...props
 }: IRadioProps) => {
   /** Отображение иконки */
   const withIcon = icon && (
@@ -42,10 +42,8 @@ const Radio: FC<IRadioProps> = ({
     e.currentTarget.classList.remove('rf-radio--pressed');
   };
 
-  const sizeClass = size === 'small' ? 'rf-radio--small' : '';
-
   return (
-    <label className={ `rf-radio ${props.className || ''} ${props.disabled ? 'disabled' : ''} ${sizeClass}` }
+    <label className={ `rf-radio ${props.className || ''} ${props.disabled ? 'disabled' : ''} ${sizeClass[size]}` }
       onMouseDown={ onMouseDown } onMouseUp={ onMouseUp }>
       <input { ...props } type='radio' className='rf-radio__input' value={ value }/>
 

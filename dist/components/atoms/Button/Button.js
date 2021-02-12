@@ -35,11 +35,7 @@ var Button = function (_a) {
         ghost: 'rf-button--ghost',
         text: 'rf-button--text',
         round: 'rf-button--round',
-        big: 'rf-button__big',
-        medium: 'rf-button__medium',
-        small: 'rf-button__small',
-        micro: 'rf-button__micro'
     };
-    return (react_1.default.createElement("button", __assign({}, props, { type: type, className: "rf-button " + classesMap[buttonType] + " " + classesMap[size] + " " + helpers_1.variantClass[variant] + "\n      " + (props.className || '') }), props.children));
+    return (react_1.default.createElement("button", __assign({}, props, { type: type, className: "rf-button " + classesMap[buttonType] + " " + helpers_1.sizeClass[size] + " " + helpers_1.variantClass[variant] + "\n      " + (props.className || '') }), props.children));
 };
 exports.default = Button;

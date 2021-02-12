@@ -51,6 +51,7 @@ var search_1 = __importDefault(require("../../_icons/search"));
 var close_1 = __importDefault(require("../../_icons/close"));
 var hide_1 = __importDefault(require("../../_icons/hide"));
 var show_1 = __importDefault(require("../../_icons/show"));
+var helpers_1 = require("../../../utils/helpers");
 var Input = function (_a) {
     // -------------------------------------------------------------------------------------------------------------------
     var _b, _c;
@@ -132,14 +133,9 @@ var Input = function (_a) {
     /** Классы */
     var searchClass = search ? 'rf-input--search' : '';
     var floatLabelClass = floatLabel ? 'rf-input__field--with-label' : '';
-    var sizeClass = {
-        big: 'rf-input--big',
-        small: 'rf-input--small',
-        micro: 'rf-input--micro'
-    };
     // -------------------------------------------------------------------------------------------------------------------
     return (react_1.default.createElement("div", { className: "rf-input " + (props.className || '') },
-        react_1.default.createElement("input", __assign({}, props, { ref: ref, className: "rf-input__field " + floatLabelClass + " " + floatClass + " " + searchClass + " " + sizeClass[size], autoComplete: 'off', type: props.type || 'text', onKeyUp: handleFloatLabel })),
+        react_1.default.createElement("input", __assign({}, props, { ref: ref, className: "rf-input__field " + floatLabelClass + " " + floatClass + " " + searchClass + " " + helpers_1.sizeClass[size], autoComplete: 'off', type: props.type || 'text', onKeyUp: handleFloatLabel })),
         labelText,
         showButton,
         closeButton,

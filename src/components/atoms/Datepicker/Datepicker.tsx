@@ -3,6 +3,8 @@ import React, { FC, useState } from 'react';
 import DatePicker, { DatePickerProps } from 'react-date-picker/dist/entry.nostyle';
 import Calendar from '../../_icons/calendar';
 import Close from '../../_icons/close';
+import { Size } from '../../../types';
+import { sizeClass } from '../../../utils/helpers';
 
 export interface IDatepickerProps extends Omit<DatePickerProps, 'onChange'> {
   /** Изменение */
@@ -10,7 +12,7 @@ export interface IDatepickerProps extends Omit<DatePickerProps, 'onChange'> {
   /** Очистка */
   clear?: boolean;
   /** Размер */
-  size?: 'big' | 'small' | 'micro';
+  size?: Size;
 }
 
 const Datepicker: FC<IDatepickerProps> = ({ size = 'small', ...props }: IDatepickerProps) => {
@@ -21,12 +23,6 @@ const Datepicker: FC<IDatepickerProps> = ({ size = 'small', ...props }: IDatepic
     const d = date as Date;
     setValue(d);
     props.onChange && props.onChange(d, props.name || '');
-  };
-
-  const sizeClass: Record<'big' | 'small' | 'micro', string> = {
-    big: 'rf-datepicker__wrapper--big',
-    small: 'rf-datepicker__wrapper--small',
-    micro: 'rf-datepicker__wrapper--micro'
   };
 
   return (

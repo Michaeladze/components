@@ -9,6 +9,6 @@ var BackdropLoader = function (_a) {
     // -------------------------------------------------------------------------------------------------------------------
     var _b = _a.className, className = _b === void 0 ? '' : _b, variant = _a.variant;
     return (react_1.default.createElement("div", { className: "rf__backdrop-loader " + className },
-        react_1.default.createElement(Preloader_1.default, { size: 'large', variant: variant })));
+        react_1.default.createElement(Preloader_1.default, { size: 'big', variant: variant })));
 };
 exports.default = BackdropLoader;

@@ -1,4 +1,4 @@
-import { IFormattedDate, Variant } from '../types';
+import { IFormattedDate, Size, Variant } from '../types';
 /**
  * Функция для добавления окончаний к месяцам
  * @param value - имя месяца
@@ -21,5 +21,6 @@ export declare const formatDate: (date: string | number | undefined) => IFormatt
  */
 export declare const getShortString: (text: string, n?: number, symbol?: string) => string;
 /** Общий класс для цветового оформления */
-export declare const variantClass: Record<string, string>;
+export declare const variantClass: Record<Variant, string>;
 export declare const variants: Variant[];
+export declare const sizeClass: Record<Size, string>;

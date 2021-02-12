@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.variants = exports.variantClass = exports.getShortString = exports.formatDate = exports.addLeadingZeros = exports.getMonthName = void 0;
+exports.sizeClass = exports.variants = exports.variantClass = exports.getShortString = exports.formatDate = exports.addLeadingZeros = exports.getMonthName = void 0;
 var months = [
     'январь',
     'февраль',
@@ -130,3 +130,9 @@ exports.variants = [
     'warning',
     'error'
 ];
+exports.sizeClass = {
+    'big': 'rf--big',
+    'medium': 'rf--medium',
+    'small': 'rf--small',
+    'micro': 'rf--micro'
+};

@@ -45,7 +45,7 @@ var react_1 = __importStar(require("react"));
 var helpers_1 = require("../../../utils/helpers");
 var Switch = function (_a) {
     var _b;
-    var label = _a.label, _c = _a.state, state = _c === void 0 ? false : _c, _d = _a.disable, disable = _d === void 0 ? false : _d, _e = _a.animation, animation = _e === void 0 ? false : _e, onChange = _a.onChange, _f = _a.labelPosition, labelPosition = _f === void 0 ? 'right' : _f, _g = _a.variant, variant = _g === void 0 ? 'primary' : _g, _h = _a.size, size = _h === void 0 ? 'default' : _h, props = __rest(_a, ["label", "state", "disable", "animation", "onChange", "labelPosition", "variant", "size"]);
+    var label = _a.label, _c = _a.state, state = _c === void 0 ? false : _c, _d = _a.disable, disable = _d === void 0 ? false : _d, _e = _a.animation, animation = _e === void 0 ? false : _e, onChange = _a.onChange, _f = _a.labelPosition, labelPosition = _f === void 0 ? 'right' : _f, _g = _a.variant, variant = _g === void 0 ? 'primary' : _g, _h = _a.size, size = _h === void 0 ? 'medium' : _h, props = __rest(_a, ["label", "state", "disable", "animation", "onChange", "labelPosition", "variant", "size"]);
     var _j = react_1.useState(state), s = _j[0], toggle = _j[1];
     react_1.useEffect(function () {
         // в случае программного изменения тоже выдаем событие
@@ -59,7 +59,7 @@ var Switch = function (_a) {
     var classDisable = disable ? 'rf-switch--disable' : '';
     var classAnim = animation ? 'rf-switch--anim' : '';
     var classOther = (_b = props.className) !== null && _b !== void 0 ? _b : '';
-    return (react_1.default.createElement("div", __assign({}, props, { tabIndex: 0, className: "rf-switch rf-switch__toggle-" + size + " " + classDisable + " " + classAnim + " " + classOther, onClick: changeState }),
+    return (react_1.default.createElement("div", __assign({}, props, { tabIndex: 0, className: "rf-switch " + helpers_1.sizeClass[size] + " " + classDisable + " " + classAnim + " " + classOther, onClick: changeState }),
         label && labelPosition === 'left' && react_1.default.createElement("p", { className: 'rf-switch__label rf-switch__label--left' }, label),
         react_1.default.createElement("div", { className: "rf-switch__toggle  " + (s ? 'rf-switch__toggle--on' : 'rf-switch__toggle--off') + " " + helpers_1.variantClass[variant] },
             react_1.default.createElement("div", { className: 'rf-switch__circle' })),

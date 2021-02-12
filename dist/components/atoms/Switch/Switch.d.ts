@@ -1,5 +1,5 @@
 import { FC, ReactNode, HTMLProps } from 'react';
-import { Variant } from '../../../types';
+import { Size, Variant } from '../../../types';
 export interface ISwitchProps extends Omit<HTMLProps<HTMLDivElement>, 'label' | 'size' | 'onChange'> {
     /** Функция срабатывает при переключении */
     onChange?: (f: boolean) => void;
@@ -14,7 +14,7 @@ export interface ISwitchProps extends Omit<HTMLProps<HTMLDivElement>, 'label' | 
     /** Цвета */
     variant?: Variant;
     /** Размер */
-    size?: 'default' | 'small';
+    size?: Size;
     /** Включить/выключить анимацию */
     animation?: boolean;
 }

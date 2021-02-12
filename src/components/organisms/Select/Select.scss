@@ -26,7 +26,7 @@
   transition: background-color 0.15s;
 }
 
-.rf-select--micro {
+.rf-select.rf--micro {
   .rf-select__list {
     padding: 8px 0;
   }
@@ -95,6 +95,11 @@
   transform: translateY(-50%) rotate(0);
   transition: 0.35s;
   color: var(--neutral-50);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 24px;
 }
 
 .rf-select__input-angle {

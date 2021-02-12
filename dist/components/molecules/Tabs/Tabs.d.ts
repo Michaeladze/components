@@ -1,5 +1,5 @@
 import { ReactNode, FC } from 'react';
-import { ITab } from '../../../types';
+import { ITab, Size } from '../../../types';
 export interface ITabsProps {
     /** Список вкладок */
     list: ITab[];
@@ -8,7 +8,7 @@ export interface ITabsProps {
     /** Если во вкладках есть url, то через children пробрасывается <Router/> */
     children?: ReactNode | ReactNode[];
     /** Размер */
-    size?: 'default' | 'small';
+    size?: Size;
 }
 declare const Tabs: FC<ITabsProps>;
 export default Tabs;

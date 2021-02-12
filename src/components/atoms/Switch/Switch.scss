@@ -15,7 +15,7 @@
   position: absolute;
   height: 1px;
   width: 1px;
-  transform: translate(-50%,-50%) scale(0);
+  transform: translate(-50%, -50%) scale(0);
   top: 50%;
   left: 50%;
   content: "";
@@ -24,7 +24,7 @@
 
 @keyframes pulse {
   to {
-    transform: translate(-50%,-50%) scale(50);
+    transform: translate(-50%, -50%) scale(50);
     background-color: rgba(0, 0, 0, 0);
     opacity: 0;
   }
@@ -41,6 +41,7 @@
 .rf-switch__label--right {
   margin-left: 8px;
 }
+
 //=====================IN COMMON=========================
 .rf-switch__toggle {
   position: relative;
@@ -58,9 +59,10 @@
 .rf-switch__label {
   user-select: none;
 }
+
 //=====================DEFAULT===========================
 
-.rf-switch__toggle-default {
+.rf-switch {
   .rf-switch__toggle {
     border-radius: 10px;
     width: 36px;
@@ -82,7 +84,8 @@
 }
 
 //=====================SMALL===========================
-.rf-switch__toggle-small {
+
+.rf-switch.rf--small {
   .rf-switch__toggle {
     border-radius: 12px;
     width: 28px;
@@ -104,6 +107,7 @@
 }
 
 //====================COLORS===========================
+
 .rf-switch__toggle.rf--primary.rf-switch__toggle--on {
   background-color: var(--primary-60);
   border-color: var(--primary-60);
@@ -145,6 +149,7 @@
 }
 
 //====================DISABLE===========================
+
 .rf-switch--disable {
   pointer-events: none;
 

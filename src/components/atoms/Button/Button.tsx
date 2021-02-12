@@ -1,12 +1,12 @@
 import React, { FC, HTMLProps } from 'react';
-import { Variant } from '../../../types';
-import { variantClass } from '../../../utils/helpers';
+import { Size, Variant } from '../../../types';
+import { sizeClass, variantClass } from '../../../utils/helpers';
 
 export interface IButtonProps extends Omit<HTMLProps<HTMLButtonElement>, 'size'> {
   /** Внешний вид */
   buttonType?: 'primary' | 'secondary' | 'ghost' | 'round' | 'text';
   /** Размер */
-  size?: 'big' | 'medium' | 'small' | 'micro';
+  size?: Size;
   /** Тип */
   type?: 'button' | 'submit' | 'reset';
   /** Варианты */
@@ -26,18 +26,13 @@ const Button: FC<IButtonProps> = ({
     ghost: 'rf-button--ghost',
     text: 'rf-button--text',
     round: 'rf-button--round',
-
-    big: 'rf-button__big',
-    medium: 'rf-button__medium',
-    small: 'rf-button__small',
-    micro: 'rf-button__micro'
   };
 
   return (
     <button
       {...props}
       type={type}
-      className={`rf-button ${classesMap[buttonType]} ${classesMap[size]} ${variantClass[variant]}
+      className={`rf-button ${classesMap[buttonType]} ${sizeClass[size]} ${variantClass[variant]}
       ${props.className || ''}`}>
       {props.children}
     </button>

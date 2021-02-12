@@ -69,3 +69,5 @@ export interface IBreadcrumb {
 }
 /** Тип цветового оформления */
 export declare type Variant = 'neutral' | 'primary' | 'attention' | 'extra-one' | 'error' | 'warning' | 'success';
+/** Размер */
+export declare type Size = 'big' | 'medium' | 'small' | 'micro';

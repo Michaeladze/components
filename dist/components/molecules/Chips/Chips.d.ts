@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { IChips, Variant } from '../../../types';
+import { IChips, Size, Variant } from '../../../types';
 export interface IChipsProps {
     items: IChips[];
     className?: string;
@@ -7,7 +7,7 @@ export interface IChipsProps {
     onClick?: (c: IChips) => void;
     onRemove?: (id: string) => void;
     disabled?: boolean;
-    size?: 'default' | 'small';
+    size?: Size;
 }
 declare const Chips: FC<IChipsProps>;
 export default Chips;

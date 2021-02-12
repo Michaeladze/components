@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import { Variant } from '../../../types';
+import { Size, Variant } from '../../../types';
 export interface IBadgeProps {
     children: ReactNode;
     badgeContent?: ReactNode;
@@ -8,7 +8,7 @@ export interface IBadgeProps {
     max?: number;
     position?: 'topRight' | 'topLeft' | 'bottomLeft' | 'bottomRight' | 'text';
     display?: boolean;
-    size?: 'default' | 'small';
+    size?: Size;
 }
 declare const Badge: React.FC<IBadgeProps>;
 export default Badge;

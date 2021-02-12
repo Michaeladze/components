@@ -8,15 +8,15 @@
   transform: translate(-50%, -50%);
 }
 
-.preloader--small {
+.preloader.rf--small {
   @include round(16px);
 }
 
-.preloader--medium {
+.preloader.rf--medium {
   @include round(24px);
 }
 
-.preloader--large {
+.preloader.rf--large {
   @include round(48px);
 }
 
@@ -28,7 +28,7 @@
   animation: spin 1s linear infinite;
 }
 
-.preloader--small .preloader__circle {
+.preloader.rf--small .preloader__circle {
   border-width: 1px;
 }
 

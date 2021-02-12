@@ -39,17 +39,17 @@
   }
 }
 
-.rf-input--big {
+.rf-input__field.rf--big {
   height: 56px;
   padding: 16px;
 }
 
-.rf-input--small {
+.rf-input__field.rf--small {
   height: 40px;
   padding: 8px 16px;
 }
 
-.rf-input--micro {
+.rf-input__field.rf--micro {
   height: 32px;
   padding: 6px 12px;
   @include Body2Long;

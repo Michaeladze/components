@@ -1,4 +1,6 @@
-import { IFormattedDate, Variant } from '../types';
+import {
+  IFormattedDate, Size, Variant
+} from '../types';
 
 const months = [
   'январь',
@@ -115,7 +117,7 @@ export const getShortString = (text: string, n = 50, symbol = '...') => {
 };
 
 /** Общий класс для цветового оформления */
-export const variantClass: Record<string, string> = {
+export const variantClass: Record<Variant, string> = {
   'neutral': 'rf--neutral',
   'primary': 'rf--primary',
   'extra-one': 'rf--extra-one',
@@ -134,3 +136,10 @@ export const variants: Variant[] = [
   'warning',
   'error'
 ];
+
+export const sizeClass: Record<Size, string> = {
+  'big': 'rf--big',
+  'medium': 'rf--medium',
+  'small': 'rf--small',
+  'micro': 'rf--micro'
+};

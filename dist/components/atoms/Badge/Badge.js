@@ -22,7 +22,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var helpers_1 = require("../../../utils/helpers");
 var Badge = function (_a) {
-    var badgeContent = _a.badgeContent, children = _a.children, _b = _a.className, className = _b === void 0 ? '' : _b, _c = _a.variant, variant = _c === void 0 ? 'neutral' : _c, _d = _a.max, max = _d === void 0 ? 99 : _d, _e = _a.position, position = _e === void 0 ? 'topRight' : _e, _f = _a.display, display = _f === void 0 ? true : _f, _g = _a.size, size = _g === void 0 ? 'default' : _g;
+    var badgeContent = _a.badgeContent, children = _a.children, _b = _a.className, className = _b === void 0 ? '' : _b, _c = _a.variant, variant = _c === void 0 ? 'neutral' : _c, _d = _a.max, max = _d === void 0 ? 99 : _d, _e = _a.position, position = _e === void 0 ? 'topRight' : _e, _f = _a.display, display = _f === void 0 ? true : _f, _g = _a.size, size = _g === void 0 ? 'medium' : _g;
     var wrapper = react_1.useRef(null);
     var isDot = badgeContent ? '' : 'rf-badge--dot';
     var _h = react_1.useState({
@@ -63,10 +63,9 @@ var Badge = function (_a) {
     }, [children, badgeContent]);
     // -------------------------------------------------------------------------------------------------------------------
     var textClass = typeof children === 'string' || position === 'text' ? 'rf-badge--text' : '';
-    var sizeClass = size === 'small' ? 'rf-badge--small' : '';
     return (react_1.default.createElement("div", { className: "rf-badge__wrapper " + className, ref: wrapper },
         children,
         display &&
-            react_1.default.createElement("div", { className: "rf-badge " + helpers_1.variantClass[variant] + " " + sizeClass + " " + isDot + " " + textClass, style: coordinates }, badgeContent ? !isNaN(+badgeContent) && +badgeContent > max ? max + "+" : badgeContent : null)));
+            react_1.default.createElement("div", { className: "rf-badge " + helpers_1.variantClass[variant] + " " + helpers_1.sizeClass[size] + " " + isDot + " " + textClass, style: coordinates }, badgeContent ? !isNaN(+badgeContent) && +badgeContent > max ? max + "+" : badgeContent : null)));
 };
 exports.default = Badge;

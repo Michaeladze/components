@@ -22,7 +22,7 @@
   @include Body2Long;
 }
 
-.rf-chips__item--small {
+.rf-chips__item.rf--small {
   height: 24px;
   padding: 4px 8px;
 
@@ -32,10 +32,10 @@
 }
 
 .rf-chips__button {
-  width: auto;
-  height: auto;
-  min-width: unset;
-  min-height: unset;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  min-height: 20px;
   box-shadow: unset;
   margin-left: 8px;
   background-color: transparent;

@@ -1,14 +1,17 @@
 import React, {
   FC, InputHTMLAttributes, useCallback, useEffect, useMemo, useRef, useState
 } from 'react';
-import { IChips, IOption } from '../../../types';
+import {
+  IChips, IOption, Size
+} from '../../../types';
 import useClickOutside from '../../../hooks/useClickOutside';
 import {
-  Button, Checkbox, Input, Radio
+  Checkbox, Input, Radio
 } from '../../../index';
 import Angle from '../../_icons/angle-down';
 import Close from '../../_icons/close';
 import Chips from '../../molecules/Chips/Chips';
+import { sizeClass } from '../../../utils/helpers';
 
 export interface ISelectProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> {
   /** Список вариантов */
@@ -22,7 +25,7 @@ export interface ISelectProps extends Omit<InputHTMLAttributes<HTMLInputElement>
   /** Вернуть IOption */
   getValue?: (option: IOption) => void;
   /** Размер */
-  size?: 'big' | 'small' | 'micro';
+  size?: Size;
 }
 
 const Select: FC<ISelectProps> = ({
@@ -242,7 +245,7 @@ const Select: FC<ISelectProps> = ({
 
   const chipsJSX = multiSelect && (
     <div className='rf-select__chips'>
-      <Chips variant='neutral' items={chips} onRemove={onChipsRemove} disabled={props.disabled} />
+      <Chips variant='neutral' items={chips} onRemove={onChipsRemove} disabled={props.disabled} size={size} />
     </div>
   );
 
@@ -277,11 +280,6 @@ const Select: FC<ISelectProps> = ({
   // -------------------------------------------------------------------------------------------------------------------
 
   const clearIconClass = !props.readOnly && inputValue.length > 0 ? 'rf-select__input-clear--show' : '';
-  const sizeClass: Record<'big' | 'small' | 'micro', string> = {
-    big: 'rf-select--big',
-    small: 'rf-select--small',
-    micro: 'rf-select--micro'
-  };
 
   return (
     <div className={`rf-select ${props.className || ''} ${sizeClass[size]}`} ref={componentNode}>
@@ -296,20 +294,18 @@ const Select: FC<ISelectProps> = ({
           disabled={props.disabled}
           size={size}
         />
-        <Button
-          buttonType='text'
+        <button
           disabled={props.disabled}
           className={`rf-select__input-icon rf-select__input-clear ${clearIconClass}`}>
           <Close onClick={clearInput} />
-        </Button>
-        <Button
-          buttonType='text'
+        </button>
+        <button
           disabled={props.disabled}
           className={`rf-select__input-icon rf-select__input-angle
                 ${showDropdown ? 'rf-select__input-angle--rotate' : ''}`}
           onClick={openSelectDropdown}>
           <Angle />
-        </Button>
+        </button>
       </div>
 
       <ul className={`rf-select__list ${showDropdown ? 'rf-select__list--show' : ''}`} ref={dropdownRef} onScroll={(e: any) => e.stopPropagation()}>

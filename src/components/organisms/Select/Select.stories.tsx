@@ -74,7 +74,7 @@ export const select = () => {
           <Select name='s1' options={list} placeholder='Выберите значение' value={s1} />
         </StoryRow>
         <StoryRow>
-          <Select name='s2' options={list} placeholder='Выберите несколько значений' multiSelect value={s} />
+          <Select name='s2' options={list} placeholder='Выберите несколько значений' multiSelect value={s} size='big'/>
         </StoryRow>
       </StoryItem>
     </Story>

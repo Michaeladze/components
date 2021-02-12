@@ -1,8 +1,8 @@
 import React, {
   ReactNode, useLayoutEffect, useRef, useState
 } from 'react';
-import { Variant } from '../../../types';
-import { variantClass } from '../../../utils/helpers';
+import { Size, Variant } from '../../../types';
+import { sizeClass, variantClass } from '../../../utils/helpers';
 
 export interface IBadgeProps {
   children: ReactNode;
@@ -12,7 +12,7 @@ export interface IBadgeProps {
   max?: number;
   position?: 'topRight' | 'topLeft' | 'bottomLeft' | 'bottomRight' | 'text';
   display?: boolean;
-  size?: 'default' | 'small';
+  size?: Size;
 }
 
 type Coordinates = { top: number; right: number };
@@ -25,7 +25,7 @@ const Badge: React.FC<IBadgeProps> = ({
   max = 99,
   position = 'topRight',
   display = true,
-  size = 'default'
+  size = 'medium'
 }: IBadgeProps) => {
   const wrapper = useRef<HTMLDivElement>(null);
 
@@ -74,13 +74,12 @@ const Badge: React.FC<IBadgeProps> = ({
   // -------------------------------------------------------------------------------------------------------------------
 
   const textClass = typeof children === 'string' || position === 'text' ? 'rf-badge--text' : '';
-  const sizeClass = size === 'small' ? 'rf-badge--small' : '';
 
   return (
     <div className={`rf-badge__wrapper ${className}`} ref={wrapper}>
       {children}
       {display &&
-        <div className={`rf-badge ${variantClass[variant]} ${sizeClass} ${isDot} ${textClass}`} style={coordinates}>
+        <div className={`rf-badge ${variantClass[variant]} ${sizeClass[size]} ${isDot} ${textClass}`} style={coordinates}>
           {badgeContent ? !isNaN(+badgeContent) && +badgeContent > max ? `${max}+` : badgeContent : null}
         </div>
       }

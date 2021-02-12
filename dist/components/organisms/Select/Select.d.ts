@@ -1,5 +1,5 @@
 import React, { FC, InputHTMLAttributes } from 'react';
-import { IOption } from '../../../types';
+import { IOption, Size } from '../../../types';
 export interface ISelectProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> {
     /** Список вариантов */
     options: IOption[];
@@ -12,7 +12,7 @@ export interface ISelectProps extends Omit<InputHTMLAttributes<HTMLInputElement>
     /** Вернуть IOption */
     getValue?: (option: IOption) => void;
     /** Размер */
-    size?: 'big' | 'small' | 'micro';
+    size?: Size;
 }
 declare const Select: FC<ISelectProps>;
 export default Select;
