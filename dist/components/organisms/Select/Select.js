@@ -58,12 +58,12 @@ var angle_down_1 = __importDefault(require("../../_icons/angle-down"));
 var close_1 = __importDefault(require("../../_icons/close"));
 var Chips_1 = __importDefault(require("../../molecules/Chips/Chips"));
 var Select = function (_a) {
-    var options = _a.options, _b = _a.multiSelect, multiSelect = _b === void 0 ? false : _b, value = _a.value, onChange = _a.onChange, getValue = _a.getValue, props = __rest(_a, ["options", "multiSelect", "value", "onChange", "getValue"]);
+    var options = _a.options, _b = _a.multiSelect, multiSelect = _b === void 0 ? false : _b, value = _a.value, onChange = _a.onChange, getValue = _a.getValue, _c = _a.size, size = _c === void 0 ? 'small' : _c, props = __rest(_a, ["options", "multiSelect", "value", "onChange", "getValue", "size"]);
     /** Ссылка на текущий компонент */
     var componentNode = react_1.useRef(null);
     // -------------------------------------------------------------------------------------------------------------------
     /** Отображение дропдауна с значениями */
-    var _c = react_1.useState(false), showDropdown = _c[0], toggleDropdown = _c[1];
+    var _d = react_1.useState(false), showDropdown = _d[0], toggleDropdown = _d[1];
     var dropdownRef = react_1.useRef(null);
     /** При открытии выпадающего списка поднимаем скролл наверх */
     react_1.useEffect(function () {
@@ -73,7 +73,7 @@ var Select = function (_a) {
     }, [showDropdown]);
     // -------------------------------------------------------------------------------------------------------------------
     /** Отфильтрованные значения */
-    var _d = react_1.useState(new Map()), hiddenOptions = _d[0], setHiddenOptions = _d[1];
+    var _e = react_1.useState(new Map()), hiddenOptions = _e[0], setHiddenOptions = _e[1];
     /** Функция фильтрации списка */
     var onFilter = function (options, search) {
         return options.reduce(function (acc, o) {
@@ -114,7 +114,7 @@ var Select = function (_a) {
         }
         return '';
     };
-    var _e = react_1.useState(initInputValue()), inputValue = _e[0], setInputValue = _e[1];
+    var _f = react_1.useState(initInputValue()), inputValue = _f[0], setInputValue = _f[1];
     react_1.useEffect(function () {
         setInputValue(initInputValue());
     }, [value]);
@@ -128,7 +128,7 @@ var Select = function (_a) {
         }
         return options.filter(function (o) { return o.value === value; });
     };
-    var _f = react_1.useState(initCurrentValue()), currentValue = _f[0], setCurrentValue = _f[1];
+    var _g = react_1.useState(initCurrentValue()), currentValue = _g[0], setCurrentValue = _g[1];
     var onOptionRemove = function (value) {
         return currentValue.filter(function (e) { return e.value !== value; });
     };
@@ -231,9 +231,14 @@ var Select = function (_a) {
     useClickOutside_1.default(componentNode, handleClickOutside);
     // -------------------------------------------------------------------------------------------------------------------
     var clearIconClass = !props.readOnly && inputValue.length > 0 ? 'rf-select__input-clear--show' : '';
-    return (react_1.default.createElement("div", { className: "rf-select " + (props.className || ''), ref: componentNode },
+    var sizeClass = {
+        big: 'rf-select--big',
+        small: 'rf-select--small',
+        micro: 'rf-select--micro'
+    };
+    return (react_1.default.createElement("div", { className: "rf-select " + (props.className || '') + " " + sizeClass[size], ref: componentNode },
         react_1.default.createElement("div", { className: 'rf-select__input-wrapper' },
-            react_1.default.createElement(index_1.Input, { placeholder: props.placeholder, value: inputValue, readOnly: props.readOnly, onChange: onInputChange, onKeyUp: onSearch, onClick: onInputClick, disabled: props.disabled }),
+            react_1.default.createElement(index_1.Input, { placeholder: props.placeholder, value: inputValue, readOnly: props.readOnly, onChange: onInputChange, onKeyUp: onSearch, onClick: onInputClick, disabled: props.disabled, size: size }),
             react_1.default.createElement(index_1.Button, { buttonType: 'text', disabled: props.disabled, className: "rf-select__input-icon rf-select__input-clear " + clearIconClass },
                 react_1.default.createElement(close_1.default, { onClick: clearInput })),
             react_1.default.createElement(index_1.Button, { buttonType: 'text', disabled: props.disabled, className: "rf-select__input-icon rf-select__input-angle\n                " + (showDropdown ? 'rf-select__input-angle--rotate' : ''), onClick: openSelectDropdown },

@@ -59,7 +59,7 @@ var Switch = function (_a) {
     var classDisable = disable ? 'rf-switch--disable' : '';
     var classAnim = animation ? 'rf-switch--anim' : '';
     var classOther = (_b = props.className) !== null && _b !== void 0 ? _b : '';
-    return (react_1.default.createElement("div", __assign({ tabIndex: 0, className: "rf-switch rf-switch__toggle-" + size + " " + classDisable + " " + classAnim + " " + classOther, onClick: changeState }, props),
+    return (react_1.default.createElement("div", __assign({}, props, { tabIndex: 0, className: "rf-switch rf-switch__toggle-" + size + " " + classDisable + " " + classAnim + " " + classOther, onClick: changeState }),
         label && labelPosition === 'left' && react_1.default.createElement("p", { className: 'rf-switch__label rf-switch__label--left' }, label),
         react_1.default.createElement("div", { className: "rf-switch__toggle  " + (s ? 'rf-switch__toggle--on' : 'rf-switch__toggle--off') + " " + helpers_1.variantClass[variant] },
             react_1.default.createElement("div", { className: 'rf-switch__circle' })),

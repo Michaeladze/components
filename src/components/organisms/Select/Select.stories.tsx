@@ -68,7 +68,7 @@ export const select = () => {
     <Story name='Select' width={600}>
       <StoryItem description='Выбор радио кнопок или чекбоксов из выпадающего списка'>
         <StoryRow>
-          <Select options={list} placeholder='Запрещен ввод' readOnly />
+          <Select options={list} placeholder='Запрещен ввод' readOnly size='micro' />
         </StoryRow>
         <StoryRow>
           <Select name='s1' options={list} placeholder='Выберите значение' value={s1} />

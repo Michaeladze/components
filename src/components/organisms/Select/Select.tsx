@@ -10,7 +10,7 @@ import Angle from '../../_icons/angle-down';
 import Close from '../../_icons/close';
 import Chips from '../../molecules/Chips/Chips';
 
-export interface ISelectProps extends InputHTMLAttributes<HTMLInputElement> {
+export interface ISelectProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> {
   /** Список вариантов */
   options: IOption[];
   /** Множественный выбор */
@@ -21,6 +21,8 @@ export interface ISelectProps extends InputHTMLAttributes<HTMLInputElement> {
   onChange?: (e: React.ChangeEvent<HTMLInputElement>, option?: IOption) => void;
   /** Вернуть IOption */
   getValue?: (option: IOption) => void;
+  /** Размер */
+  size?: 'big' | 'small' | 'micro';
 }
 
 const Select: FC<ISelectProps> = ({
@@ -29,6 +31,7 @@ const Select: FC<ISelectProps> = ({
   value,
   onChange,
   getValue,
+  size = 'small',
   ...props
 }: ISelectProps) => {
   /** Ссылка на текущий компонент */
@@ -274,9 +277,14 @@ const Select: FC<ISelectProps> = ({
   // -------------------------------------------------------------------------------------------------------------------
 
   const clearIconClass = !props.readOnly && inputValue.length > 0 ? 'rf-select__input-clear--show' : '';
+  const sizeClass: Record<'big' | 'small' | 'micro', string> = {
+    big: 'rf-select--big',
+    small: 'rf-select--small',
+    micro: 'rf-select--micro'
+  };
 
   return (
-    <div className={`rf-select ${props.className || ''}`} ref={componentNode}>
+    <div className={`rf-select ${props.className || ''} ${sizeClass[size]}`} ref={componentNode}>
       <div className='rf-select__input-wrapper'>
         <Input
           placeholder={props.placeholder}
@@ -286,6 +294,7 @@ const Select: FC<ISelectProps> = ({
           onKeyUp={onSearch}
           onClick={onInputClick}
           disabled={props.disabled}
+          size={size}
         />
         <Button
           buttonType='text'

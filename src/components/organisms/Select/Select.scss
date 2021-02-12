@@ -26,6 +26,21 @@
   transition: background-color 0.15s;
 }
 
+.rf-select--micro {
+  .rf-select__list {
+    padding: 8px 0;
+  }
+
+  .rf-select__list-item {
+    height: 32px;
+  }
+
+  .rf-radio__label,
+  .rf-checkbox__label {
+    @include Body2Long;
+  }
+}
+
 .rf-select__list-item:hover {
   background-color: var(--neutral-5);
 }

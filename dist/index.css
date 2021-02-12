@@ -3339,7 +3339,7 @@ input[type='file']:disabled + .rf-input__field.rf-input__field--file {
   color: var(--neutral-90); }
 
 .rf-tabs__content {
-  margin-top: 8px; }
+  margin-top: 24px; }
 
 .rf-tabs--buttons .rf-tabs__navigation {
   border-bottom: none; }
@@ -3686,6 +3686,21 @@ input[type='file']:disabled + .rf-input__field.rf-input__field--file {
   display: flex;
   align-items: center;
   transition: background-color 0.15s; }
+
+.rf-select--micro .rf-select__list {
+  padding: 8px 0; }
+
+.rf-select--micro .rf-select__list-item {
+  height: 32px; }
+
+.rf-select--micro .rf-radio__label,
+.rf-select--micro .rf-checkbox__label {
+  font-style: normal;
+  letter-spacing: normal;
+  font-weight: 400;
+  color: var(--neutral-90);
+  font-size: 14px;
+  line-height: 20px; }
 
 .rf-select__list-item:hover {
   background-color: var(--neutral-5); }

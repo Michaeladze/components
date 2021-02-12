@@ -4,13 +4,13 @@ import React, {
 import { Variant } from '../../../types';
 import { variantClass } from '../../../utils/helpers';
 
-export interface ISwitchProps extends Omit<HTMLProps<HTMLDivElement>, 'label'| 'size' |'onChange'> {
+export interface ISwitchProps extends Omit<HTMLProps<HTMLDivElement>, 'label' | 'size' | 'onChange'> {
   /** Функция срабатывает при переключении */
   onChange?: (f: boolean) => void;
   /** Метка */
   label?: ReactNode;
   /** Позиция метки */
-  labelPosition?: 'right'|'left';
+  labelPosition?: 'right' | 'left';
   /** Текущее состояние */
   state?: boolean;
   /** Блокировка от нажатий */
@@ -18,7 +18,7 @@ export interface ISwitchProps extends Omit<HTMLProps<HTMLDivElement>, 'label'| '
   /** Цвета */
   variant?: Variant;
   /** Размер */
-  size?: 'default'|'small';
+  size?: 'default' | 'small';
   /** Включить/выключить анимацию */
   animation?: boolean;
 }
@@ -52,14 +52,15 @@ const Switch: FC<ISwitchProps> = ({
   const classOther = props.className ?? '';
 
   return (
-    <div tabIndex={0}
-      className={`rf-switch rf-switch__toggle-${size} ${classDisable} ${classAnim} ${classOther}`}
-      onClick={changeState} {...props} >
-      {label && labelPosition === 'left' && <p className='rf-switch__label rf-switch__label--left'>{label}</p>}
-      <div className={`rf-switch__toggle  ${s ? 'rf-switch__toggle--on' : 'rf-switch__toggle--off'} ${variantClass[variant]}`}>
-        <div className='rf-switch__circle' />
+    <div { ...props } tabIndex={ 0 }
+      className={ `rf-switch rf-switch__toggle-${size} ${classDisable} ${classAnim} ${classOther}` }
+      onClick={ changeState } >
+      { label && labelPosition === 'left' && <p className='rf-switch__label rf-switch__label--left'>{ label }</p> }
+      <div
+        className={ `rf-switch__toggle  ${s ? 'rf-switch__toggle--on' : 'rf-switch__toggle--off'} ${variantClass[variant]}` }>
+        <div className='rf-switch__circle'/>
       </div>
-      {label && labelPosition === 'right' && <p className='rf-switch__label rf-switch__label--right'>{label}</p>}
+      { label && labelPosition === 'right' && <p className='rf-switch__label rf-switch__label--right'>{ label }</p> }
     </div>
   );
 };

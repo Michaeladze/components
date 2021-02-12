@@ -25,8 +25,8 @@ export const switcher = () => {
   });
 
   const switchVariantsJSX = variants.map((variant: Variant) => (
-    <StoryRow key={variant}>
-      <Switch variant={variant} state={true} label={variant} />
+    <StoryRow key={ variant }>
+      <Switch variant={ variant } state={ true } label={ variant }/>
     </StoryRow>
   ));
 
@@ -34,24 +34,26 @@ export const switcher = () => {
     <Story name='Switch (Переключатель)' description='Переключает состояние какой-нибудь сущности'>
       <StoryItem description='Состояния переключателя'>
         <StoryRow>
-          <Switch animation={true} label='Default c анимацией ' onChange={onChange} />
-          <Switch label='Default без анимации ' style={{ paddingLeft: '60px' }} onChange={onChange} labelPosition='left'/>
+          <Switch animation={ true } label='Default c анимацией ' onChange={ onChange }/>
+          <Switch label='Default без анимации ' style={ { paddingLeft: '60px' } } onChange={ onChange }
+            labelPosition='left'/>
         </StoryRow>
         <StoryRow>
-          <Switch label='Small' onChange={onChange} size='small' />
-          <Switch label='Small' style={{ paddingLeft: '60px' }} onChange={onChange} size='small' labelPosition='left'/>
+          <Switch label='Small' onChange={ onChange } size='small'/>
+          <Switch label='Small' style={ { paddingLeft: '60px' } } onChange={ onChange } size='small'
+            labelPosition='left'/>
         </StoryRow>
         <StoryRow>
-          <Switch animation={true} label='Default' onChange={onChange} state={active}/>
+          <Switch animation={ true } label='Default' onChange={ onChange } state={ active }/>
         </StoryRow>
         <StoryRow>
-          <Switch label='Неактивен и включен' state={true} disable={true} onChange={onChange} />
+          <Switch label='Неактивен и включен' state={ true } disable={ true } onChange={ onChange }/>
         </StoryRow>
         <StoryRow>
-          <Switch size='small' label='Неактивен и выключен и еще и мелкий)' disable={true} onChange={onChange} />
+          <Switch size='small' label='Неактивен и выключен и еще и мелкий)' disable={ true } onChange={ onChange }/>
         </StoryRow>
       </StoryItem>
-      <StoryItem description='Варианты цветового оформления'>{switchVariantsJSX}</StoryItem>
+      <StoryItem description='Варианты цветового оформления'>{ switchVariantsJSX }</StoryItem>
     </Story>
   );
 };
