@@ -138,8 +138,8 @@ var Input = function (_a) {
         micro: 'rf-input--micro'
     };
     // -------------------------------------------------------------------------------------------------------------------
-    return (react_1.default.createElement("div", { className: 'rf-input' },
-        react_1.default.createElement("input", __assign({}, props, { ref: ref, className: "rf-input__field " + (props.className || '') + " " + floatLabelClass + " " + floatClass + " " + searchClass + " " + sizeClass[size], autoComplete: 'off', type: props.type || 'text', onKeyUp: handleFloatLabel })),
+    return (react_1.default.createElement("div", { className: "" + (props.className || '') },
+        react_1.default.createElement("input", __assign({}, props, { ref: ref, className: "rf-input__field " + (props.className ? '' : '') + " " + floatLabelClass + " " + floatClass + " " + searchClass + " " + sizeClass[size], autoComplete: 'off', type: props.type || 'text', onKeyUp: handleFloatLabel })),
         labelText,
         showButton,
         closeButton,

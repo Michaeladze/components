@@ -103,15 +103,15 @@ const Input: FC<IInputProps> = ({
 
   /** Кнопка поиска и сброса */
   const closeButton = onClear && value.length > 0 && (
-    <button className='rf-input__action rf-input__action-clear' onClick={clearInput}>
-      <CloseIcon />
+    <button className='rf-input__action rf-input__action-clear' onClick={ clearInput }>
+      <CloseIcon/>
     </button>
   );
 
   /** Кнопка поиска и сброса */
   const searchButton = search && showSearch && (
     <button className='rf-input__action rf-input__action-search'>
-      <SearchIcon />
+      <SearchIcon/>
     </button>
   );
 
@@ -127,15 +127,15 @@ const Input: FC<IInputProps> = ({
 
   /** Кнопка отображения пароля */
   const showButton = props.type === 'password' && (
-    <button className='rf-input-action rf-password-action' type='button' onClick={togglePassword}>
-      {showPassword ? <ShowIcon /> : <HideIcon />}
+    <button className='rf-input-action rf-password-action' type='button' onClick={ togglePassword }>
+      { showPassword ? <ShowIcon/> : <HideIcon/> }
     </button>
   );
 
   // -------------------------------------------------------------------------------------------------------------------
 
   /** Плавающий лейбл */
-  const labelText = floatLabel && <label className='rf-input__label'>{floatLabel}</label>;
+  const labelText = floatLabel && <label className='rf-input__label'>{ floatLabel }</label>;
 
   /** Добавляем активный класс, если инпут заполнен */
   const handleFloatLabel = () => {
@@ -159,21 +159,21 @@ const Input: FC<IInputProps> = ({
   // -------------------------------------------------------------------------------------------------------------------
 
   return (
-    <div className='rf-input'>
+    <div className={ `${props.className || ''}` }>
       <input
-        {...props}
-        ref={ref}
-        className={`rf-input__field ${
-          props.className || ''
-        } ${floatLabelClass} ${floatClass} ${searchClass} ${sizeClass[size]}`}
+        { ...props }
+        ref={ ref }
+        className={ `rf-input__field ${
+          props.className ? '' : ''
+        } ${floatLabelClass} ${floatClass} ${searchClass} ${sizeClass[size]}` }
         autoComplete='off'
-        type={props.type || 'text'}
-        onKeyUp={handleFloatLabel}
+        type={ props.type || 'text' }
+        onKeyUp={ handleFloatLabel }
       />
-      {labelText}
-      {showButton}
-      {closeButton}
-      {searchButton}
+      { labelText }
+      { showButton }
+      { closeButton }
+      { searchButton }
     </div>
   );
 };
