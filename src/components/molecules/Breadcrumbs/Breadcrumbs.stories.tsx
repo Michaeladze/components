@@ -34,6 +34,9 @@ export const breadcrumbs = () => {
         <StoryItem description='Отображение пути в системе до текущей страницы'>
           <Breadcrumbs list={breadcrumbs} />
         </StoryItem>
+        <StoryItem description='Маленького размера'>
+          <Breadcrumbs list={breadcrumbs} size='small' />
+        </StoryItem>
       </BrowserRouter>
     </Story>
   );

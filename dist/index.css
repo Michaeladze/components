@@ -3574,6 +3574,19 @@ input[type='file']:disabled + .rf-input__field.rf-input__field--file {
   transform: rotate(-90deg);
   color: var(--neutral-50); }
 
+.breadcrumbs.rf--small .breadcrumb__link {
+  font-style: normal;
+  letter-spacing: normal;
+  font-weight: 400;
+  color: var(--neutral-90);
+  font-size: 14px;
+  line-height: 16px;
+  color: var(--neutral-50); }
+
+.breadcrumbs.rf--small .breadcrumb__angle {
+  width: 16px;
+  height: 16px; }
+
 .breadcrumb:last-of-type .breadcrumb__angle {
   display: none; }
 
