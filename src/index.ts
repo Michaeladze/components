@@ -52,7 +52,6 @@ import PopupFooter from './components/projects/molecules/PopupFooter';
 
 // -------------------------Icons---------------------------------------------------------------------------------------
 
-
 import Copy from './components/_icons/copy';
 import Envelope from './components/_icons/envelope';
 import Headset from './components/_icons/headset';
@@ -61,6 +60,7 @@ import Bell from './components/_icons/bell';
 import People from './components/_icons/people';
 import QuestionCircle from './components/_icons/question-circle';
 import Settings from './components/_icons/settings';
+import DotsHorizontal from './components/_icons/dots-h';
 
 // ---------------------------------------------------------------------------------------------------------------------
 
@@ -121,5 +121,6 @@ export {
   Bell,
   People,
   QuestionCircle,
-  Settings
+  Settings,
+  DotsHorizontal
 };
