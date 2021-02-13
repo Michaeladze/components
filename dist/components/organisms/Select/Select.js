@@ -206,7 +206,7 @@ var Select = function (_a) {
         }
         setCurrentValue(onOptionRemove(id));
     };
-    var chipsJSX = multiSelect && (react_1.default.createElement("div", { className: 'rf-select__chips' },
+    var chipsJSX = multiSelect && chips.length > 0 && (react_1.default.createElement("div", { className: 'rf-select__chips' },
         react_1.default.createElement(Chips_1.default, { variant: 'neutral', items: chips, onRemove: onChipsRemove, disabled: props.disabled, size: size })));
     // -------------------------------------------------------------------------------------------------------------------
     /** Очистка оля ввода */

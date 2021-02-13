@@ -2319,8 +2319,8 @@ input[type='file']:disabled + .rf-input__field.rf-input__field--file {
   padding-left: 8px; }
 
 .rf-tooltip__content {
-  border-radius: 8px;
-  box-shadow: var(--shadow-strong); }
+  border-radius: 2px;
+  box-shadow: 0px -1.5px 6px rgba(0, 0, 0, 0.06), 0px 0.6px 1.8px rgba(0, 0, 0, 0.1), 0px 3.2px 7.2px rgba(0, 0, 0, 0.14); }
 
 .rf-tooltip__inner {
   position: relative;
@@ -2330,7 +2330,7 @@ input[type='file']:disabled + .rf-input__field.rf-input__field--file {
   font-size: 14px;
   line-height: 18px;
   background: var(--neutral-white);
-  border-radius: 8px; }
+  border-radius: 2px; }
 
 .rf-tooltip__inner::after {
   content: '';
@@ -3785,7 +3785,8 @@ input[type='file']:disabled + .rf-input__field.rf-input__field--file {
   padding-right: 50px; }
 
 .rf-select__input-wrapper .rf-input__field[readonly] {
-  cursor: pointer; }
+  cursor: pointer;
+  padding-right: 30px; }
 
 .rf-select__input-icon {
   position: absolute;
