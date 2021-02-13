@@ -23,7 +23,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Bell = exports.MenuOutline = exports.Headset = exports.Envelope = exports.Copy = exports.getMonthName = exports.getShortString = exports.formatDate = exports.Tag = exports.BackdropLoader = exports.Menu = exports.FeedbackPopup = exports.UsersStack = exports.AppHeader = exports.FindUsers = exports.openPopup = exports.PopupMaker = exports.Select = exports.Tabs = exports.Modal = exports.FormGroup = exports.sendNotification = exports.Notifications = exports.Chips = exports.ContentExpander = exports.Container = exports.UserPhoto = exports.PopupFooter = exports.Tooltip = exports.Textarea = exports.Row = exports.Radio = exports.Input = exports.Message = exports.FileInput = exports.Datepicker = exports.Notification = exports.Column = exports.Checkbox = exports.Preloader = exports.Button = exports.Breadcrumbs = exports.PageTemplate = exports.Timepicker = exports.UserItem = exports.ShareButton = exports.Tile = exports.Switch = exports.useLocation = exports.useClickOutside = void 0;
-exports.DotsHorizontal = exports.Settings = exports.QuestionCircle = exports.People = void 0;
+exports.PersonAddOutline = exports.InfoCircle = exports.DotsHorizontal = exports.Settings = exports.QuestionCircle = exports.People = void 0;
 var useClickOutside_1 = __importDefault(require("./hooks/useClickOutside"));
 exports.useClickOutside = useClickOutside_1.default;
 var useLocation_1 = require("./hooks/useLocation");
@@ -133,3 +133,7 @@ var settings_1 = __importDefault(require("./components/_icons/settings"));
 exports.Settings = settings_1.default;
 var dots_h_1 = __importDefault(require("./components/_icons/dots-h"));
 exports.DotsHorizontal = dots_h_1.default;
+var info_circle_1 = __importDefault(require("./components/_icons/info-circle"));
+exports.InfoCircle = info_circle_1.default;
+var person_add_outline_1 = __importDefault(require("./components/_icons/person-add-outline"));
+exports.PersonAddOutline = person_add_outline_1.default;

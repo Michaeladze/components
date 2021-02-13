@@ -61,6 +61,8 @@ import People from './components/_icons/people';
 import QuestionCircle from './components/_icons/question-circle';
 import Settings from './components/_icons/settings';
 import DotsHorizontal from './components/_icons/dots-h';
+import InfoCircle from './components/_icons/info-circle';
+import PersonAddOutline from './components/_icons/person-add-outline';
 
 // ---------------------------------------------------------------------------------------------------------------------
 
@@ -122,5 +124,7 @@ export {
   People,
   QuestionCircle,
   Settings,
-  DotsHorizontal
+  DotsHorizontal,
+  InfoCircle,
+  PersonAddOutline
 };
