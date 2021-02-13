@@ -26,6 +26,8 @@ export interface ISelectProps extends Omit<InputHTMLAttributes<HTMLInputElement>
   getValue?: (option: IOption) => void;
   /** Размер */
   size?: Size;
+  /** Дополнительное событие при удалении чипсы */
+  onChipRemove?: (id: string, name?: string) => void;
 }
 
 const Select: FC<ISelectProps> = ({
@@ -35,6 +37,7 @@ const Select: FC<ISelectProps> = ({
   onChange,
   getValue,
   size = 'small',
+  onChipRemove,
   ...props
 }: ISelectProps) => {
   /** Ссылка на текущий компонент */
@@ -240,6 +243,7 @@ const Select: FC<ISelectProps> = ({
       }
     }
 
+    onChipRemove && onChipRemove(id, props.name);
     setCurrentValue(onOptionRemove(id));
   };
 

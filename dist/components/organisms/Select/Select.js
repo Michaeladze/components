@@ -59,7 +59,7 @@ var close_1 = __importDefault(require("../../_icons/close"));
 var Chips_1 = __importDefault(require("../../molecules/Chips/Chips"));
 var helpers_1 = require("../../../utils/helpers");
 var Select = function (_a) {
-    var options = _a.options, _b = _a.multiSelect, multiSelect = _b === void 0 ? false : _b, value = _a.value, onChange = _a.onChange, getValue = _a.getValue, _c = _a.size, size = _c === void 0 ? 'small' : _c, props = __rest(_a, ["options", "multiSelect", "value", "onChange", "getValue", "size"]);
+    var options = _a.options, _b = _a.multiSelect, multiSelect = _b === void 0 ? false : _b, value = _a.value, onChange = _a.onChange, getValue = _a.getValue, _c = _a.size, size = _c === void 0 ? 'small' : _c, onChipRemove = _a.onChipRemove, props = __rest(_a, ["options", "multiSelect", "value", "onChange", "getValue", "size", "onChipRemove"]);
     /** Ссылка на текущий компонент */
     var componentNode = react_1.useRef(null);
     // -------------------------------------------------------------------------------------------------------------------
@@ -204,6 +204,7 @@ var Select = function (_a) {
                 checkbox.checked = false;
             }
         }
+        onChipRemove && onChipRemove(id, props.name);
         setCurrentValue(onOptionRemove(id));
     };
     var chipsJSX = multiSelect && chips.length > 0 && (react_1.default.createElement("div", { className: 'rf-select__chips' },
